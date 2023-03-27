@@ -5,7 +5,8 @@
 PointCluster::PointCluster(std::vector<std::variant<float, std::string>> components) :
   pointBasic_(components), clusterIndex_(-1) {}
 
-PointCluster::PointCluster(PointBasic pointBasic) : pointBasic_(pointBasic) {}
+PointCluster::PointCluster(PointBasic pointBasic) :
+    pointBasic_(pointBasic), clusterIndex_(-1) {}
 
 PointCluster::~PointCluster() {}
 

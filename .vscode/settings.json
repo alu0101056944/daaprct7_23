@@ -47,5 +47,10 @@
     "random": "cpp",
     "variant": "cpp",
     "iostream": "cpp"
-  }
+  },
+  "cmake.debugConfig": {
+    "args": [
+        "./instancias/prob1.txt"
+    ]
+}
 }

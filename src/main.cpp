@@ -3,6 +3,8 @@
 
 #include "../include/instance_filereader.h"
 #include "../include/point/point_basic.h"
+#include "../include/algorithm_greedy/framework_greedy.h"
+#include "../include/algorithm_greedy/algorithm_greedy_kmeans.h"
 
 int main (int argv, char** argc) {
   if (argv < 2) {
@@ -15,4 +17,11 @@ int main (int argv, char** argc) {
   for (auto& point : points) {
     point.print();
   }
+  std::cout << std::endl;
+
+  FrameworkGreedy framework;
+  auto ptrAlgorithm =
+        std::shared_ptr<AlgorithmGreedyKMeans>(new AlgorithmGreedyKMeans(points, 2));
+  framework.execute(ptrAlgorithm);
+  ptrAlgorithm->print();
 }

@@ -1,5 +1,6 @@
 #include "../../include/algorithm_greedy/algorithm_greedy_kmeans.h"
 
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -10,7 +11,7 @@
 #include "../../include/heuristics/heuristic_kmeans_least.h"
 
 AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points,
-    int k) : k_(k), amountOfReassignedPoints_(0),
+    int k) : k_(k), amountOfReassignedPoints_(points.size()),
     ptrHeuristic_(new HeuristicKMeansLeast()) {
 
   assert(points.size() >= k);
@@ -55,14 +56,14 @@ void AlgorithmGreedyKMeans::selectBestCandidate() {
 
   for (auto& point : pointsClient_) {
 
-    // vector<IPoint> to vector<shared_ptr> for heuristic->choose()
+    // from vector<...> to vector<shared_ptr<...>> for heuristic->choose()
     std::vector<std::shared_ptr<IPoint>> available;
     for (int j = 0; j < pointsService_.size(); ++j) {
-      available.push_back(std::shared_ptr<PointCluster>(&(point)));
+      available.push_back(std::make_shared<PointCluster>(pointsService_[j]));
     }
 
     int closestClusterIndex = ptrHeuristic_->choose(
-      std::shared_ptr<PointCluster>(&(point)), available);
+      std::make_shared<PointCluster>(point), available);
 
     if (closestClusterIndex != point.getCluster()) {
       ++amountOfReassignedPoints_;
@@ -91,26 +92,51 @@ void AlgorithmGreedyKMeans::addCandidate() {
       }
     }
 
-    // add partial average to componentsAverage
+    int amountOfPointsOnCluster = 0;
+    // calculate numerator of the average mathematical operation
     for (auto& point : pointsClient_) {
       if (point.getCluster() == i) {
-        for (auto& component : point.getComponents()) {
+        auto components = point.getComponents();
+        for (int j = 0; j < components.size(); ++j) {
 
-          if (std::holds_alternative<float>(component)) {
-            componentsAverage[i] = std::get<float>(componentsAverage[i]) +
-                (std::get<float>(component) / pointsClient_.size());
+          if (std::holds_alternative<float>(components[j])) {
+            componentsAverage[j] = std::get<float>(componentsAverage[j]) +
+                std::get<float>(components[j]);
           }
         }
+
+        ++amountOfPointsOnCluster;
       }
     }
 
-    pointsService_[i] = PointCluster(componentsAverage);
+    if (amountOfPointsOnCluster > 0) {
+      // apply denominator division of the average mathematical operation
+      for (int j = 0; j < componentsAverage.size(); ++j) {
+        if (std::holds_alternative<float>(componentsAverage[j])) {
+          componentsAverage[j] = std::get<float>(componentsAverage[j]) /
+              amountOfPointsOnCluster;
+        }
+      }
+
+      pointsService_[i] = PointCluster(componentsAverage);
+    } else {
+      pointsService_[i] = pointsClient_[generateRandomIndex(1).back()];
+    }
   }
 }
 
 void AlgorithmGreedyKMeans::print() {
+  std::cout << "Amount of clusters: " << k_ << std::endl;
   for (int i = 0; i < pointsService_.size(); ++i) {
-    
+    std::cout << "Cluster " << i << ", ";
+    pointsService_[i].print();
+    std::cout << ": ";
+    for (int j = 0; j < pointsClient_.size(); ++j) {
+      if (pointsClient_[j].getCluster() == i) {
+        pointsClient_[j].print();
+      }
+    }
+    std::cout << std::endl;
   }
 }
 
@@ -121,8 +147,7 @@ std::vector<int> AlgorithmGreedyKMeans::generateRandomIndex(int size) {
   int randomIndex = rand() % pointsClient_.size();
   previous.push_back(randomIndex);
 
-  for (int i = 0; i < size; ++i) {
-
+  for (int i = 0; i < size - 1; ++i) {
     while (std::find(previous.begin(), previous.end(), randomIndex) !=
         previous.end()) {
 

@@ -8,7 +8,7 @@
 #include "../point/point_basic.h"
 #include "../../include/point/point_cluster.h"
 
-class AlgorithmGreedyKMeans : IAlgorithmGreedy {
+class AlgorithmGreedyKMeans : public IAlgorithmGreedy {
 public:
   AlgorithmGreedyKMeans(std::vector<PointBasic> points, int k);
   ~AlgorithmGreedyKMeans();
