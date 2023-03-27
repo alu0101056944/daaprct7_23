@@ -148,6 +148,19 @@ CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/similarity/similarity_euclidean.cpp -o CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.s
 
+CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o: CMakeFiles/prct07Library.dir/flags.make
+CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o: ../src/instance_filereader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/instance_filereader.cpp
+
+CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/dyaa/daaprct7_23/src/instance_filereader.cpp > CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.i
+
+CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/instance_filereader.cpp -o CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.s
+
 # Object files for target prct07Library
 prct07Library_OBJECTS = \
 "CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o" \
@@ -156,7 +169,8 @@ prct07Library_OBJECTS = \
 "CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/point/point_basic.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/point/point_cluster.cpp.o" \
-"CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o"
+"CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o" \
+"CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o"
 
 # External object files for target prct07Library
 prct07Library_EXTERNAL_OBJECTS =
@@ -168,9 +182,10 @@ libprct07Library.a: CMakeFiles/prct07Library.dir/src/objective_functions/objecti
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/point/point_basic.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/point/point_cluster.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o
+libprct07Library.a: CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/build.make
 libprct07Library.a: CMakeFiles/prct07Library.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libprct07Library.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libprct07Library.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/prct07Library.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/prct07Library.dir/link.txt --verbose=$(VERBOSE)
 

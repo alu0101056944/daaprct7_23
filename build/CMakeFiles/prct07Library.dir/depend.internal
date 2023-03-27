@@ -22,6 +22,11 @@ CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o
  /home/usuario/dyaa/daaprct7_23/include/similarity/i_similarity.h
  /home/usuario/dyaa/daaprct7_23/include/similarity/similarity_euclidean.h
  /home/usuario/dyaa/daaprct7_23/src/heuristics/heuristic_kmeans_least.cpp
+CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o
+ /home/usuario/dyaa/daaprct7_23/include/instance_filereader.h
+ /home/usuario/dyaa/daaprct7_23/include/point/i_point.h
+ /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
+ /home/usuario/dyaa/daaprct7_23/src/instance_filereader.cpp
 CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.o
  /home/usuario/dyaa/daaprct7_23/include/objective_functions/i_objective_function.h
  /home/usuario/dyaa/daaprct7_23/include/objective_functions/objective_function_ees.h

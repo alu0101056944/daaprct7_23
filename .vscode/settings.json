@@ -45,6 +45,7 @@
     "memory_resource": "cpp",
     "numeric": "cpp",
     "random": "cpp",
-    "variant": "cpp"
+    "variant": "cpp",
+    "iostream": "cpp"
   }
 }

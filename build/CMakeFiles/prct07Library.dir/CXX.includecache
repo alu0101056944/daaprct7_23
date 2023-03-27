@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/usuario/dyaa/daaprct7_23/include/instance_filereader.h
+vector
+-
+string
+-
+point/point_basic.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
+
 /home/usuario/dyaa/daaprct7_23/include/point/i_point.h
 type_traits
 -
@@ -28,17 +36,13 @@ initializer_list
 i_point.h
 /home/usuario/dyaa/daaprct7_23/include/point/i_point.h
 
-/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
-vector
+/home/usuario/dyaa/daaprct7_23/src/instance_filereader.cpp
+../include/instance_filereader.h
+/home/usuario/dyaa/daaprct7_23/include/instance_filereader.h
+fstream
 -
-variant
+sstream
 -
-i_point.h
-/home/usuario/dyaa/daaprct7_23/include/point/i_point.h
-point_basic.h
-/home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
-
-/home/usuario/dyaa/daaprct7_23/src/point/point_cluster.cpp
-../../include/point/point_cluster.h
-/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
+cassert
+-
 

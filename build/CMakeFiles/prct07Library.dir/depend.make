@@ -22,6 +22,11 @@ CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../inc
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/similarity/similarity_euclidean.h
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../src/heuristics/heuristic_kmeans_least.cpp
 
+CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o: ../include/instance_filereader.h
+CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o: ../include/point/i_point.h
+CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o: ../include/point/point_basic.h
+CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o: ../src/instance_filereader.cpp
+
 CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.o: ../include/objective_functions/i_objective_function.h
 CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.o: ../include/objective_functions/objective_function_ees.h
 CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.o: ../src/objective_functions/objective_function_ees.cpp

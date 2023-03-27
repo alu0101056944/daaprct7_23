@@ -217,6 +217,33 @@ src/heuristics/heuristic_kmeans_least.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.s
 .PHONY : src/heuristics/heuristic_kmeans_least.cpp.s
 
+src/instance_filereader.o: src/instance_filereader.cpp.o
+
+.PHONY : src/instance_filereader.o
+
+# target to build an object file
+src/instance_filereader.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o
+.PHONY : src/instance_filereader.cpp.o
+
+src/instance_filereader.i: src/instance_filereader.cpp.i
+
+.PHONY : src/instance_filereader.i
+
+# target to preprocess a source file
+src/instance_filereader.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.i
+.PHONY : src/instance_filereader.cpp.i
+
+src/instance_filereader.s: src/instance_filereader.cpp.s
+
+.PHONY : src/instance_filereader.s
+
+# target to generate assembly for a file
+src/instance_filereader.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.s
+.PHONY : src/instance_filereader.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -371,6 +398,9 @@ help:
 	@echo "... src/heuristics/heuristic_kmeans_least.o"
 	@echo "... src/heuristics/heuristic_kmeans_least.i"
 	@echo "... src/heuristics/heuristic_kmeans_least.s"
+	@echo "... src/instance_filereader.o"
+	@echo "... src/instance_filereader.i"
+	@echo "... src/instance_filereader.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
