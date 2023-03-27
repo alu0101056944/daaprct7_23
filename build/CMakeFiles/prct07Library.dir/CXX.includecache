@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/usuario/dyaa/daaprct7_23/include/point/i_point.h
+type_traits
+-
+variant
+-
+vector
+-
+memory
+-
+
+/home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
+vector
+-
+variant
+-
+string
+-
+initializer_list
+-
+i_point.h
+/home/usuario/dyaa/daaprct7_23/include/point/i_point.h
+
+/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
+vector
+-
+variant
+-
+i_point.h
+/home/usuario/dyaa/daaprct7_23/include/point/i_point.h
+point_basic.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
+
+/home/usuario/dyaa/daaprct7_23/src/point/point_cluster.cpp
+../../include/point/point_cluster.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
+
