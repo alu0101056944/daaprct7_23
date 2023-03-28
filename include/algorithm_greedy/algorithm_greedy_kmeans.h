@@ -35,6 +35,7 @@ private:
   int k_;
 
   int indexOfFarthest_;
+  PointCluster pointFarthest_;
 
   float deltaSSE_;
   float sse_;

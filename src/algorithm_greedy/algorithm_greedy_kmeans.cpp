@@ -23,7 +23,8 @@ AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points,
     ssePrevious_(999),
     indexOfFarthest_(-1),
     executionIterationNumber_(0),
-    currentID_(++ID) {
+    currentID_(++ID),
+    pointFarthest_(points.back()) {
 
   assert(k_ >= 2);
   assert(points.size() >= k);
@@ -44,8 +45,8 @@ AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points,
     ssePrevious_(0),
     indexOfFarthest_(-1),
     executionIterationNumber_(0),
-    currentID_(++ID) {
-
+    currentID_(++ID),
+    pointFarthest_(points.back()) {
   assert(k_ >= 2);
   assert(points.size() >= k_);
 
@@ -103,6 +104,7 @@ bool AlgorithmGreedyKMeans::isAtSolution() {
 
 void AlgorithmGreedyKMeans::selectBestCandidate() {
   indexOfFarthest_ = ptrHeuristic_->choose(pointsCandidate_, pointsService_);
+  pointFarthest_ = pointsCandidate_[indexOfFarthest_];
   pointsCandidate_.erase(pointsCandidate_.begin() + indexOfFarthest_);
 }
 
@@ -122,8 +124,8 @@ bool AlgorithmGreedyKMeans::validCandidate() {
 
 // execute kmeans algorithm with current services
 void AlgorithmGreedyKMeans::addCandidate() {
-  pointsService_.push_back(pointsClient_[indexOfFarthest_]);
-  pointsCandidate_.assign(pointsClient_.begin(), pointsClient_.end());
+  pointsService_.push_back(pointFarthest_);
+  pointsCandidate_ = pointsClient_;
 
   applyGreedyKMeans();
   
