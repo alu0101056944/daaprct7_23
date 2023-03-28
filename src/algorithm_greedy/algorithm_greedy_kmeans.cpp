@@ -6,20 +6,51 @@
 #include <time.h>
 #include <algorithm>
 #include <cassert>
+#include <cmath>
 
 #include "../../include/point/point_cluster.h"
-#include "../../include/heuristics/heuristic_kmeans_least.h"
+#include "../../include/heuristics/heuristic_kmeans_max.h"
+#include "../../include/similarity/similarity_euclidean.h"
+
+int AlgorithmGreedyKMeans::ID = 0;
 
 AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points,
-    int k) : k_(k), amountOfReassignedPoints_(points.size()),
-    ptrHeuristic_(new HeuristicKMeansLeast()) {
+    int k) :
+    k_(k),
+    ptrHeuristic_(new HeuristicKMeansMax()),
+    sse_(900),
+    ssePrevious_(999),
+    indexOfFarthest_(-1),
+    executionIterationNumber_(0),
+    currentID_(++ID) {
 
+  assert(k_ >= 2);
   assert(points.size() >= k);
 
   for (auto& point : points) {
     assert(point.getComponents().size() == points.back().getComponents().size());
     pointsClient_.push_back(PointCluster(point));
   }
+  pointsCandidate_ = pointsClient_;
+}
+
+AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points) :
+    k_(points.size() * 0.1),
+    ptrHeuristic_(new HeuristicKMeansMax()),
+    sse_(0),
+    ssePrevious_(0),
+    indexOfFarthest_(-1),
+    executionIterationNumber_(0),
+    currentID_(++ID) {
+
+  assert(k_ >= 2);
+  assert(points.size() >= k_);
+
+  for (auto& point : points) {
+    assert(point.getComponents().size() == points.back().getComponents().size());
+    pointsClient_.push_back(PointCluster(point));
+  }
+  pointsCandidate_ = pointsClient_;
 }
 
 AlgorithmGreedyKMeans::~AlgorithmGreedyKMeans() {}
@@ -28,116 +59,148 @@ void AlgorithmGreedyKMeans::setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristi
   ptrHeuristic_ = ptrHeuristic;
 }
 
-/**
- * Use randomly generated index that hasn't been already generated before to
- *  access and insert a copy of a point as point of service.
- */
 void AlgorithmGreedyKMeans::preprocess() {
-  std::vector<int> randomIndex = generateRandomIndex(k_);
   for (int i = 0; i < k_; ++i) {
-    int index = randomIndex[i];
-    pointsService_.push_back(pointsClient_[index]);
+    selectBestCandidate();
   }
 }
 
-// Because the algorithm simply iterates all client points to search
-// the closest service point to it and to reassign it, so amount
-// of candidates is irrelevant.
 bool AlgorithmGreedyKMeans::hasCandidates() {
-  return true;
+  return pointsService_.size() < pointsClient_.size();
 }
 
 bool AlgorithmGreedyKMeans::isAtSolution() {
-  return amountOfReassignedPoints_ == 0;
+  return std::abs(ssePrevious_ - sse_) < 2;
 }
 
 void AlgorithmGreedyKMeans::selectBestCandidate() {
-  amountOfReassignedPoints_ = 0;
-
-  for (auto& point : pointsClient_) {
-
-    // from vector<...> to vector<shared_ptr<...>> for heuristic->choose()
-    std::vector<std::shared_ptr<IPoint>> available;
-    for (int j = 0; j < pointsService_.size(); ++j) {
-      available.push_back(std::make_shared<PointCluster>(pointsService_[j]));
-    }
-
-    int closestClusterIndex = ptrHeuristic_->choose(
-      std::make_shared<PointCluster>(point), available);
-
-    if (closestClusterIndex != point.getCluster()) {
-      ++amountOfReassignedPoints_;
-    }
-
-    point.setCluster(closestClusterIndex);
+  // PointCluster to std::shared_ptr<IPoint> for choose()
+  std::vector<std::shared_ptr<IPoint>> candidates;
+  for (int j = 0; j < pointsCandidate_.size(); j++) {
+    candidates.push_back(std::make_shared<PointCluster>(pointsCandidate_[j]));
   }
+
+  // PointCluster to std::shared_ptr<IPoint> for choose()
+  std::vector<std::shared_ptr<IPoint>> services;
+  for (int j = 0; j < pointsService_.size(); j++) {
+    services.push_back(std::make_shared<PointCluster>(pointsService_[j]));
+  }
+
+  indexOfFarthest_ = ptrHeuristic_->choose(candidates, services);
+  pointsCandidate_.erase(pointsCandidate_.begin() + indexOfFarthest_);
 }
 
-// Because on this algorithm there is no such thing as candidate, the greedy
-// part is simply choosing the cluster as the one of the service point
-// that is closer in distance to the client point.
 bool AlgorithmGreedyKMeans::validCandidate() {
-  return true;
+  ++executionIterationNumber_;
+  bool similarPointPresentAsService = false;
+  for (int i = 0; i < pointsService_.size(); ++i) {
+    auto componentsCandidate = pointsClient_[indexOfFarthest_].getComponents();
+    auto componentsService = pointsService_[i].getComponents();
+
+    if (componentsCandidate == componentsService) {
+      similarPointPresentAsService = true;
+    }
+  }
+  return !similarPointPresentAsService;
 }
 
-// Recalculate clusters instead.
+// execute kmeans algorithm with current services
 void AlgorithmGreedyKMeans::addCandidate() {
-  for (int i = 0; i < pointsService_.size(); ++i) {
+  pointsService_.push_back(pointsClient_[indexOfFarthest_]);
+  pointsCandidate_ = pointsClient_;
 
-    // initialize components to 0, nominals left as is
-    auto componentsAverage = pointsService_[i].getComponents();
-    for (auto& component : componentsAverage) {
-      if (std::holds_alternative<float>(component)) {
-        component = 0;
+  SimilarityEuclidean euclidean;
+  int amountOfReassigned = pointsClient_.size();
+  while(amountOfReassigned > 0) {
+    amountOfReassigned = 0;
+
+    // assign clients to services
+    for (int i = 0; i < pointsClient_.size(); ++i) {
+      auto ptrPoint = std::make_shared<PointCluster>(pointsClient_[i]);
+      float minimumDistance = -1;
+      int indexCluster;
+      for (int j = 0; j < pointsService_.size(); ++j) {
+        auto ptrService = std::make_shared<PointCluster>(pointsService_[j]);
+        float distance = euclidean.similarity(ptrPoint, ptrService);
+        if (minimumDistance == -1 || distance < minimumDistance) {
+          indexCluster = j;
+          minimumDistance = distance;
+        }
       }
+      if (pointsClient_[i].getCluster() != indexCluster) {
+        ++amountOfReassigned;
+      }
+      pointsClient_[i].setCluster(indexCluster);
     }
 
-    int amountOfPointsOnCluster = 0;
-    // calculate numerator of the average mathematical operation
-    for (auto& point : pointsClient_) {
-      if (point.getCluster() == i) {
-        auto components = point.getComponents();
-        for (int j = 0; j < components.size(); ++j) {
+    // Recalculate service points
+    for (int i = 0; i < pointsService_.size(); ++i) {
+      // get components layout. set numerics to 0, nominals left as is
+      auto componentsAverage = pointsService_[i].getComponents();
+      for (auto& component : componentsAverage) {
+        if (std::holds_alternative<float>(component)) {
+          component = 0;
+        }
+      }
 
-          if (std::holds_alternative<float>(components[j])) {
-            componentsAverage[j] = std::get<float>(componentsAverage[j]) +
-                std::get<float>(components[j]);
+      int amountOfPointsOnCluster = 0;
+
+      // calculate the numerator of the average mathematical operation
+      for (auto& point : pointsClient_) {
+        if (point.getCluster() == i) {
+          auto components = point.getComponents();
+          for (int j = 0; j < components.size(); ++j) {
+            if (std::holds_alternative<float>(components[j])) {
+              componentsAverage[j] = std::get<float>(componentsAverage[j]) +
+                  std::get<float>(components[j]);
+            }
+          }
+          ++amountOfPointsOnCluster;
+        }
+      }
+
+      if (amountOfPointsOnCluster > 0) {
+        // apply denominator division of the average mathematical operation
+        for (int j = 0; j < componentsAverage.size(); ++j) {
+          if (std::holds_alternative<float>(componentsAverage[j])) {
+            componentsAverage[j] = std::get<float>(componentsAverage[j]) /
+                amountOfPointsOnCluster;
           }
         }
-
-        ++amountOfPointsOnCluster;
+        pointsService_[i] = PointCluster(componentsAverage);
+      } else {
+        pointsService_[i] = pointsClient_[generateRandomIndex(1).back()];
       }
-    }
-
-    if (amountOfPointsOnCluster > 0) {
-      // apply denominator division of the average mathematical operation
-      for (int j = 0; j < componentsAverage.size(); ++j) {
-        if (std::holds_alternative<float>(componentsAverage[j])) {
-          componentsAverage[j] = std::get<float>(componentsAverage[j]) /
-              amountOfPointsOnCluster;
-        }
-      }
-
-      pointsService_[i] = PointCluster(componentsAverage);
-    } else {
-      pointsService_[i] = pointsClient_[generateRandomIndex(1).back()];
     }
   }
+  ssePrevious_ = sse_;
+  sse_ = objectiveFunction();
+}
+
+// calculate sse
+float AlgorithmGreedyKMeans::objectiveFunction() {
+  SimilarityEuclidean euclidean;
+  float total = 0;
+  for (int i = 0; i < pointsService_.size(); ++i) {
+    auto ptrService = std::make_shared<PointCluster>(pointsService_[i]);
+    float clusterTotal = 0;
+    for (auto& point : pointsClient_) {
+      if (point.getCluster() == i) {
+        auto ptrPoint = std::make_shared<PointCluster>(point);
+        clusterTotal += euclidean.similarity(ptrService, ptrPoint);
+      }
+    }
+    total += clusterTotal;
+  }
+  return total;
 }
 
 void AlgorithmGreedyKMeans::print() {
-  std::cout << "Amount of clusters: " << k_ << std::endl;
-  for (int i = 0; i < pointsService_.size(); ++i) {
-    std::cout << "Cluster " << i << ", ";
-    pointsService_[i].print();
-    std::cout << ": ";
-    for (int j = 0; j < pointsClient_.size(); ++j) {
-      if (pointsClient_[j].getCluster() == i) {
-        pointsClient_[j].print();
-      }
-    }
-    std::cout << std::endl;
-  }
+  std::cout << currentID_ << "\t\t";
+  std::cout << pointsClient_.size() << "\t\t";
+  std::cout << pointsService_.size() << "\t\t";
+  std::cout << executionIterationNumber_ << "\t\t\t";
+  std::cout << sse_ << "\t\t";
 }
 
 std::vector<int> AlgorithmGreedyKMeans::generateRandomIndex(int size) {
@@ -150,13 +213,10 @@ std::vector<int> AlgorithmGreedyKMeans::generateRandomIndex(int size) {
   for (int i = 0; i < size - 1; ++i) {
     while (std::find(previous.begin(), previous.end(), randomIndex) !=
         previous.end()) {
-
       srand(time(NULL));
       randomIndex = rand() % pointsClient_.size();
     }
-
     previous.push_back(randomIndex);
   }
-
   return previous;
 }

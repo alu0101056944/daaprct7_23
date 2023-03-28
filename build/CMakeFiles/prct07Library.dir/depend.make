@@ -3,33 +3,32 @@
 
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
-CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o: ../include/heuristics/heuristic_kmeans_least.h
+CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o: ../include/heuristics/heuristic_kmeans_max.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o: ../include/heuristics/i_heuristic.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o: ../include/point/i_point.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o: ../include/point/point_basic.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o: ../include/point/point_cluster.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o: ../include/similarity/i_similarity.h
+CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o: ../include/similarity/similarity_euclidean.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o: ../src/algorithm_greedy/algorithm_greedy_kmeans.cpp
 
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../include/algorithm_greedy/framework_greedy.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../src/algorithm_greedy/framework_greedy.cpp
 
-CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/heuristics/heuristic_kmeans_least.h
-CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/heuristics/i_heuristic.h
-CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/point/i_point.h
-CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/similarity/i_similarity.h
-CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/similarity/similarity_euclidean.h
-CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../src/heuristics/heuristic_kmeans_least.cpp
+CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: ../include/heuristics/heuristic_kmeans_max.h
+CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: ../include/heuristics/i_heuristic.h
+CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: ../include/point/i_point.h
+CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: ../include/point/point_basic.h
+CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: ../include/point/point_cluster.h
+CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: ../include/similarity/i_similarity.h
+CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: ../include/similarity/similarity_euclidean.h
+CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: ../src/heuristics/heuristic_kmeans_max.cpp
 
 CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o: ../include/instance_filereader.h
 CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o: ../include/point/i_point.h
 CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o: ../include/point/point_basic.h
 CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o: ../src/instance_filereader.cpp
-
-CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.o: ../include/objective_functions/i_objective_function.h
-CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.o: ../include/objective_functions/objective_function_ees.h
-CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.o: ../src/objective_functions/objective_function_ees.cpp
 
 CMakeFiles/prct07Library.dir/src/point/point_basic.cpp.o: ../include/point/i_point.h
 CMakeFiles/prct07Library.dir/src/point/point_basic.cpp.o: ../include/point/point_basic.h

@@ -24,5 +24,5 @@ std::vector<std::variant<float, std::string>> PointCluster::getComponents() {
 
 void PointCluster::print() {
   pointBasic_.print();
-  std::cout << "[" << clusterIndex_ << "] ";
+  std::cout << "[" << clusterIndex_ << "]";
 }

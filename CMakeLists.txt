@@ -5,9 +5,7 @@ add_library(prct07Library
     src/algorithm_greedy/algorithm_greedy_kmeans.cpp
     src/algorithm_greedy/framework_greedy.cpp
     include/heuristics/i_heuristic.h
-    src/heuristics/heuristic_kmeans_least.cpp
-    include/objective_functions/i_objective_function.h
-    src/objective_functions/objective_function_ees.cpp
+    src/heuristics/heuristic_kmeans_max.cpp
     include/point/i_point.h
     src/point/point_basic.cpp
     src/point/point_cluster.cpp

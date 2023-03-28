@@ -46,7 +46,8 @@
     "numeric": "cpp",
     "random": "cpp",
     "variant": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "chrono": "cpp"
   },
   "cmake.debugConfig": {
     "args": [

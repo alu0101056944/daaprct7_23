@@ -16,13 +16,8 @@
 },
 {
   "directory": "/home/usuario/dyaa/daaprct7_23/build",
-  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/heuristics/heuristic_kmeans_least.cpp",
-  "file": "/home/usuario/dyaa/daaprct7_23/src/heuristics/heuristic_kmeans_least.cpp"
-},
-{
-  "directory": "/home/usuario/dyaa/daaprct7_23/build",
-  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/objective_functions/objective_function_ees.cpp",
-  "file": "/home/usuario/dyaa/daaprct7_23/src/objective_functions/objective_function_ees.cpp"
+  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/heuristics/heuristic_kmeans_max.cpp",
+  "file": "/home/usuario/dyaa/daaprct7_23/src/heuristics/heuristic_kmeans_max.cpp"
 },
 {
   "directory": "/home/usuario/dyaa/daaprct7_23/build",

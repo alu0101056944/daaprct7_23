@@ -11,6 +11,7 @@ public:
   virtual void selectBestCandidate() = 0;
   virtual bool validCandidate() = 0;
   virtual void addCandidate() = 0;
+  virtual void print() = 0;
 private:
 };
 

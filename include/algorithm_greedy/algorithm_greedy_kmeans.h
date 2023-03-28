@@ -11,6 +11,8 @@
 class AlgorithmGreedyKMeans : public IAlgorithmGreedy {
 public:
   AlgorithmGreedyKMeans(std::vector<PointBasic> points, int k);
+  AlgorithmGreedyKMeans(std::vector<PointBasic> points);
+
   ~AlgorithmGreedyKMeans();
   
   void setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristic);
@@ -21,21 +23,33 @@ public:
   virtual void selectBestCandidate();
   virtual bool validCandidate();
   virtual void addCandidate();
+  virtual void print();
+  float objectiveFunction();
 
-  void print();
+  static int ID;
 private:
   int k_;
-  int amountOfReassignedPoints_; // meant for isAtSolution()
+
+  int indexOfFarthest_;
+
+  float sse_;
+  float ssePrevious_;
+
+  // print() variables:
+  const int currentID_;
+  int executionIterationNumber_;
 
   std::vector<PointCluster> pointsClient_;
   std::vector<PointCluster> pointsService_;
+  std::vector<PointCluster> pointsCandidate_; // == pointsClient_ if validCandidate() found
   
   std::shared_ptr<IHeuristic> ptrHeuristic_;
 
   /**
-   * Used on preprocess() to generate a random list of index without duplicates.
+   * vector of index with unique points from pointsClient_
    */
   std::vector<int> generateRandomIndex(int size);
 };
 
 #endif
+

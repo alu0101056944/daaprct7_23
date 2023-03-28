@@ -11,6 +11,7 @@ public:
   ~FrameworkGreedy();
 
   void execute(std::shared_ptr<IAlgorithmGreedy> ptrAlgorithm);
+  void executeAndprint(std::shared_ptr<IAlgorithmGreedy> ptrAlgorithm);
 private:
 };
 

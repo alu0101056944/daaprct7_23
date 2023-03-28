@@ -29,8 +29,8 @@ i_algorithm_greedy.h
 /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
 vector
 -
-../point/i_point.h
-/home/usuario/dyaa/daaprct7_23/include/point/i_point.h
+../point/point_cluster.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 
 /home/usuario/dyaa/daaprct7_23/include/instance_filereader.h
 vector
@@ -75,6 +75,10 @@ point_basic.h
 /home/usuario/dyaa/daaprct7_23/src/main.cpp
 iostream
 -
+vector
+-
+variant
+-
 ../include/instance_filereader.h
 /home/usuario/dyaa/daaprct7_23/include/instance_filereader.h
 ../include/point/point_basic.h
@@ -83,4 +87,6 @@ iostream
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
 ../include/algorithm_greedy/algorithm_greedy_kmeans.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
+../include/point/point_cluster.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 

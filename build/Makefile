@@ -190,32 +190,32 @@ src/algorithm_greedy/framework_greedy.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.s
 .PHONY : src/algorithm_greedy/framework_greedy.cpp.s
 
-src/heuristics/heuristic_kmeans_least.o: src/heuristics/heuristic_kmeans_least.cpp.o
+src/heuristics/heuristic_kmeans_max.o: src/heuristics/heuristic_kmeans_max.cpp.o
 
-.PHONY : src/heuristics/heuristic_kmeans_least.o
+.PHONY : src/heuristics/heuristic_kmeans_max.o
 
 # target to build an object file
-src/heuristics/heuristic_kmeans_least.cpp.o:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o
-.PHONY : src/heuristics/heuristic_kmeans_least.cpp.o
+src/heuristics/heuristic_kmeans_max.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o
+.PHONY : src/heuristics/heuristic_kmeans_max.cpp.o
 
-src/heuristics/heuristic_kmeans_least.i: src/heuristics/heuristic_kmeans_least.cpp.i
+src/heuristics/heuristic_kmeans_max.i: src/heuristics/heuristic_kmeans_max.cpp.i
 
-.PHONY : src/heuristics/heuristic_kmeans_least.i
+.PHONY : src/heuristics/heuristic_kmeans_max.i
 
 # target to preprocess a source file
-src/heuristics/heuristic_kmeans_least.cpp.i:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.i
-.PHONY : src/heuristics/heuristic_kmeans_least.cpp.i
+src/heuristics/heuristic_kmeans_max.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.i
+.PHONY : src/heuristics/heuristic_kmeans_max.cpp.i
 
-src/heuristics/heuristic_kmeans_least.s: src/heuristics/heuristic_kmeans_least.cpp.s
+src/heuristics/heuristic_kmeans_max.s: src/heuristics/heuristic_kmeans_max.cpp.s
 
-.PHONY : src/heuristics/heuristic_kmeans_least.s
+.PHONY : src/heuristics/heuristic_kmeans_max.s
 
 # target to generate assembly for a file
-src/heuristics/heuristic_kmeans_least.cpp.s:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.s
-.PHONY : src/heuristics/heuristic_kmeans_least.cpp.s
+src/heuristics/heuristic_kmeans_max.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.s
+.PHONY : src/heuristics/heuristic_kmeans_max.cpp.s
 
 src/instance_filereader.o: src/instance_filereader.cpp.o
 
@@ -270,33 +270,6 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07.dir/build.make CMakeFiles/prct07.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
-
-src/objective_functions/objective_function_ees.o: src/objective_functions/objective_function_ees.cpp.o
-
-.PHONY : src/objective_functions/objective_function_ees.o
-
-# target to build an object file
-src/objective_functions/objective_function_ees.cpp.o:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.o
-.PHONY : src/objective_functions/objective_function_ees.cpp.o
-
-src/objective_functions/objective_function_ees.i: src/objective_functions/objective_function_ees.cpp.i
-
-.PHONY : src/objective_functions/objective_function_ees.i
-
-# target to preprocess a source file
-src/objective_functions/objective_function_ees.cpp.i:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.i
-.PHONY : src/objective_functions/objective_function_ees.cpp.i
-
-src/objective_functions/objective_function_ees.s: src/objective_functions/objective_function_ees.cpp.s
-
-.PHONY : src/objective_functions/objective_function_ees.s
-
-# target to generate assembly for a file
-src/objective_functions/objective_function_ees.cpp.s:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/objective_functions/objective_function_ees.cpp.s
-.PHONY : src/objective_functions/objective_function_ees.cpp.s
 
 src/point/point_basic.o: src/point/point_basic.cpp.o
 
@@ -395,18 +368,15 @@ help:
 	@echo "... src/algorithm_greedy/framework_greedy.o"
 	@echo "... src/algorithm_greedy/framework_greedy.i"
 	@echo "... src/algorithm_greedy/framework_greedy.s"
-	@echo "... src/heuristics/heuristic_kmeans_least.o"
-	@echo "... src/heuristics/heuristic_kmeans_least.i"
-	@echo "... src/heuristics/heuristic_kmeans_least.s"
+	@echo "... src/heuristics/heuristic_kmeans_max.o"
+	@echo "... src/heuristics/heuristic_kmeans_max.i"
+	@echo "... src/heuristics/heuristic_kmeans_max.s"
 	@echo "... src/instance_filereader.o"
 	@echo "... src/instance_filereader.i"
 	@echo "... src/instance_filereader.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/objective_functions/objective_function_ees.o"
-	@echo "... src/objective_functions/objective_function_ees.i"
-	@echo "... src/objective_functions/objective_function_ees.s"
 	@echo "... src/point/point_basic.o"
 	@echo "... src/point/point_basic.i"
 	@echo "... src/point/point_basic.s"
