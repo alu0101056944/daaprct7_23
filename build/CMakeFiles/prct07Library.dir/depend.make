@@ -41,6 +41,7 @@ CMakeFiles/prct07Library.dir/src/point/point_cluster.cpp.o: ../src/point/point_c
 
 CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o: ../include/point/i_point.h
 CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o: ../include/point/point_basic.h
+CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o: ../include/point/point_cluster.h
 CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o: ../include/similarity/i_similarity.h
 CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o: ../include/similarity/similarity_euclidean.h
 CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o: ../src/similarity/similarity_euclidean.cpp

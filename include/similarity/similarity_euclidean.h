@@ -8,8 +8,7 @@ public:
   SimilarityEuclidean();
   ~SimilarityEuclidean();
   
-  virtual float similarity(std::shared_ptr<IPoint> pointA,
-      std::shared_ptr<IPoint> pointB);
+  virtual float similarity(PointCluster pointA, PointCluster pointB);
 private:
 };
 

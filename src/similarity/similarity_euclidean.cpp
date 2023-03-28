@@ -16,10 +16,9 @@ SimilarityEuclidean::~SimilarityEuclidean() {}
 //
 // For strings, if a value is different then the distance is maximum to specify
 // that the points are not even close to similar.
-float SimilarityEuclidean::similarity(std::shared_ptr<IPoint> pointA,
-      std::shared_ptr<IPoint> pointB) {
-  auto componentsA = ((PointBasic*)pointA.get())->getComponents();
-  auto componentsB = ((PointBasic*)pointB.get())->getComponents();
+float SimilarityEuclidean::similarity(PointCluster pointA, PointCluster pointB) {
+  auto componentsA = pointA.getComponents();
+  auto componentsB = pointB.getComponents();
   
   assert(componentsA.size() == componentsB.size());
 

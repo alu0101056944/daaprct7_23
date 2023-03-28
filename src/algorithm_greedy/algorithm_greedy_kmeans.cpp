@@ -77,19 +77,7 @@ bool AlgorithmGreedyKMeans::isAtSolution() {
 }
 
 void AlgorithmGreedyKMeans::selectBestCandidate() {
-  // PointCluster to std::shared_ptr<IPoint> for choose()
-  std::vector<std::shared_ptr<IPoint>> candidates;
-  for (int j = 0; j < pointsCandidate_.size(); j++) {
-    candidates.push_back(std::make_shared<PointCluster>(pointsCandidate_[j]));
-  }
-
-  // PointCluster to std::shared_ptr<IPoint> for choose()
-  std::vector<std::shared_ptr<IPoint>> services;
-  for (int j = 0; j < pointsService_.size(); j++) {
-    services.push_back(std::make_shared<PointCluster>(pointsService_[j]));
-  }
-
-  indexOfFarthest_ = ptrHeuristic_->choose(candidates, services);
+  indexOfFarthest_ = ptrHeuristic_->choose(pointsCandidate_, pointsService_);
   pointsCandidate_.erase(pointsCandidate_.begin() + indexOfFarthest_);
 }
 
@@ -126,12 +114,10 @@ void AlgorithmGreedyKMeans::applyKMeans() {
 
     // assign clients to services
     for (int i = 0; i < pointsClient_.size(); ++i) {
-      auto ptrPoint = std::make_shared<PointCluster>(pointsClient_[i]);
       float minimumDistance = -1;
       int indexCluster;
       for (int j = 0; j < pointsService_.size(); ++j) {
-        auto ptrService = std::make_shared<PointCluster>(pointsService_[j]);
-        float distance = euclidean.similarity(ptrPoint, ptrService);
+        float distance = euclidean.similarity(pointsClient_[i], pointsService_[j]);
         if (minimumDistance == -1 || distance < minimumDistance) {
           indexCluster = j;
           minimumDistance = distance;
@@ -185,18 +171,15 @@ void AlgorithmGreedyKMeans::applyKMeans() {
   }
 }
 
-
 // calculate sse
 float AlgorithmGreedyKMeans::objectiveFunction() {
   SimilarityEuclidean euclidean;
   float total = 0;
   for (int i = 0; i < pointsService_.size(); ++i) {
-    auto ptrService = std::make_shared<PointCluster>(pointsService_[i]);
     float clusterTotal = 0;
     for (auto& point : pointsClient_) {
       if (point.getCluster() == i) {
-        auto ptrPoint = std::make_shared<PointCluster>(point);
-        clusterTotal += euclidean.similarity(ptrService, ptrPoint);
+        clusterTotal += euclidean.similarity(pointsService_[i], point);
       }
     }
     total += clusterTotal;

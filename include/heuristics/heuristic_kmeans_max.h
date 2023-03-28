@@ -20,8 +20,8 @@ public:
    * get the index of the available point that has the least distance to
    *    the "from" point.
   */
-  virtual int choose(std::vector<std::shared_ptr<IPoint>> pointClients,
-      std::vector<std::shared_ptr<IPoint>> pointServices);
+  virtual int choose(std::vector<PointCluster> pointClients,
+      std::vector<PointCluster> pointServices);
 
   /**
    * To allow to choose a different similarity algorithm, in case a modification

@@ -10,8 +10,8 @@ HeuristicKMeansMax::HeuristicKMeansMax() :
 
 HeuristicKMeansMax::~HeuristicKMeansMax() {}
 
-int HeuristicKMeansMax::choose(std::vector<std::shared_ptr<IPoint>> pointClients,
-      std::vector<std::shared_ptr<IPoint>> pointServices) {
+int HeuristicKMeansMax::choose(std::vector<PointCluster> pointClients,
+      std::vector<PointCluster> pointServices) {
   assert(pointClients.size() > 0);
 
   float maximumTotalDistance = 0;
