@@ -21,6 +21,6 @@ int main (int argv, char** argc) {
 
   FrameworkGreedy framework;
   auto ptrAlgorithm =
-        std::shared_ptr<AlgorithmGreedyKMeans>(new AlgorithmGreedyKMeans(points, 2));
+        std::shared_ptr<AlgorithmGreedyKMeans>(new AlgorithmGreedyKMeans(points, 2, 7));
   framework.executeAndprint(ptrAlgorithm);
 }

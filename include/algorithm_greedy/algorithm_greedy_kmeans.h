@@ -10,8 +10,8 @@
 
 class AlgorithmGreedyKMeans : public IAlgorithmGreedy {
 public:
-  AlgorithmGreedyKMeans(std::vector<PointBasic> points, int k);
-  AlgorithmGreedyKMeans(std::vector<PointBasic> points);
+  AlgorithmGreedyKMeans(std::vector<PointBasic> points, int k, float deltaSSE);
+  AlgorithmGreedyKMeans(std::vector<PointBasic> points, float deltaSSE);
 
   ~AlgorithmGreedyKMeans();
   
@@ -32,6 +32,7 @@ private:
 
   int indexOfFarthest_;
 
+  float deltaSSE_;
   float sse_;
   float ssePrevious_;
 

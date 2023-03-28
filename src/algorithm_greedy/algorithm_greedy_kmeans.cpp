@@ -15,8 +15,9 @@
 int AlgorithmGreedyKMeans::ID = 0;
 
 AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points,
-    int k) :
+    int k, float deltaSSE) :
     k_(k),
+    deltaSSE_(deltaSSE),
     ptrHeuristic_(new HeuristicKMeansMax()),
     sse_(900),
     ssePrevious_(999),
@@ -34,8 +35,10 @@ AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points,
   pointsCandidate_ = pointsClient_;
 }
 
-AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points) :
+AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points,
+  float deltaSSE) :
     k_(points.size() * 0.1),
+    deltaSSE_(deltaSSE),
     ptrHeuristic_(new HeuristicKMeansMax()),
     sse_(0),
     ssePrevious_(0),
@@ -70,7 +73,7 @@ bool AlgorithmGreedyKMeans::hasCandidates() {
 }
 
 bool AlgorithmGreedyKMeans::isAtSolution() {
-  return std::abs(ssePrevious_ - sse_) < 2;
+  return std::abs(ssePrevious_ - sse_) < deltaSSE_;
 }
 
 void AlgorithmGreedyKMeans::selectBestCandidate() {
@@ -198,7 +201,7 @@ float AlgorithmGreedyKMeans::objectiveFunction() {
 void AlgorithmGreedyKMeans::print() {
   std::cout << currentID_ << "\t\t";
   std::cout << pointsClient_.size() << "\t\t";
-  std::cout << pointsService_.size() << "\t\t";
+  std::cout << pointsService_.size() << "\t\t\t\t";
   std::cout << executionIterationNumber_ << "\t\t\t";
   std::cout << sse_ << "\t\t";
 }
