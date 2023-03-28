@@ -46,6 +46,11 @@ private:
   
   std::shared_ptr<IHeuristic> ptrHeuristic_;
 
+  /*
+   * called on addCandidate() to update services and it's clients.
+  */
+  void applyKMeans();
+
   /**
    * vector of index with unique points from pointsClient_
    */

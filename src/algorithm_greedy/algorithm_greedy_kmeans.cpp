@@ -112,6 +112,13 @@ void AlgorithmGreedyKMeans::addCandidate() {
   pointsService_.push_back(pointsClient_[indexOfFarthest_]);
   pointsCandidate_ = pointsClient_;
 
+  applyKMeans();
+  
+  ssePrevious_ = sse_;
+  sse_ = objectiveFunction();
+}
+
+void AlgorithmGreedyKMeans::applyKMeans() {
   SimilarityEuclidean euclidean;
   int amountOfReassigned = pointsClient_.size();
   while(amountOfReassigned > 0) {
@@ -176,9 +183,8 @@ void AlgorithmGreedyKMeans::addCandidate() {
       }
     }
   }
-  ssePrevious_ = sse_;
-  sse_ = objectiveFunction();
 }
+
 
 // calculate sse
 float AlgorithmGreedyKMeans::objectiveFunction() {
