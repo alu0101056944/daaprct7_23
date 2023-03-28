@@ -7,10 +7,20 @@
 #IncludeRegexTransform: 
 
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
-unordered_map
--
 i_algorithm_greedy.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
+../heuristics/i_heuristic.h
+/home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
+../point/point_basic.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
+../../include/point/point_cluster.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
+
+/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans_grasp.h
+i_algorithm_greedy.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
+algorithm_greedy_kmeans.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
 ../heuristics/i_heuristic.h
 /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
 ../point/point_basic.h
@@ -87,6 +97,8 @@ variant
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
 ../include/algorithm_greedy/algorithm_greedy_kmeans.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
+../include/algorithm_greedy/algorithm_greedy_kmeans_grasp.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans_grasp.h
 ../include/point/point_cluster.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 

@@ -163,6 +163,33 @@ src/algorithm_greedy/algorithm_greedy_kmeans.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.s
 .PHONY : src/algorithm_greedy/algorithm_greedy_kmeans.cpp.s
 
+src/algorithm_greedy/algorithm_greedy_kmeans_grasp.o: src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o
+
+.PHONY : src/algorithm_greedy/algorithm_greedy_kmeans_grasp.o
+
+# target to build an object file
+src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o
+.PHONY : src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o
+
+src/algorithm_greedy/algorithm_greedy_kmeans_grasp.i: src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.i
+
+.PHONY : src/algorithm_greedy/algorithm_greedy_kmeans_grasp.i
+
+# target to preprocess a source file
+src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.i
+.PHONY : src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.i
+
+src/algorithm_greedy/algorithm_greedy_kmeans_grasp.s: src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.s
+
+.PHONY : src/algorithm_greedy/algorithm_greedy_kmeans_grasp.s
+
+# target to generate assembly for a file
+src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.s
+.PHONY : src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.s
+
 src/algorithm_greedy/framework_greedy.o: src/algorithm_greedy/framework_greedy.cpp.o
 
 .PHONY : src/algorithm_greedy/framework_greedy.o
@@ -365,6 +392,9 @@ help:
 	@echo "... src/algorithm_greedy/algorithm_greedy_kmeans.o"
 	@echo "... src/algorithm_greedy/algorithm_greedy_kmeans.i"
 	@echo "... src/algorithm_greedy/algorithm_greedy_kmeans.s"
+	@echo "... src/algorithm_greedy/algorithm_greedy_kmeans_grasp.o"
+	@echo "... src/algorithm_greedy/algorithm_greedy_kmeans_grasp.i"
+	@echo "... src/algorithm_greedy/algorithm_greedy_kmeans_grasp.s"
 	@echo "... src/algorithm_greedy/framework_greedy.o"
 	@echo "... src/algorithm_greedy/framework_greedy.i"
 	@echo "... src/algorithm_greedy/framework_greedy.s"

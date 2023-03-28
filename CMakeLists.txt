@@ -3,6 +3,7 @@ project(prct07 VERSION 0.1.0)
 add_library(prct07Library
     include/algorithm_greedy/i_algorithm_greedy.h
     src/algorithm_greedy/algorithm_greedy_kmeans.cpp
+    src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp
     src/algorithm_greedy/framework_greedy.cpp
     include/heuristics/i_heuristic.h
     src/heuristics/heuristic_kmeans_max.cpp

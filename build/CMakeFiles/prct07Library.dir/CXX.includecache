@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
-unordered_map
--
 i_algorithm_greedy.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
 ../heuristics/i_heuristic.h

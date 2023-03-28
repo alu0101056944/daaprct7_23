@@ -53,7 +53,7 @@
   },
   "cmake.debugConfig": {
     "args": [
-        "./instancias/prob1.txt"
+        "./instancias/prob2.txt", "grasp", "2", "4", "3"
     ]
 }
 }

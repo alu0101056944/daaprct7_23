@@ -19,7 +19,7 @@ void FrameworkGreedy::execute(std::shared_ptr<IAlgorithmGreedy> ptrAlgorithm) {
 
 void FrameworkGreedy::executeAndprint(std::shared_ptr<IAlgorithmGreedy> ptrAlgorithm) {
   int cpuTime = 0;
-  std::cout << "Problema\tm\t\tK\t\t|LRC|\t\tEjecución\t\tSSE\t\tCPU" << std::endl;
+  std::cout << "Problema\tm\t\tK\t\tEjecución\t\tSSE\t\t|LRC|\t\tCPU" << std::endl;
 
   ptrAlgorithm->preprocess();
   while (ptrAlgorithm->hasCandidates() && !ptrAlgorithm->isAtSolution()) {

@@ -1,8 +1,6 @@
 #ifndef ALGORITHM_GREEDY_KMEANS_H
 #define ALGORITHM_GREEDY_KMEANS_H
 
-#include <unordered_map>
-
 #include "i_algorithm_greedy.h"
 #include "../heuristics/i_heuristic.h"
 #include "../point/point_basic.h"
@@ -15,6 +13,12 @@ public:
 
   ~AlgorithmGreedyKMeans();
   
+  std::vector<PointCluster> getServices();
+  std::shared_ptr<IHeuristic> getHeuristic();
+  std::vector<PointCluster> getCandidates();
+  void setCandidates(std::vector<PointCluster> candidates);
+  int getIndexOfFarthest();
+  void setIndexOfFarthest(int newIndex);
   void setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristic);
 
   virtual void preprocess();

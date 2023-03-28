@@ -58,6 +58,30 @@ AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points,
 
 AlgorithmGreedyKMeans::~AlgorithmGreedyKMeans() {}
 
+std::vector<PointCluster> AlgorithmGreedyKMeans::getServices() {
+  return pointsService_;
+}
+
+std::shared_ptr<IHeuristic> AlgorithmGreedyKMeans::getHeuristic() {
+  return ptrHeuristic_;
+}
+
+std::vector<PointCluster> AlgorithmGreedyKMeans::getCandidates() {
+  return pointsCandidate_;
+}
+
+void AlgorithmGreedyKMeans::setCandidates(std::vector<PointCluster> candidates) {
+  pointsCandidate_ = candidates;
+}
+
+int AlgorithmGreedyKMeans::getIndexOfFarthest() {
+  return indexOfFarthest_;
+}
+
+void AlgorithmGreedyKMeans::setIndexOfFarthest(int newIndex) {
+  indexOfFarthest_ = newIndex;
+}
+
 void AlgorithmGreedyKMeans::setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristic) {
   ptrHeuristic_ = ptrHeuristic;
 }
@@ -99,7 +123,7 @@ bool AlgorithmGreedyKMeans::validCandidate() {
 // execute kmeans algorithm with current services
 void AlgorithmGreedyKMeans::addCandidate() {
   pointsService_.push_back(pointsClient_[indexOfFarthest_]);
-  pointsCandidate_ = pointsClient_;
+  pointsCandidate_.assign(pointsClient_.begin(), pointsClient_.end());
 
   applyGreedyKMeans();
   
@@ -192,7 +216,7 @@ float AlgorithmGreedyKMeans::objectiveFunction() {
 void AlgorithmGreedyKMeans::print() {
   std::cout << currentID_ << "\t\t";
   std::cout << pointsClient_.size() << "\t\t";
-  std::cout << pointsService_.size() << "\t\t\t\t";
+  std::cout << pointsService_.size() << "\t\t";
   std::cout << executionIterationNumber_ << "\t\t\t";
   std::cout << sse_ << "\t\t";
 }
