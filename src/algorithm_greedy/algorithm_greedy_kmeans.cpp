@@ -65,6 +65,7 @@ void AlgorithmGreedyKMeans::setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristi
 void AlgorithmGreedyKMeans::preprocess() {
   for (int i = 0; i < k_; ++i) {
     selectBestCandidate();
+    addCandidate();
   }
 }
 
