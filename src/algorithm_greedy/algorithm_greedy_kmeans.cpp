@@ -101,13 +101,14 @@ void AlgorithmGreedyKMeans::addCandidate() {
   pointsService_.push_back(pointsClient_[indexOfFarthest_]);
   pointsCandidate_ = pointsClient_;
 
-  applyKMeans();
+  applyGreedyKMeans();
   
   ssePrevious_ = sse_;
   sse_ = objectiveFunction();
 }
 
-void AlgorithmGreedyKMeans::applyKMeans() {
+// greedy kmeans algorithm
+void AlgorithmGreedyKMeans::applyGreedyKMeans() {
   SimilarityEuclidean euclidean;
   int amountOfReassigned = pointsClient_.size();
   while(amountOfReassigned > 0) {

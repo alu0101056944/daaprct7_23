@@ -49,7 +49,7 @@ private:
   /*
    * called on addCandidate() to update services and it's clients.
   */
-  void applyKMeans();
+  void applyGreedyKMeans();
 
   /**
    * vector of index with unique points from pointsClient_
