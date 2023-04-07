@@ -123,12 +123,14 @@ bool AlgorithmGreedyKMeans::validCandidate() {
 }
 
 // execute kmeans algorithm with current services
+// add service point and then update all service points to their client average
 void AlgorithmGreedyKMeans::addCandidate() {
   pointsService_.push_back(pointFarthest_);
-  pointsCandidate_ = pointsClient_;
 
   applyGreedyKMeans();
   
+  pointsCandidate_ = pointsClient_;
+
   ssePrevious_ = sse_;
   sse_ = objectiveFunction();
 }

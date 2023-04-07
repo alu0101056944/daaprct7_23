@@ -55,5 +55,6 @@
     "args": [
         "./instancias/prob2.txt", "grasp", "2", "4", "3"
     ]
-}
+},
+"C_Cpp.errorSquiggles": "disabled"
 }

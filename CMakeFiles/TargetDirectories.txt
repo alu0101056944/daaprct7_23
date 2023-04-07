@@ -1,0 +1,4 @@
+/home/usuario/dyaa/daaprct7_23/CMakeFiles/rebuild_cache.dir
+/home/usuario/dyaa/daaprct7_23/CMakeFiles/edit_cache.dir
+/home/usuario/dyaa/daaprct7_23/CMakeFiles/prct07.dir
+/home/usuario/dyaa/daaprct7_23/CMakeFiles/prct07Library.dir
