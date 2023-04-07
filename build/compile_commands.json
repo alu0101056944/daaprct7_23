@@ -21,6 +21,16 @@
 },
 {
   "directory": "/home/usuario/dyaa/daaprct7_23/build",
+  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/framework_grasp.cpp",
+  "file": "/home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/framework_grasp.cpp"
+},
+{
+  "directory": "/home/usuario/dyaa/daaprct7_23/build",
+  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_kmeans.cpp",
+  "file": "/home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_kmeans.cpp"
+},
+{
+  "directory": "/home/usuario/dyaa/daaprct7_23/build",
   "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/heuristics/heuristic_kmeans_max.cpp",
   "file": "/home/usuario/dyaa/daaprct7_23/src/heuristics/heuristic_kmeans_max.cpp"
 },

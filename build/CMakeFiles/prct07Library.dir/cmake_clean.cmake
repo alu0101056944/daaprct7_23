@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o"
+  "CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o"
   "CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o"
   "CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o"
   "CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o"

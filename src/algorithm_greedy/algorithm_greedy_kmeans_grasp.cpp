@@ -34,12 +34,23 @@ bool AlgorithmGreedyKMeansGRASP::isAtSolution() {
   return greedy_.isAtSolution();
 }
 
+/**
+ * Alternative: select best candidate, get and store, repeat LCR.size() times.
+*/
 void AlgorithmGreedyKMeansGRASP::selectBestCandidate() {
   auto pointsCandidate = greedy_.getCandidates();
   auto pointsService = greedy_.getServices();
   auto ptrHeuristic = greedy_.getHeuristic();
   
   std::vector<PointCluster> lrcCandidates;
+  /**
+   * equivalent syntax:
+  while (!pointsCandidate.empty() && pointsCandidate.size() < sizeOfLRC_) {
+    int indexOfFarthest = ptrHeuristic->choose(pointsCandidate, pointsService);
+    lrcCandidates.push_back(pointsCandidate[indexOfFarthest]);
+    pointsCandidate.erase(pointsCandidate.begin() + indexOfFarthest);
+  }
+  */
   int lengthAvailable = pointsCandidate.size() < sizeOfLRC_ ? pointsCandidate.size() : sizeOfLRC_;
   for (int i = 0; i < lengthAvailable; ++i) {
     int indexOfFarthest = ptrHeuristic->choose(pointsCandidate, pointsService);
@@ -48,7 +59,7 @@ void AlgorithmGreedyKMeansGRASP::selectBestCandidate() {
   }
 
   srand(time(NULL));
-  int randomIndex = rand() % lengthAvailable;
+  int randomIndex = rand() % lengthAvailable; // framework checks if there are candidates, should not cause trouble.
   greedy_.setIndexOfFarthest(randomIndex);
   lrcCandidates.erase(lrcCandidates.begin() + randomIndex);
 
@@ -56,7 +67,7 @@ void AlgorithmGreedyKMeansGRASP::selectBestCandidate() {
     pointsCandidate.push_back(lrcCandidates[i]);
   }
 
-  greedy_.setCandidates(pointsCandidate);
+  greedy_.setCandidates(pointsCandidate); // does not matter; candidates are reset after this method
 }
 
 bool AlgorithmGreedyKMeansGRASP::validCandidate() {
