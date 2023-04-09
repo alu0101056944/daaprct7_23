@@ -3,7 +3,7 @@
 
 CMakeFiles/prct07.dir/src/main.cpp.o
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters.h
- /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans_grasp.h
+ /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
  /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h

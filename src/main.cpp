@@ -7,7 +7,7 @@
 #include "../include/point/point_basic.h"
 #include "../include/algorithm_greedy/framework_greedy.h"
 #include "../include/algorithm_greedy/algorithm_greedy_clusters.h"
-#include "../include/algorithm_greedy/algorithm_greedy_kmeans_grasp.h"
+#include "../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h"
 
 #include "../include/point/point_cluster.h"
 
@@ -30,8 +30,8 @@ int main (int argv, char** argc) {
   if (kNameOfAlgorithm.compare("grasp") == 0) {
     const int kSizeOfLRC = argv > 5 ? std::stoi(argc[5]) : 2;
     auto ptrAlgorithm =
-        std::shared_ptr<AlgorithmGreedyKMeansGRASP>(
-          new AlgorithmGreedyKMeansGRASP(points, kAmountOfClusters, kdeltaSSE,
+        std::shared_ptr<AlgorithmGreedyClustersLRC>(
+          new AlgorithmGreedyClustersLRC(points, kAmountOfClusters, kdeltaSSE,
             kSizeOfLRC));
     framework.executeAndprint(ptrAlgorithm);
   } else {

@@ -18,7 +18,7 @@ framework_greedy.h
 ../heuristics/i_heuristic.h
 /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
 
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans_grasp.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
 i_algorithm_greedy.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
 algorithm_greedy_clusters.h
@@ -99,8 +99,8 @@ variant
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
 ../include/algorithm_greedy/algorithm_greedy_clusters.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters.h
-../include/algorithm_greedy/algorithm_greedy_kmeans_grasp.h
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans_grasp.h
+../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
 ../include/point/point_cluster.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 

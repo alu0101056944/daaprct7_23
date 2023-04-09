@@ -16,8 +16,8 @@
 },
 {
   "directory": "/home/usuario/dyaa/daaprct7_23/build",
-  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp",
-  "file": "/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp"
+  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp",
+  "file": "/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp"
 },
 {
   "directory": "/home/usuario/dyaa/daaprct7_23/build",

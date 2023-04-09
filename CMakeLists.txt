@@ -4,9 +4,9 @@ add_library(prct07Library
     include/algorithm_greedy/i_algorithm_greedy.h
     src/algorithm_greedy/algorithm_greedy_kmeans.cpp
     src/algorithm_greedy/algorithm_greedy_clusters.cpp
-    src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp
+    src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp
     src/algorithm_greedy/framework_greedy.cpp
-    
+
     include/algorithm_grasp/i_algorithm_grasp.h
     src/algorithm_grasp/framework_grasp.cpp
     src/algorithm_grasp/algorithm_grasp_kmeans.cpp

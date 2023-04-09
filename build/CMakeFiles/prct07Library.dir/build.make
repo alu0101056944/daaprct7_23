@@ -83,18 +83,18 @@ CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_clusters.cpp -o CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.s
 
-CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o: CMakeFiles/prct07Library.dir/flags.make
-CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o: ../src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp
+CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o: CMakeFiles/prct07Library.dir/flags.make
+CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o: ../src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp
 
-CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp > CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.i
+CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp > CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.i
 
-CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp -o CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.s
+CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp -o CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.s
 
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: CMakeFiles/prct07Library.dir/flags.make
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../src/algorithm_greedy/framework_greedy.cpp
@@ -217,7 +217,7 @@ CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.s: cmake_force
 prct07Library_OBJECTS = \
 "CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o" \
-"CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o" \
+"CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o" \
@@ -233,7 +233,7 @@ prct07Library_EXTERNAL_OBJECTS =
 
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o
-libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o
+libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o
