@@ -9,3 +9,5 @@ TODO: Edge case on greedy kmeans: if pointsService.size() == pointsClient.size()
 TODO: Check why there are more failed iterations than there should be of invalid candidates() on greedy clusters builder.
 
 TODO: a point cluster has a cluster index stored, but the clusters will change constantly. Think about it.
+
+TODO: Think about what to do on the preprocess phase of the GRASP.

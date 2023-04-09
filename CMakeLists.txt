@@ -11,6 +11,9 @@ add_library(prct07Library
     src/algorithm_grasp/framework_grasp.cpp
     src/algorithm_grasp/algorithm_grasp_clusters.cpp
 
+    include/environment_structure/i_environment_structure.h
+    src/environment_structure/environment_structure_interchange.cpp
+
     include/heuristics/i_heuristic.h
     src/heuristics/heuristic_kmeans_max.cpp
     src/heuristics/heuristic_kmeans_least.cpp

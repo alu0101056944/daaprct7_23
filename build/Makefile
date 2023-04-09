@@ -298,6 +298,33 @@ src/algorithm_greedy/framework_greedy.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.s
 .PHONY : src/algorithm_greedy/framework_greedy.cpp.s
 
+src/environment_structure/environment_structure_interchange.o: src/environment_structure/environment_structure_interchange.cpp.o
+
+.PHONY : src/environment_structure/environment_structure_interchange.o
+
+# target to build an object file
+src/environment_structure/environment_structure_interchange.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o
+.PHONY : src/environment_structure/environment_structure_interchange.cpp.o
+
+src/environment_structure/environment_structure_interchange.i: src/environment_structure/environment_structure_interchange.cpp.i
+
+.PHONY : src/environment_structure/environment_structure_interchange.i
+
+# target to preprocess a source file
+src/environment_structure/environment_structure_interchange.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.i
+.PHONY : src/environment_structure/environment_structure_interchange.cpp.i
+
+src/environment_structure/environment_structure_interchange.s: src/environment_structure/environment_structure_interchange.cpp.s
+
+.PHONY : src/environment_structure/environment_structure_interchange.s
+
+# target to generate assembly for a file
+src/environment_structure/environment_structure_interchange.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.s
+.PHONY : src/environment_structure/environment_structure_interchange.cpp.s
+
 src/heuristics/heuristic_kmeans_least.o: src/heuristics/heuristic_kmeans_least.cpp.o
 
 .PHONY : src/heuristics/heuristic_kmeans_least.o
@@ -515,6 +542,9 @@ help:
 	@echo "... src/algorithm_greedy/framework_greedy.o"
 	@echo "... src/algorithm_greedy/framework_greedy.i"
 	@echo "... src/algorithm_greedy/framework_greedy.s"
+	@echo "... src/environment_structure/environment_structure_interchange.o"
+	@echo "... src/environment_structure/environment_structure_interchange.i"
+	@echo "... src/environment_structure/environment_structure_interchange.s"
 	@echo "... src/heuristics/heuristic_kmeans_least.o"
 	@echo "... src/heuristics/heuristic_kmeans_least.i"
 	@echo "... src/heuristics/heuristic_kmeans_least.s"

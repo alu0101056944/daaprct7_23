@@ -57,6 +57,13 @@ CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../inc
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../src/algorithm_greedy/framework_greedy.cpp
 
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o: ../include/environment_structure/environment_structure_interchange.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o: ../include/environment_structure/i_environment_structure.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o: ../include/point/i_point.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o: ../include/point/point_basic.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o: ../include/point/point_cluster.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o: ../src/environment_structure/environment_structure_interchange.cpp
+
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/heuristics/heuristic_kmeans_least.h
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/heuristics/i_heuristic.h
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/point/i_point.h
