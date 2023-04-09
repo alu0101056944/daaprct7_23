@@ -6,9 +6,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_kmeans.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/framework_grasp.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o"
+  "/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_clusters.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_kmeans.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans_grasp.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/framework_greedy.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o"
+  "/home/usuario/dyaa/daaprct7_23/src/heuristics/heuristic_kmeans_least.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/heuristics/heuristic_kmeans_max.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/instance_filereader.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/point/point_basic.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/point/point_basic.cpp.o"

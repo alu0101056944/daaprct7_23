@@ -6,7 +6,7 @@
 #include "../include/instance_filereader.h"
 #include "../include/point/point_basic.h"
 #include "../include/algorithm_greedy/framework_greedy.h"
-#include "../include/algorithm_greedy/algorithm_greedy_kmeans.h"
+#include "../include/algorithm_greedy/algorithm_greedy_clusters.h"
 #include "../include/algorithm_greedy/algorithm_greedy_kmeans_grasp.h"
 
 #include "../include/point/point_cluster.h"
@@ -36,8 +36,8 @@ int main (int argv, char** argc) {
     framework.executeAndprint(ptrAlgorithm);
   } else {
     auto ptrAlgorithm =
-        std::shared_ptr<AlgorithmGreedyKMeans>(
-          new AlgorithmGreedyKMeans(points, kAmountOfClusters, kdeltaSSE));
+        std::shared_ptr<AlgorithmGreedyClusters>(
+          new AlgorithmGreedyClusters(points, kAmountOfClusters, kdeltaSSE));
     framework.executeAndprint(ptrAlgorithm);
   }
 }

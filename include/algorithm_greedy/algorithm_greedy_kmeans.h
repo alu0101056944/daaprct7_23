@@ -4,23 +4,19 @@
 #include "i_algorithm_greedy.h"
 #include "../heuristics/i_heuristic.h"
 #include "../point/point_basic.h"
-#include "../../include/point/point_cluster.h"
+#include "../point/point_cluster.h"
 
 class AlgorithmGreedyKMeans : public IAlgorithmGreedy {
 public:
-  AlgorithmGreedyKMeans(std::vector<PointBasic> points, int k, float deltaSSE);
-  AlgorithmGreedyKMeans(std::vector<PointBasic> points, float deltaSSE);
+  AlgorithmGreedyKMeans(std::vector<PointBasic> points, int k);
+  AlgorithmGreedyKMeans(std::vector<PointBasic> points);
 
   ~AlgorithmGreedyKMeans();
   
-  std::vector<PointCluster> getServices();
-  std::shared_ptr<IHeuristic> getHeuristic();
-  std::vector<PointCluster> getCandidates();
-  void setCandidates(std::vector<PointCluster> candidates);
-  int getIndexOfFarthest();
-  void setIndexOfFarthest(int newIndex);
+  // getters and setters
   void setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristic);
 
+  // greedy functions
   virtual void preprocess();
   virtual bool hasCandidates();
   virtual bool isAtSolution();
@@ -33,34 +29,23 @@ public:
   static int ID;
 private:
   int k_;
-
-  int indexOfFarthest_;
   PointCluster pointFarthest_;
-
-  float deltaSSE_;
+  int amountOfReassignedPoints_;
   float sse_;
-  float ssePrevious_;
-
+  
   // print() variables:
   const int currentID_;
   int executionIterationNumber_;
 
   std::vector<PointCluster> pointsClient_;
   std::vector<PointCluster> pointsService_;
-  std::vector<PointCluster> pointsCandidate_; // == pointsClient_ if validCandidate() found
   
   std::shared_ptr<IHeuristic> ptrHeuristic_;
 
-  /*
-   * called on addCandidate() to update services and it's clients.
-  */
-  void applyGreedyKMeans();
-
   /**
-   * vector of index with unique points from pointsClient_
+   * mathematical set of points from pointsClient_ by picking randomly
    */
-  std::vector<int> generateRandomIndex(int size);
+  std::vector<int> generateRandomIndexList(int size);
 };
 
 #endif
-

@@ -10,20 +10,20 @@ HeuristicKMeansMax::HeuristicKMeansMax() :
 
 HeuristicKMeansMax::~HeuristicKMeansMax() {}
 
-int HeuristicKMeansMax::choose(std::vector<PointCluster> pointClients,
-      std::vector<PointCluster> pointServices) {
-  assert(pointClients.size() > 0);
+int HeuristicKMeansMax::choose(std::vector<PointCluster> pointsClient,
+      std::vector<PointCluster> pointsService) {
+  assert(pointsClient.size() > 0);
 
   float maximumTotalDistance = 0;
   int index = -1;
 
   // furthest away point from any other point
-  if (pointServices.empty()) {
-    for (int i = 0; i < pointClients.size(); ++i) {
+  if (pointsService.empty()) {
+    for (int i = 0; i < pointsClient.size(); ++i) {
       float totalDistance = 0;
-      for (int j = 0; j < pointClients.size(); ++j) {
+      for (int j = 0; j < pointsClient.size(); ++j) {
         float distance = ptrSimilarityAlgorithm_->similarity(
-            pointClients[i], pointClients[j]);
+            pointsClient[i], pointsClient[j]);
         totalDistance += distance;
       }
       if (totalDistance > maximumTotalDistance) {
@@ -37,11 +37,11 @@ int HeuristicKMeansMax::choose(std::vector<PointCluster> pointClients,
   maximumTotalDistance = 0;
 
   // furthest away point from the service points
-  for (int i = 0; i < pointClients.size(); ++i) {
+  for (int i = 0; i < pointsClient.size(); ++i) {
     float totalDistance = 0;
-    for (int j = 0; j < pointServices.size(); ++j) {
+    for (int j = 0; j < pointsService.size(); ++j) {
       float distance = ptrSimilarityAlgorithm_->similarity(
-          pointClients[i], pointServices[j]);
+          pointsClient[i], pointsService[j]);
       totalDistance += distance;
     }
     if (totalDistance > maximumTotalDistance) {

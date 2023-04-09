@@ -2,10 +2,10 @@
 #define ALGORITHM_GREEDY_KMEANS_GRASP_H
 
 #include "i_algorithm_greedy.h"
-#include "algorithm_greedy_kmeans.h"
+#include "algorithm_greedy_clusters.h"
 #include "../heuristics/i_heuristic.h"
 #include "../point/point_basic.h"
-#include "../../include/point/point_cluster.h"
+#include "../point/point_cluster.h"
 
 class AlgorithmGreedyKMeansGRASP : public IAlgorithmGreedy {
 public:
@@ -29,7 +29,7 @@ public:
 
   static int ID;
 private:
-  AlgorithmGreedyKMeans greedy_;
+  AlgorithmGreedyClusters greedy_;
   int sizeOfLRC_;
 };
 

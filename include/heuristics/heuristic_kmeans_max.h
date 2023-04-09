@@ -17,11 +17,11 @@ public:
   ~HeuristicKMeansMax();
   
   /**
-   * get the index of the available point that has the least distance to
-   *    the "from" point.
+   * get the index of the available point that has the max distance to
+   *    the service points
   */
-  virtual int choose(std::vector<PointCluster> pointClients,
-      std::vector<PointCluster> pointServices);
+  virtual int choose(std::vector<PointCluster> pointsClient,
+      std::vector<PointCluster> pointsService);
 
   /**
    * To allow to choose a different similarity algorithm, in case a modification

@@ -190,6 +190,33 @@ src/algorithm_grasp/framework_grasp.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.s
 .PHONY : src/algorithm_grasp/framework_grasp.cpp.s
 
+src/algorithm_greedy/algorithm_greedy_clusters.o: src/algorithm_greedy/algorithm_greedy_clusters.cpp.o
+
+.PHONY : src/algorithm_greedy/algorithm_greedy_clusters.o
+
+# target to build an object file
+src/algorithm_greedy/algorithm_greedy_clusters.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o
+.PHONY : src/algorithm_greedy/algorithm_greedy_clusters.cpp.o
+
+src/algorithm_greedy/algorithm_greedy_clusters.i: src/algorithm_greedy/algorithm_greedy_clusters.cpp.i
+
+.PHONY : src/algorithm_greedy/algorithm_greedy_clusters.i
+
+# target to preprocess a source file
+src/algorithm_greedy/algorithm_greedy_clusters.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.i
+.PHONY : src/algorithm_greedy/algorithm_greedy_clusters.cpp.i
+
+src/algorithm_greedy/algorithm_greedy_clusters.s: src/algorithm_greedy/algorithm_greedy_clusters.cpp.s
+
+.PHONY : src/algorithm_greedy/algorithm_greedy_clusters.s
+
+# target to generate assembly for a file
+src/algorithm_greedy/algorithm_greedy_clusters.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.s
+.PHONY : src/algorithm_greedy/algorithm_greedy_clusters.cpp.s
+
 src/algorithm_greedy/algorithm_greedy_kmeans.o: src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o
 
 .PHONY : src/algorithm_greedy/algorithm_greedy_kmeans.o
@@ -270,6 +297,33 @@ src/algorithm_greedy/framework_greedy.s: src/algorithm_greedy/framework_greedy.c
 src/algorithm_greedy/framework_greedy.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.s
 .PHONY : src/algorithm_greedy/framework_greedy.cpp.s
+
+src/heuristics/heuristic_kmeans_least.o: src/heuristics/heuristic_kmeans_least.cpp.o
+
+.PHONY : src/heuristics/heuristic_kmeans_least.o
+
+# target to build an object file
+src/heuristics/heuristic_kmeans_least.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o
+.PHONY : src/heuristics/heuristic_kmeans_least.cpp.o
+
+src/heuristics/heuristic_kmeans_least.i: src/heuristics/heuristic_kmeans_least.cpp.i
+
+.PHONY : src/heuristics/heuristic_kmeans_least.i
+
+# target to preprocess a source file
+src/heuristics/heuristic_kmeans_least.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.i
+.PHONY : src/heuristics/heuristic_kmeans_least.cpp.i
+
+src/heuristics/heuristic_kmeans_least.s: src/heuristics/heuristic_kmeans_least.cpp.s
+
+.PHONY : src/heuristics/heuristic_kmeans_least.s
+
+# target to generate assembly for a file
+src/heuristics/heuristic_kmeans_least.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.s
+.PHONY : src/heuristics/heuristic_kmeans_least.cpp.s
 
 src/heuristics/heuristic_kmeans_max.o: src/heuristics/heuristic_kmeans_max.cpp.o
 
@@ -449,6 +503,9 @@ help:
 	@echo "... src/algorithm_grasp/framework_grasp.o"
 	@echo "... src/algorithm_grasp/framework_grasp.i"
 	@echo "... src/algorithm_grasp/framework_grasp.s"
+	@echo "... src/algorithm_greedy/algorithm_greedy_clusters.o"
+	@echo "... src/algorithm_greedy/algorithm_greedy_clusters.i"
+	@echo "... src/algorithm_greedy/algorithm_greedy_clusters.s"
 	@echo "... src/algorithm_greedy/algorithm_greedy_kmeans.o"
 	@echo "... src/algorithm_greedy/algorithm_greedy_kmeans.i"
 	@echo "... src/algorithm_greedy/algorithm_greedy_kmeans.s"
@@ -458,6 +515,9 @@ help:
 	@echo "... src/algorithm_greedy/framework_greedy.o"
 	@echo "... src/algorithm_greedy/framework_greedy.i"
 	@echo "... src/algorithm_greedy/framework_greedy.s"
+	@echo "... src/heuristics/heuristic_kmeans_least.o"
+	@echo "... src/heuristics/heuristic_kmeans_least.i"
+	@echo "... src/heuristics/heuristic_kmeans_least.s"
 	@echo "... src/heuristics/heuristic_kmeans_max.o"
 	@echo "... src/heuristics/heuristic_kmeans_max.i"
 	@echo "... src/heuristics/heuristic_kmeans_max.s"
