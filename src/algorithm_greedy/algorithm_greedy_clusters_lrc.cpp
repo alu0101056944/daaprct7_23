@@ -10,13 +10,17 @@
 #include "../../include/similarity/similarity_euclidean.h"
 
 AlgorithmGreedyClustersLRC::AlgorithmGreedyClustersLRC(std::vector<PointBasic> points,
-  int k, float deltaSSE, int sizeOfLRC) : greedy_(points, k, deltaSSE),
+  int k, int sizeOfLRC) : greedy_(points, k),
     sizeOfLRC_(sizeOfLRC) {}
 
 AlgorithmGreedyClustersLRC::AlgorithmGreedyClustersLRC(std::vector<PointBasic> points,
-  float deltaSSE, int sizeOfLRC) : greedy_(points, deltaSSE), sizeOfLRC_(sizeOfLRC) {}
+  int sizeOfLRC) : greedy_(points), sizeOfLRC_(sizeOfLRC) {}
 
 AlgorithmGreedyClustersLRC::~AlgorithmGreedyClustersLRC() {}
+
+std::vector<PointCluster> AlgorithmGreedyClustersLRC::getServices() {
+  return greedy_.getServices();;
+}
 
 void AlgorithmGreedyClustersLRC::setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristic) {
   greedy_.setHeuristic(ptrHeuristic);

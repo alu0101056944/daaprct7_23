@@ -9,8 +9,8 @@
 
 class AlgorithmGreedyClusters : public IAlgorithmGreedy {
 public:
-  AlgorithmGreedyClusters(std::vector<PointBasic> points, int k, float deltaSSE);
-  AlgorithmGreedyClusters(std::vector<PointBasic> points, float deltaSSE);
+  AlgorithmGreedyClusters(std::vector<PointBasic> points, int k);
+  AlgorithmGreedyClusters(std::vector<PointBasic> points);
 
   ~AlgorithmGreedyClusters();
   
@@ -42,7 +42,6 @@ private:
 
   FrameworkGreedy greedyAlgorithm_; // for applying KMeans in addCandidate()
 
-  float deltaSSE_;
   float sse_;
   float ssePrevious_;
 

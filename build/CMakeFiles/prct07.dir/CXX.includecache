@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+/home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/framework_grasp.h
+memory
+-
+i_algorithm_grasp.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/i_algorithm_grasp.h
+
+/home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/i_algorithm_grasp.h
+
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters.h
 i_algorithm_greedy.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
@@ -101,6 +109,8 @@ variant
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters.h
 ../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
+../include/algorithm_grasp/framework_grasp.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/framework_grasp.h
 ../include/point/point_cluster.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 

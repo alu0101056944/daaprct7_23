@@ -9,13 +9,15 @@
 #include "../include/algorithm_greedy/algorithm_greedy_clusters.h"
 #include "../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h"
 
+#include "../include/algorithm_grasp/framework_grasp.h"
+
 #include "../include/point/point_cluster.h"
 
 int main (int argv, char** argc) {
-  if (argv < 5) {
-    std::cout << "Insufficient amount of arguments. Expected 5" << std::endl;
+  if (argv < 3) {
+    std::cout << "Insufficient amount of arguments. Expected at least 3" << std::endl;
     std::cout << "<executable> <path> <nameOfAlgorithm> <amountOfClusters>";
-    std::cout << "<deltaSSE>" << std::endl;
+    std::cout << std::endl;
     return -1;
   }
 
@@ -24,21 +26,24 @@ int main (int argv, char** argc) {
 
   const std::string kNameOfAlgorithm = argc[2];
   const int kAmountOfClusters = std::stoi(argc[3]);
-  const int kdeltaSSE = std::stoi(argc[4]);
   
-  FrameworkGreedy framework;
+  FrameworkGreedy frameworkGreedy;
+  FrameworkGRASP frameworkGRASP;
   if (kNameOfAlgorithm.compare("grasp") == 0) {
-    const int kSizeOfLRC = argv > 5 ? std::stoi(argc[5]) : 2;
-    auto ptrAlgorithm =
-        std::shared_ptr<AlgorithmGreedyClustersLRC>(
-          new AlgorithmGreedyClustersLRC(points, kAmountOfClusters, kdeltaSSE,
-            kSizeOfLRC));
-    framework.executeAndprint(ptrAlgorithm);
+    const int kSizeOfLRC = argv > 3 ? std::stoi(argc[3]) : 3;
+    auto ptrAlgorithm = std::make_shared<AlgorithmGreedyClustersLRC>(
+        points, kAmountOfClusters, kSizeOfLRC);
+    frameworkGreedy.executeAndprint(ptrAlgorithm);
+  } else if (kNameOfAlgorithm.compare("final")) {
+    const int kSizeOfLRC = argv > 3 ? std::stoi(argc[3]) : 3;
+    auto ptrAlgorithm = std::make_shared<AlgorithmGRASPKMeans>(
+        points, kAmountOfClusters, kSizeOfLRC);
+    frameworGRASP.executeAndprint(ptrAlgorithm);
   } else {
     auto ptrAlgorithm =
         std::shared_ptr<AlgorithmGreedyClusters>(
-          new AlgorithmGreedyClusters(points, kAmountOfClusters, kdeltaSSE));
-    framework.executeAndprint(ptrAlgorithm);
+          new AlgorithmGreedyClusters(points, kAmountOfClusters));
+    frameworkGreedy.executeAndprint(ptrAlgorithm);
   }
 }
   

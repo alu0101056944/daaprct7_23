@@ -21,7 +21,15 @@ void FrameworkGreedy::executeAndprint(std::shared_ptr<IAlgorithmGreedy> ptrAlgor
   int cpuTime = 0;
   std::cout << "Problema\tm\t\tK\t\tEjecución\t\tSSE\t\t|LRC|\t\tCPU" << std::endl;
 
+  auto start = std::chrono::high_resolution_clock::now();
   ptrAlgorithm->preprocess();
+  auto stop = std::chrono::high_resolution_clock::now();
+
+  auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
+  cpuTime += duration.count() / 100000;
+  ptrAlgorithm->print();
+  std::cout << std::to_string(cpuTime) << "\t\t" << std::endl;
+
   while (ptrAlgorithm->hasCandidates() && !ptrAlgorithm->isAtSolution()) {
 
     auto start = std::chrono::high_resolution_clock::now();

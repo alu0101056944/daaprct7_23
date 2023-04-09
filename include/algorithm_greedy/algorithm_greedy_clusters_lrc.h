@@ -9,13 +9,12 @@
 
 class AlgorithmGreedyClustersLRC : public IAlgorithmGreedy {
 public:
-  AlgorithmGreedyClustersLRC(std::vector<PointBasic> points, int k, float deltaSSE,
-      int sizeOfLRC);
-  AlgorithmGreedyClustersLRC(std::vector<PointBasic> points, float deltaSSE,
-      int sizeOfLRC);
+  AlgorithmGreedyClustersLRC(std::vector<PointBasic> points, int k, int sizeOfLRC);
+  AlgorithmGreedyClustersLRC(std::vector<PointBasic> points, int sizeOfLRC);
 
   ~AlgorithmGreedyClustersLRC();
   
+  std::vector<PointCluster> getServices();
   void setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristic);
 
   virtual void preprocess();

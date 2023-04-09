@@ -16,12 +16,10 @@
 int AlgorithmGreedyClusters::ID = 0;
 
 AlgorithmGreedyClusters::AlgorithmGreedyClusters(std::vector<PointBasic> points,
-    int k, float deltaSSE) :
+    int k) :
     k_(k),
-    deltaSSE_(deltaSSE),
     ptrHeuristic_(new HeuristicKMeansMax()),
-    sse_(900),
-    ssePrevious_(999),
+    sse_(-1),
     indexOfFarthest_(-1),
     executionIterationNumber_(0),
     currentID_(++ID),
@@ -37,13 +35,10 @@ AlgorithmGreedyClusters::AlgorithmGreedyClusters(std::vector<PointBasic> points,
   pointsCandidate_ = pointsClient_;
 }
 
-AlgorithmGreedyClusters::AlgorithmGreedyClusters(std::vector<PointBasic> points,
-  float deltaSSE) :
+AlgorithmGreedyClusters::AlgorithmGreedyClusters(std::vector<PointBasic> points) :
     k_(points.size() * 0.1),
-    deltaSSE_(deltaSSE),
     ptrHeuristic_(new HeuristicKMeansMax()),
-    sse_(900),
-    ssePrevious_(999),
+    sse_(-1),
     indexOfFarthest_(-1),
     executionIterationNumber_(0),
     currentID_(++ID),
@@ -89,7 +84,7 @@ void AlgorithmGreedyClusters::setHeuristic(std::shared_ptr<IHeuristic> ptrHeuris
 }
 
 void AlgorithmGreedyClusters::preprocess() {
-  for (int i = 0; i < k_; ++i) {
+  for (int i = 0; i < 2; ++i) {
     selectBestCandidate();
     addCandidate();
   }
@@ -100,7 +95,7 @@ bool AlgorithmGreedyClusters::hasCandidates() {
 }
 
 bool AlgorithmGreedyClusters::isAtSolution() {
-  return std::abs(ssePrevious_ - sse_) < deltaSSE_;
+  return pointsService_.size() == k_;
 }
 
 void AlgorithmGreedyClusters::selectBestCandidate() {
@@ -113,7 +108,7 @@ bool AlgorithmGreedyClusters::validCandidate() {
   ++executionIterationNumber_;
   bool similarPointPresentAsService = false;
   for (int i = 0; i < pointsService_.size(); ++i) {
-    auto componentsCandidate = pointsClient_[indexOfFarthest_].getComponents();
+    auto componentsCandidate = pointFarthest_.getComponents();
     auto componentsService = pointsService_[i].getComponents();
 
     if (componentsCandidate == componentsService) {
@@ -139,72 +134,6 @@ void AlgorithmGreedyClusters::addCandidate() {
   ssePrevious_ = sse_;
   sse_ = objectiveFunction();
 }
-
-// // greedy kmeans algorithm
-// void AlgorithmGreedyClusters::applyGreedyKMeans() {
-//   SimilarityEuclidean euclidean;
-//   int amountOfReassigned = pointsClient_.size();
-//   while(amountOfReassigned > 0) {
-//     amountOfReassigned = 0;
-
-//     // assign clients to services
-//     for (int i = 0; i < pointsClient_.size(); ++i) {
-//       float minimumDistance = -1;
-//       int indexCluster;
-//       for (int j = 0; j < pointsService_.size(); ++j) {
-//         float distance = euclidean.similarity(pointsClient_[i], pointsService_[j]);
-//         if (minimumDistance == -1 || distance < minimumDistance) {
-//           indexCluster = j;
-//           minimumDistance = distance;
-//         }
-//       }
-//       if (pointsClient_[i].getCluster() != indexCluster) {
-//         ++amountOfReassigned;
-//       }
-//       pointsClient_[i].setCluster(indexCluster);
-//     }
-
-//     // Recalculate service points
-//     for (int i = 0; i < pointsService_.size(); ++i) {
-//       // get components layout. set numerics to 0, nominals left as is
-//       auto componentsAverage = pointsService_[i].getComponents();
-//       for (auto& component : componentsAverage) {
-//         if (std::holds_alternative<float>(component)) {
-//           component = 0;
-//         }
-//       }
-
-//       int amountOfPointsOnCluster = 0;
-
-//       // calculate the numerator of the average mathematical operation
-//       for (auto& point : pointsClient_) {
-//         if (point.getCluster() == i) {
-//           auto components = point.getComponents();
-//           for (int j = 0; j < components.size(); ++j) {
-//             if (std::holds_alternative<float>(components[j])) {
-//               componentsAverage[j] = std::get<float>(componentsAverage[j]) +
-//                   std::get<float>(components[j]);
-//             }
-//           }
-//           ++amountOfPointsOnCluster;
-//         }
-//       }
-
-//       if (amountOfPointsOnCluster > 0) {
-//         // apply denominator division of the average mathematical operation
-//         for (int j = 0; j < componentsAverage.size(); ++j) {
-//           if (std::holds_alternative<float>(componentsAverage[j])) {
-//             componentsAverage[j] = std::get<float>(componentsAverage[j]) /
-//                 amountOfPointsOnCluster;
-//           }
-//         }
-//         pointsService_[i] = PointCluster(componentsAverage);
-//       } else {
-//         pointsService_[i] = pointsClient_[generateRandomIndexList(1).back()];
-//       }
-//     }
-//   }
-// }
 
 // calculate sse
 float AlgorithmGreedyClusters::objectiveFunction() {
