@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_kmeans.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o"
+  "/home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_clusters.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/framework_grasp.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_clusters.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o"

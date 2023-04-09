@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/algorithm_grasp_kmeans.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/algorithm_grasp_clusters.h
 i_algorithm_grasp.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/i_algorithm_grasp.h
 ../point/point_basic.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
 ../algorithm_greedy/framework_greedy.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
+../../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
 
 /home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/i_algorithm_grasp.h
 
@@ -86,9 +88,7 @@ i_point.h
 point_basic.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
 
-/home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_kmeans.cpp
-../../include/algorithm_grasp/algorithm_grasp_kmeans.h
-/home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/algorithm_grasp_kmeans.h
-../../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
+/home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_clusters.cpp
+../../include/algorithm_grasp/algorithm_grasp_clusters.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/algorithm_grasp_clusters.h
 

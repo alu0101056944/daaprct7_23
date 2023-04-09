@@ -9,7 +9,7 @@ add_library(prct07Library
 
     include/algorithm_grasp/i_algorithm_grasp.h
     src/algorithm_grasp/framework_grasp.cpp
-    src/algorithm_grasp/algorithm_grasp_kmeans.cpp
+    src/algorithm_grasp/algorithm_grasp_clusters.cpp
 
     include/heuristics/i_heuristic.h
     src/heuristics/heuristic_kmeans_max.cpp

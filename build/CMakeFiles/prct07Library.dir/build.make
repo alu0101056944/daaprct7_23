@@ -122,18 +122,18 @@ CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/framework_grasp.cpp -o CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.s
 
-CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o: CMakeFiles/prct07Library.dir/flags.make
-CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o: ../src/algorithm_grasp/algorithm_grasp_kmeans.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_kmeans.cpp
+CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o: CMakeFiles/prct07Library.dir/flags.make
+CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o: ../src/algorithm_grasp/algorithm_grasp_clusters.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_clusters.cpp
 
-CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_kmeans.cpp > CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.i
+CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_clusters.cpp > CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.i
 
-CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_kmeans.cpp -o CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.s
+CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_clusters.cpp -o CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.s
 
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: CMakeFiles/prct07Library.dir/flags.make
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: ../src/heuristics/heuristic_kmeans_max.cpp
@@ -220,7 +220,7 @@ prct07Library_OBJECTS = \
 "CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o" \
-"CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o" \
+"CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/point/point_basic.cpp.o" \
@@ -236,7 +236,7 @@ libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o
-libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o
+libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/point/point_basic.cpp.o

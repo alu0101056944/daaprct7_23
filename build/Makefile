@@ -136,32 +136,32 @@ prct07Library/fast:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/build
 .PHONY : prct07Library/fast
 
-src/algorithm_grasp/algorithm_grasp_kmeans.o: src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o
+src/algorithm_grasp/algorithm_grasp_clusters.o: src/algorithm_grasp/algorithm_grasp_clusters.cpp.o
 
-.PHONY : src/algorithm_grasp/algorithm_grasp_kmeans.o
+.PHONY : src/algorithm_grasp/algorithm_grasp_clusters.o
 
 # target to build an object file
-src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o
-.PHONY : src/algorithm_grasp/algorithm_grasp_kmeans.cpp.o
+src/algorithm_grasp/algorithm_grasp_clusters.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o
+.PHONY : src/algorithm_grasp/algorithm_grasp_clusters.cpp.o
 
-src/algorithm_grasp/algorithm_grasp_kmeans.i: src/algorithm_grasp/algorithm_grasp_kmeans.cpp.i
+src/algorithm_grasp/algorithm_grasp_clusters.i: src/algorithm_grasp/algorithm_grasp_clusters.cpp.i
 
-.PHONY : src/algorithm_grasp/algorithm_grasp_kmeans.i
+.PHONY : src/algorithm_grasp/algorithm_grasp_clusters.i
 
 # target to preprocess a source file
-src/algorithm_grasp/algorithm_grasp_kmeans.cpp.i:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.i
-.PHONY : src/algorithm_grasp/algorithm_grasp_kmeans.cpp.i
+src/algorithm_grasp/algorithm_grasp_clusters.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.i
+.PHONY : src/algorithm_grasp/algorithm_grasp_clusters.cpp.i
 
-src/algorithm_grasp/algorithm_grasp_kmeans.s: src/algorithm_grasp/algorithm_grasp_kmeans.cpp.s
+src/algorithm_grasp/algorithm_grasp_clusters.s: src/algorithm_grasp/algorithm_grasp_clusters.cpp.s
 
-.PHONY : src/algorithm_grasp/algorithm_grasp_kmeans.s
+.PHONY : src/algorithm_grasp/algorithm_grasp_clusters.s
 
 # target to generate assembly for a file
-src/algorithm_grasp/algorithm_grasp_kmeans.cpp.s:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_kmeans.cpp.s
-.PHONY : src/algorithm_grasp/algorithm_grasp_kmeans.cpp.s
+src/algorithm_grasp/algorithm_grasp_clusters.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.s
+.PHONY : src/algorithm_grasp/algorithm_grasp_clusters.cpp.s
 
 src/algorithm_grasp/framework_grasp.o: src/algorithm_grasp/framework_grasp.cpp.o
 
@@ -497,9 +497,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... prct07"
 	@echo "... prct07Library"
-	@echo "... src/algorithm_grasp/algorithm_grasp_kmeans.o"
-	@echo "... src/algorithm_grasp/algorithm_grasp_kmeans.i"
-	@echo "... src/algorithm_grasp/algorithm_grasp_kmeans.s"
+	@echo "... src/algorithm_grasp/algorithm_grasp_clusters.o"
+	@echo "... src/algorithm_grasp/algorithm_grasp_clusters.i"
+	@echo "... src/algorithm_grasp/algorithm_grasp_clusters.s"
 	@echo "... src/algorithm_grasp/framework_grasp.o"
 	@echo "... src/algorithm_grasp/framework_grasp.i"
 	@echo "... src/algorithm_grasp/framework_grasp.s"
