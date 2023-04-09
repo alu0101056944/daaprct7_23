@@ -11,6 +11,7 @@ CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o
  /home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/framework_grasp.cpp
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters.h
+ /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
  /home/usuario/dyaa/daaprct7_23/include/heuristics/heuristic_kmeans_max.h

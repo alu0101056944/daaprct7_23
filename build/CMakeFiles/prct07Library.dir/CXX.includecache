@@ -6,23 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
 i_algorithm_greedy.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
-framework_greedy.h
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
-../point/point_basic.h
-/home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
-../point/point_cluster.h
-/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
-../heuristics/i_heuristic.h
-/home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
-
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
-i_algorithm_greedy.h
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
-algorithm_greedy_clusters.h
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters.h
 ../heuristics/i_heuristic.h
 /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
 ../point/point_basic.h
@@ -30,21 +16,17 @@ algorithm_greedy_clusters.h
 ../point/point_cluster.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
-memory
--
-i_algorithm_greedy.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
 
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
-
-/home/usuario/dyaa/daaprct7_23/include/heuristics/heuristic_kmeans_max.h
+/home/usuario/dyaa/daaprct7_23/include/heuristics/heuristic_kmeans_least.h
 memory
 -
 i_heuristic.h
 /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
 ../similarity/i_similarity.h
 /home/usuario/dyaa/daaprct7_23/include/similarity/i_similarity.h
+../point/point_cluster.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 
 /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
 vector
@@ -88,13 +70,9 @@ point_basic.h
 ../point/point_cluster.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 
-/home/usuario/dyaa/daaprct7_23/include/similarity/similarity_euclidean.h
-i_similarity.h
-/home/usuario/dyaa/daaprct7_23/include/similarity/i_similarity.h
-
-/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp
-../../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
+/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_kmeans.cpp
+../../include/algorithm_greedy/algorithm_greedy_kmeans.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
 iostream
 -
 stdio.h
@@ -103,10 +81,12 @@ stdlib.h
 -
 time.h
 -
+algorithm
+-
+cassert
+-
 ../../include/point/point_cluster.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
-../../include/heuristics/heuristic_kmeans_max.h
-/home/usuario/dyaa/daaprct7_23/include/heuristics/heuristic_kmeans_max.h
-../../include/similarity/similarity_euclidean.h
-/home/usuario/dyaa/daaprct7_23/include/similarity/similarity_euclidean.h
+../../include/heuristics/heuristic_kmeans_least.h
+/home/usuario/dyaa/daaprct7_23/include/heuristics/heuristic_kmeans_least.h
 

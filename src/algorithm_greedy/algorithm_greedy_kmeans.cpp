@@ -1,3 +1,11 @@
+/**
+ * Receives clients and services, applies kmeans by a loop of assign-recalculate
+ *    service until no reassignments have taken place.
+ * 
+ * NOTE: When a cluster results empty, it's service is moved to a random client
+ *  location.
+*/
+
 #include "../../include/algorithm_greedy/algorithm_greedy_kmeans.h"
 
 #include <iostream>
@@ -12,29 +20,28 @@
 
 int AlgorithmGreedyKMeans::ID = 0;
 
-AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points,
-    int k) : k_(k), currentID_(++ID), amountOfReassignedPoints_(points.size()),
-    ptrHeuristic_(new HeuristicKMeansLeast()), pointFarthest_(points.back()) {
-
-  assert(points.size() >= k);
-
-  for (auto& point : points) {
-    assert(point.getComponents().size() == points.back().getComponents().size());
+AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> pointsClient,
+      std::vector<PointBasic> pointsService) :
+    currentID_(++ID),
+    amountOfReassignedPoints_(pointsClient.size()),
+    ptrHeuristic_(new HeuristicKMeansLeast()) {
+  
+  for (auto& point : pointsClient) {
     pointsClient_.push_back(PointCluster(point));
+  }
+
+  for (auto& point : pointsService) {
+    pointsService_.push_back(PointCluster(point));
   }
 }
 
-AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> points) :
-    k_(0.1 * points.size()), currentID_(++ID), amountOfReassignedPoints_(points.size()),
-    ptrHeuristic_(new HeuristicKMeansLeast()), pointFarthest_(points.back()) {
-
-  assert(points.size() >= k_);
-
-  for (auto& point : points) {
-    assert(point.getComponents().size() == points.back().getComponents().size());
-    pointsClient_.push_back(PointCluster(point));
-  }
-}
+AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointCluster> pointsClient,
+      std::vector<PointCluster> pointsService) :
+    pointsClient_(pointsClient),
+    pointsService_(pointsService),
+    currentID_(++ID),
+    amountOfReassignedPoints_(pointsClient.size()),
+    ptrHeuristic_(new HeuristicKMeansLeast()) {}
 
 AlgorithmGreedyKMeans::~AlgorithmGreedyKMeans() {}
 
@@ -42,23 +49,20 @@ void AlgorithmGreedyKMeans::setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristi
   ptrHeuristic_ = ptrHeuristic;
 }
 
-/**
- * Use randomly generated index that hasn't been already generated before to
- *  access and insert a copy of a point as point of service.
- */
-void AlgorithmGreedyKMeans::preprocess() {
-  std::vector<int> randomIndex = generateRandomIndexList(k_);
-  for (int i = 0; i < k_; ++i) {
-    int index = randomIndex[i];
-    pointsService_.push_back(pointsClient_[index]);
-  }
+std::vector<PointCluster> AlgorithmGreedyKMeans::getServices() {
+  return pointsService_;
 }
 
-// Because the algorithm simply iterates all client points to search
-// the closest service point to it and to reassign it, so amount
-// of candidates is irrelevant.
+std::vector<PointCluster> AlgorithmGreedyKMeans::getClients() {
+  return pointsClient_;
+}
+
+// No preprocessing needed because all points are set on constructor
+void AlgorithmGreedyKMeans::preprocess() {}
+
+// Because if there are no clients then there is nothing to do
 bool AlgorithmGreedyKMeans::hasCandidates() {
-  return true;
+  return !pointsClient_.empty();
 }
 
 bool AlgorithmGreedyKMeans::isAtSolution() {
@@ -69,7 +73,7 @@ void AlgorithmGreedyKMeans::selectBestCandidate() {
   amountOfReassignedPoints_ = 0;
 
   for (auto& point : pointsClient_) {
-    std::vector<PointCluster> singlePointVector; // IHeuristic expects vector
+    std::vector<PointCluster> singlePointVector; // for IHeuristic.choose()
     singlePointVector.push_back(point);
     const int kClosestClusterIndex = ptrHeuristic_->choose(singlePointVector,
         pointsService_);
@@ -82,18 +86,16 @@ void AlgorithmGreedyKMeans::selectBestCandidate() {
   }
 }
 
-// Because on this algorithm there is no such thing as candidate, the greedy
-// part is simply choosing the cluster as the one of the service point
-// that is closer in distance to the client point.
+// Always true because I need addCandidate() to always be called
 bool AlgorithmGreedyKMeans::validCandidate() {
   return true;
 }
 
-// Recalculate clusters instead.
+// recalculate service points based on the client average
 void AlgorithmGreedyKMeans::addCandidate() {
   for (int i = 0; i < pointsService_.size(); ++i) {
 
-    // initialize components to 0, nominals left as is
+    // initialize components to 0, nominals left the same
     auto componentsAverage = pointsService_[i].getComponents();
     for (auto& component : componentsAverage) {
       if (std::holds_alternative<float>(component)) {
@@ -102,7 +104,7 @@ void AlgorithmGreedyKMeans::addCandidate() {
     }
 
     int amountOfPointsOnCluster = 0;
-    // calculate numerator of the average mathematical operation
+    // average = total/(nº elements), total is calculated here
     for (auto& point : pointsClient_) {
       if (point.getCluster() == i) {
         auto components = point.getComponents();
@@ -119,7 +121,7 @@ void AlgorithmGreedyKMeans::addCandidate() {
     }
 
     if (amountOfPointsOnCluster > 0) {
-      // apply denominator division of the average mathematical operation
+      // average = total/(nº elements), average is calculated here
       for (int j = 0; j < componentsAverage.size(); ++j) {
         if (std::holds_alternative<float>(componentsAverage[j])) {
           componentsAverage[j] = std::get<float>(componentsAverage[j]) /

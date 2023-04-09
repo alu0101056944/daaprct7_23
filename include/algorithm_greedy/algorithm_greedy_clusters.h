@@ -40,7 +40,7 @@ private:
   int indexOfFarthest_;
   PointCluster pointFarthest_;
 
-  FrameworkGreedy algorithmKMeans_;
+  FrameworkGreedy greedyAlgorithm_; // for applying KMeans in addCandidate()
 
   float deltaSSE_;
   float sse_;

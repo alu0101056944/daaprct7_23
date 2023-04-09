@@ -10,6 +10,7 @@ CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o: ../inclu
 CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o: ../src/algorithm_grasp/framework_grasp.cpp
 
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o: ../include/algorithm_greedy/algorithm_greedy_clusters.h
+CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o: ../include/algorithm_greedy/framework_greedy.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o: ../include/heuristics/heuristic_kmeans_max.h

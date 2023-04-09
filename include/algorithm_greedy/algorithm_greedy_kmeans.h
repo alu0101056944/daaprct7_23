@@ -8,13 +8,17 @@
 
 class AlgorithmGreedyKMeans : public IAlgorithmGreedy {
 public:
-  AlgorithmGreedyKMeans(std::vector<PointBasic> points, int k);
-  AlgorithmGreedyKMeans(std::vector<PointBasic> points);
+  AlgorithmGreedyKMeans(std::vector<PointBasic> pointsClient,
+      std::vector<PointBasic> pointsService);
+  AlgorithmGreedyKMeans(std::vector<PointCluster> pointsClient,
+      std::vector<PointCluster> pointsService);
 
   ~AlgorithmGreedyKMeans();
   
   // getters and setters
   void setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristic);
+  std::vector<PointCluster> getServices();
+  std::vector<PointCluster> getClients();
 
   // greedy functions
   virtual void preprocess();
@@ -29,8 +33,8 @@ public:
   static int ID;
 private:
   int k_;
-  PointCluster pointFarthest_;
   int amountOfReassignedPoints_;
+  int amountOfProcessedPoints_; // for hasCandidates()
   float sse_;
   
   // print() variables:
