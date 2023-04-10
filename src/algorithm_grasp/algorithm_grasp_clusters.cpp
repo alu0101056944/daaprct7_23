@@ -36,11 +36,7 @@ void AlgorithmGRASPClusters::setEnvironmentStructure(
   ptrStructure_ = ptrStructure;
 }
 
-void AlgorithmGRASPClusters::preprocess() {
-  build();
-  postprocess();
-  update();
-}
+void AlgorithmGRASPClusters::preprocess() {}
 
 void AlgorithmGRASPClusters::build() {
   hasImproved_ = false;
@@ -50,6 +46,10 @@ void AlgorithmGRASPClusters::build() {
 
   ptrSolution_ = std::make_shared<AlgorithmGreedyKMeans>(builtSolution->getClients(),
     builtSolution->getServices());
+
+  if (ptrBestSolution_ == nullptr) { // to ease the print()
+    ptrBestSolution_ = ptrSolution_;
+  }
 }
 
 void AlgorithmGRASPClusters::postprocess() {

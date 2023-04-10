@@ -19,25 +19,23 @@ void FrameworkGRASP::execute(std::shared_ptr<IAlgorithmGRASP> ptrAlgorithm) {
 void FrameworkGRASP::executeAndprint(std::shared_ptr<IAlgorithmGRASP> ptrAlgorithm) {
   int cpuTime = 0;
   std::cout << "Problema\tm\t\tK\t\tEjecución\t\tSSE\t\t|LRC|\t\tCPU" << std::endl;
-
-  auto start = std::chrono::high_resolution_clock::now();
   ptrAlgorithm->preprocess();
-  auto stop = std::chrono::high_resolution_clock::now();
-
-  auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
-  cpuTime += duration.count() / 100000;
-  ptrAlgorithm->print();
-  std::cout << std::to_string(cpuTime) << "\t\t" << std::endl;
-
   while (!ptrAlgorithm->stopCriteria()) {
 
+    // print the build phase
     auto start = std::chrono::high_resolution_clock::now();
     ptrAlgorithm->build();
+    auto stop = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
+    cpuTime += duration.count() / 100000;
+    ptrAlgorithm->print();
+    std::cout << std::to_string(cpuTime) << "\t\t" << std::endl;
+
+    start = std::chrono::high_resolution_clock::now();
     ptrAlgorithm->postprocess();
     ptrAlgorithm->update();
-    auto stop = std::chrono::high_resolution_clock::now();
-
-    auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
+    stop = std::chrono::high_resolution_clock::now();
+    duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
     cpuTime += duration.count() / 100000;
     ptrAlgorithm->print();
     std::cout << std::to_string(cpuTime) << "\t\t" << std::endl;

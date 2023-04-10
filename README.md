@@ -29,6 +29,8 @@ TODO: add kmeans print()
 
 TODO: triangular restriction on the similirity function
 
+TODO: read whole directory and execute all the files using the same amount of clusters.
+
 ## About failed iterations on the build phase:
 
 In k-means, it can happen that a cluster remains in the same place, especially when it is about to finish the k-means process. I have it set up so that when a cluster is alone and has not been recalculated because it has no points, but it may be that the random index leads to the same cluster.
