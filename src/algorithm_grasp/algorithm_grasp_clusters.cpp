@@ -54,7 +54,7 @@ void AlgorithmGRASPClusters::build() {
 
 void AlgorithmGRASPClusters::postprocess() {
   ptrStructure_->execute(ptrSolution_);
-  ptrBestSolution_ = ptrStructure_->getBestSolution();
+  ptrSolution_ = ptrStructure_->getBestSolution();
 }
 
 void AlgorithmGRASPClusters::update() {
