@@ -64,7 +64,15 @@ i_algorithm_greedy.h
 
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
 
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_delete.h
+i_environment_structure.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
+
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange.h
+i_environment_structure.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
+
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange_k.h
 i_environment_structure.h
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
 
@@ -125,4 +133,8 @@ cassert
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
 ../../include/environment_structure/environment_structure_exchange.h
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange.h
+../../include/environment_structure/environment_structure_exchange_k.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange_k.h
+../../include/environment_structure/environment_structure_delete.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_delete.h
 
