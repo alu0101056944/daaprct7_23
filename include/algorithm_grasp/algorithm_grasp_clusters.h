@@ -14,10 +14,8 @@
 
 class AlgorithmGRASPClusters : public IAlgorithmGRASP {
 public:
-  AlgorithmGRASPClusters(std::vector<PointBasic> points, int k, int sizeOfLRC,
-      int msBeforeStop);
-  AlgorithmGRASPClusters(std::vector<PointBasic> points, int sizeOfLRC,
-      int msBeforeStop);
+  AlgorithmGRASPClusters(std::vector<PointBasic> points, int k, int sizeOfLRC);
+  AlgorithmGRASPClusters(std::vector<PointBasic> points, int sizeOfLRC);
 
   ~AlgorithmGRASPClusters();
 
@@ -39,6 +37,8 @@ public:
   virtual bool stopCriteria();
 
   virtual void print();
+
+  static int ID;
 private:
   FrameworkGreedy greedyAlgorithm_; // for build()
   std::shared_ptr<AlgorithmGreedyKMeans> ptrSolution_;
@@ -50,10 +50,13 @@ private:
   int k_;
   int sizeOfLRC_;
 
-  int msBeforeStop_;
-  std::chrono::_V2::system_clock::time_point startTime_; 
+  bool hasImproved_;
 
   std::vector<PointCluster> nextBestCandidates_;
+
+  // print() variables:
+  const int currentID_;
+  int executionIterationNumber_;
 };
 
 #endif

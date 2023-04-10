@@ -147,6 +147,7 @@ void AlgorithmGreedyClusters::print() {
   std::cout << pointsService_.size() << "\t\t";
   std::cout << executionIterationNumber_ << "\t\t\t";
   std::cout << sse_ << "\t\t";
+  std::cout << "..." << "\t\t";
 }
 
 std::vector<int> AlgorithmGreedyClusters::generateRandomIndexList(int size) {

@@ -1,39 +1,48 @@
 #include "../../include/algorithm_grasp/algorithm_grasp_clusters.h"
 
-#include <chrono>
 #include <iostream>
+#include <cassert>
 
 #include "../../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h"
 
-#include "../../include/environment_structure/environment_structure_exchange.h"
+#include "../../include/environment_structure/environment_structure_delete.h"
+
+int AlgorithmGRASPClusters::ID = 0;
 
 AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
-    int k, int sizeOfLRC, int msBeforeStop) :
+    int k, int sizeOfLRC) :
       points_(points),
       k_(k),
       sizeOfLRC_(sizeOfLRC),
-      msBeforeStop_(msBeforeStop) {}
+      ptrStructure_(new EnvironmentStructureDelete()),
+      currentID_(++ID),
+      executionIterationNumber_(0),
+      hasImproved_(true) {}
 
 AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
-    int sizeOfLRC, int msBeforeStop) :
+    int sizeOfLRC) :
       points_(points),
       k_(0.1 * points.size()),
       sizeOfLRC_(sizeOfLRC),
-      msBeforeStop_(msBeforeStop) {}
+      ptrStructure_(new EnvironmentStructureDelete()),
+      currentID_(++ID),
+      executionIterationNumber_(0),
+      hasImproved_(true) {}
 
 AlgorithmGRASPClusters::~AlgorithmGRASPClusters() {}
 
 void AlgorithmGRASPClusters::setEnvironmentStructure(
-    std::shared_ptr<IEnvironmentStructure> ptrStructure) {
-
+      std::shared_ptr<IEnvironmentStructure> ptrStructure) {
   ptrStructure_ = ptrStructure;
 }
 
 void AlgorithmGRASPClusters::preprocess() {
-  startTime_ = std::chrono::high_resolution_clock::now();
+
 }
 
 void AlgorithmGRASPClusters::build() {
+  hasImproved_ = false;
+
   auto builtSolution = std::make_shared<AlgorithmGreedyClustersLRC>(points_, k_, sizeOfLRC_);
   greedyAlgorithm_.execute(builtSolution);
 
@@ -47,17 +56,27 @@ void AlgorithmGRASPClusters::postprocess() {
 }
 
 void AlgorithmGRASPClusters::update() {
+  ++executionIterationNumber_;
+
   if (ptrSolution_->objectiveFunction() < ptrBestSolution_->objectiveFunction()) {
     ptrBestSolution_ = ptrSolution_;
+    hasImproved_ = true;
   }
 }
 
 bool AlgorithmGRASPClusters::stopCriteria() {
-  auto stopTime = std::chrono::high_resolution_clock::now();
-  auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stopTime - startTime_);
-  return (duration.count() / 1000000) > msBeforeStop_;
+  return !hasImproved_;
 }
 
 void AlgorithmGRASPClusters::print() {
-  std::cout << "no print implementation yet on grasp clusters" << std::endl;
+  std::cout << currentID_ << "\t\t";
+  std::cout << points_.size() << "\t\t";
+  std::cout << k_ << "\t\t";
+  std::cout << executionIterationNumber_ << "\t\t\t";
+  if (ptrBestSolution_ != nullptr) {
+    std::cout << ptrBestSolution_->objectiveFunction() << "\t\t";
+  } else {
+    std::cout << "..." << "\t\t";
+  }
+  std::cout << sizeOfLRC_ << "\t\t";
 }

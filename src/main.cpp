@@ -28,23 +28,26 @@ int main (int argv, char** argc) {
   const std::string kNameOfAlgorithm = argc[2];
   const int kAmountOfClusters = std::stoi(argc[3]);
   
-  FrameworkGreedy frameworkGreedy;
-  FrameworkGRASP frameworkGRASP;
-  if (kNameOfAlgorithm.compare("grasp") == 0) {
-    const int kSizeOfLRC = argv > 3 ? std::stoi(argc[3]) : 3;
-    auto ptrAlgorithm = std::make_shared<AlgorithmGreedyClustersLRC>(
+  if (kNameOfAlgorithm.compare("clustersLRC") == 0) {
+    FrameworkGreedy frameworkGreedy;
+    const int kSizeOfLRC = argv > 3 ? std::stoi(argc[4]) : 3;
+
+    auto ptrClustersLRC = std::make_shared<AlgorithmGreedyClustersLRC>(
         points, kAmountOfClusters, kSizeOfLRC);
-    frameworkGreedy.executeAndprint(ptrAlgorithm);
-  } else if (kNameOfAlgorithm.compare("final") == 0) {
-    const int kSizeOfLRC = argv > 3 ? std::stoi(argc[3]) : 3;
-    auto ptrAlgorithm = std::make_shared<AlgorithmGRASPClusters>(
+    frameworkGreedy.executeAndprint(ptrClustersLRC);
+
+  } else if (kNameOfAlgorithm.compare("grasp") == 0) {
+    FrameworkGRASP frameworkGRASP;
+    const int kSizeOfLRC = argv > 3 ? std::stoi(argc[4]) : 3;
+
+    auto ptrGRASP = std::make_shared<AlgorithmGRASPClusters>(
         points, kAmountOfClusters, kSizeOfLRC);
-    frameworkGRASP.executeAndprint(ptrAlgorithm);
+    frameworkGRASP.executeAndprint(ptrGRASP);
+
   } else {
-    auto ptrAlgorithm =
-        std::shared_ptr<AlgorithmGreedyClusters>(
-          new AlgorithmGreedyClusters(points, kAmountOfClusters));
-    frameworkGreedy.executeAndprint(ptrAlgorithm);
+    FrameworkGreedy frameworkGreedy;
+    auto ptrClusters = std::make_shared<AlgorithmGreedyClusters>(
+      points, kAmountOfClusters);
+    frameworkGreedy.executeAndprint(ptrClusters);
   }
 }
-  

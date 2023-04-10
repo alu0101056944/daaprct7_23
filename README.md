@@ -4,13 +4,22 @@ alu0101056944@ull.edu.es
 
 Marcos Barrios.
 
-TODO: Edge case on greedy kmeans: if pointsService.size() == pointsClient.size() then all empty clusters, and will be randomly relocalized. So, implement random index to return the same index if no non-service point is available, also make sure it always returns index of pointclient that is not in the same localization as a service point.
-
 TODO: Check why there are more failed iterations than there should be of invalid candidates() on greedy clusters builder.
+
+    Its meant to count failed executions where the candidate is invalid. It happens because the choose() can choose a repeated point, so it is rejected and removed from candidates list.
 
 TODO: a point cluster has a cluster index stored, but the clusters will change constantly. Think about it.
 
+    I need a representation of the cluster anyways. If a point has an invalid cluster index
+    does not matter because the first step of kmeans is calculating cluster and the other
+    algorithms are not in charge of assignment. As long as I dont modify cluster information
+    on another place it will be ok. And if that is necessary, then service points is always
+    passed with client points, two entities used at the same time on the same places, so
+    again, it should not be a problem.
+
 TODO: Think about what to do on the preprocess phase of the GRASP.
+
+TODO: make is so that CLI works without specifying k
 
 ## About failed iterations on the build phase:
 

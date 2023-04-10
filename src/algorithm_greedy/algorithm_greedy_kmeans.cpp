@@ -4,6 +4,9 @@
  * 
  * NOTE: When a cluster results empty, it's service is moved to a random client
  *  location.
+ * NOTE: Because a client point can have a service point on top, I make sure
+ *    that when pointsClient.size() == pointsService.size() then the service
+ *    points stay as they are and are not recalculated.
 */
 
 #include "../../include/algorithm_greedy/algorithm_greedy_kmeans.h"
@@ -132,7 +135,12 @@ void AlgorithmGreedyKMeans::addCandidate() {
 
       pointsService_[i] = PointCluster(componentsAverage);
     } else {
-      pointsService_[i] = pointsClient_[generateRandomIndexList(1).back()];
+      // when pointsService.size() == pointsClient.size() I dont want it to
+      // choose a point that has a service point on top
+      auto otherNonServices = getSetOfRandomNonServicePoints(1);
+      if (!otherNonServices.empty()) {
+        pointsService_[i] = pointsClient_[otherNonServices.back()];
+      }
     }
   }
 }
@@ -156,11 +164,35 @@ float AlgorithmGreedyKMeans::objectiveFunction() {
   return ObjectiveFunctionSSE().get(pointsClient_, pointsService_);
 }
 
-std::vector<int> AlgorithmGreedyKMeans::generateRandomIndexList(int size) {
+std::vector<int> AlgorithmGreedyKMeans::getSetOfRandomNonServicePoints(int size) {
+
+  // calculate list of client points that are not service points
+  std::vector<PointCluster> nonServicePoints;
+  for (int i = 0; i < pointsClient_.size(); ++i) {
+    auto componentsClient = pointsClient_[i].getComponents();
+    bool isService = false;
+
+    for (int j = 0; j < pointsService_.size(); ++j) {
+      auto componentsService = pointsService_[j].getComponents();
+      
+      if (componentsClient == componentsService) {
+        isService = true;
+      }
+    }
+
+    if (!isService) {
+      nonServicePoints.push_back(pointsClient_[i]);
+    }
+  }
+
   std::vector<int> set;
 
+  if (nonServicePoints.empty()) { // to signal that all clients have a service ontop
+    return set;
+  }
+
   srand(time(NULL));
-  int randomIndex = rand() % pointsClient_.size();
+  int randomIndex = rand() % nonServicePoints.size();
   set.push_back(randomIndex);
 
   for (int i = 0; i < size - 1; ++i) {

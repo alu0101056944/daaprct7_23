@@ -49,7 +49,7 @@ private:
   /**
    * mathematical set of points from pointsClient_ by picking randomly
    */
-  std::vector<int> generateRandomIndexList(int size);
+  std::vector<int> getSetOfRandomNonServicePoints(int size);
 };
 
 #endif
