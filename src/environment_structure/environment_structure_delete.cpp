@@ -25,8 +25,9 @@ void EnvironmentStructureDelete::execute(
   bool hasImproved;
   do {
     hasImproved = false;
-    for (int i = 0; i < bestSolution->getServices().size(); ++i) {
-      std::vector<PointCluster> permutation = bestSolution->getServices();
+    auto services = bestSolution->getServices();
+    for (int i = 0; i < services.size(); ++i) {
+      std::vector<PointCluster> permutation = services;
       permutation.erase(permutation.begin() + i);
 
       auto ptrKMeans = std::make_shared<AlgorithmGreedyKMeans>(

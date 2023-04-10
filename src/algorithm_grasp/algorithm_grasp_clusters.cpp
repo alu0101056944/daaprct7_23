@@ -5,7 +5,7 @@
 
 #include "../../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h"
 
-#include "../../include/environment_structure/environment_structure_delete.h"
+#include "../../include/environment_structure/environment_structure_exchange.h"
 
 int AlgorithmGRASPClusters::ID = 0;
 
@@ -14,7 +14,7 @@ AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
       points_(points),
       k_(k),
       sizeOfLRC_(sizeOfLRC),
-      ptrStructure_(new EnvironmentStructureDelete()),
+      ptrStructure_(new EnvironmentStructureExchange()),
       currentID_(++ID),
       executionIterationNumber_(0),
       hasImproved_(true) {}
@@ -24,7 +24,7 @@ AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
       points_(points),
       k_(0.1 * points.size()),
       sizeOfLRC_(sizeOfLRC),
-      ptrStructure_(new EnvironmentStructureDelete()),
+      ptrStructure_(new EnvironmentStructureExchange()),
       currentID_(++ID),
       executionIterationNumber_(0),
       hasImproved_(true) {}
@@ -37,7 +37,9 @@ void AlgorithmGRASPClusters::setEnvironmentStructure(
 }
 
 void AlgorithmGRASPClusters::preprocess() {
-
+  build();
+  postprocess();
+  update();
 }
 
 void AlgorithmGRASPClusters::build() {

@@ -1,5 +1,7 @@
 #include "../include/objective_function_sse.h"
 
+#include <cmath>
+
 #include "../include/similarity/similarity_euclidean.h"
 
 ObjectiveFunctionSSE::ObjectiveFunctionSSE() {}
@@ -13,7 +15,7 @@ float ObjectiveFunctionSSE::get(std::vector<PointCluster> pointsClient,
     float clusterTotal = 0;
     for (auto& point : pointsClient) {
       if (point.getCluster() == i) {
-        clusterTotal += euclidean.similarity(pointsService[i], point);
+        clusterTotal += std::pow(euclidean.similarity(pointsService[i], point), 2);
       }
     }
     total += clusterTotal;
