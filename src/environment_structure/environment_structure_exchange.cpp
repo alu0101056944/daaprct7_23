@@ -1,6 +1,9 @@
 #include "../../include/environment_structure/environment_structure_exchange.h"
 
 #include <algorithm>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include <cassert>
 
 #include "../../include/algorithm_greedy/algorithm_greedy_kmeans.h"
@@ -16,28 +19,55 @@ std::shared_ptr<AlgorithmGreedyKMeans> EnvironmentStructureExchange::getBestSolu
   return ptrBestSolution_;  
 }
 
-// exchange one service point to one other position
+// exhange one service point for a random client point that doesn't have a
+// service point on the same location
 void EnvironmentStructureExchange::execute(
       std::shared_ptr<AlgorithmGreedyKMeans> solution) {
-  // FrameworkGreedy greedyAlgorithm;
+  FrameworkGreedy greedyAlgorithm;
 
-  // auto bestSolution = solution;
-  
-  // for (int i = 0; i < solution->getServices().size(); ++i) {
-  //   for (int j = 0; j < solution->getServices().size(); ++j) {
-  //     if (j != i) {
-  //       std::vector<PointCluster> permutation = solution->getServices();
-  //       std::iter_swap(permutation.begin() + i, permutation.begin() + j);
+  auto bestSolution = solution;
+  bool hasImproved;
+  do {
+    hasImproved = false;
 
-  //       auto ptrKMeans = std::make_shared<AlgorithmGreedyKMeans>(solution->getClients(),
-  //           permutation);
-  //       ptrKMeans->setIgnoreFirstAssignments(true); // swap does nothing without this
-  //       greedyAlgorithm.execute(ptrKMeans);
+    std::vector<PointCluster> clients = bestSolution->getClients();
+    for (int i = 0; i < bestSolution->getServices().size(); ++i) {
+      std::vector<PointCluster> services = bestSolution->getServices();
 
-  //       if (ptrKMeans->objectiveFunction() < bestSolution->objectiveFunction()) {
+      // calculate list of client points that are not service points
+      std::vector<PointCluster> nonServicePoints;
+      for (int i = 0; i < clients.size(); ++i) {
+        auto componentsClient = clients[i].getComponents();
+        bool isService = false;
 
-  //       }
-  //     }
-  //   }
-  // }
+        for (int j = 0; j < services.size(); ++j) {
+          auto componentsService = services[j].getComponents();
+          
+          if (componentsClient == componentsService) {
+            isService = true;
+          }
+        }
+
+        if (!isService) {
+          nonServicePoints.push_back(clients[i]);
+        }
+      }
+
+      if (!nonServicePoints.empty()) {
+        srand(time(NULL));
+        int randomIndex = rand() % nonServicePoints.size();
+        services[i] = nonServicePoints[randomIndex];
+      }
+      
+      auto ptrKMeans = std::make_shared<AlgorithmGreedyKMeans>(clients, services);
+      greedyAlgorithm.execute(ptrKMeans);
+
+      if (ptrKMeans->objectiveFunction() < bestSolution->objectiveFunction()) {
+        bestSolution = ptrKMeans;
+        hasImproved = true;
+      }
+    }
+  } while (hasImproved);
+
+  ptrBestSolution_ = bestSolution;
 }

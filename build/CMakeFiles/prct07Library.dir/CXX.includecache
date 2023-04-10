@@ -24,7 +24,7 @@ i_algorithm_greedy.h
 
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
 
-/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_delete.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange.h
 i_environment_structure.h
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
 
@@ -74,10 +74,16 @@ i_point.h
 point_basic.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
 
-/home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_delete.cpp
-../../include/environment_structure/environment_structure_delete.h
-/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_delete.h
+/home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange.cpp
+../../include/environment_structure/environment_structure_exchange.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange.h
 algorithm
+-
+stdio.h
+-
+stdlib.h
+-
+time.h
 -
 cassert
 -

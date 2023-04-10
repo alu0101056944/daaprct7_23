@@ -21,6 +21,8 @@ TODO: Think about what to do on the preprocess phase of the GRASP.
 
 TODO: make is so that CLI works without specifying k
 
+TODO: Make a decision on if nominal similarity is well designed.
+
 ## About failed iterations on the build phase:
 
 In k-means, it can happen that a cluster remains in the same place, especially when it is about to finish the k-means process. I have it set up so that when a cluster is alone and has not been recalculated because it has no points, but it may be that the random index leads to the same cluster.
