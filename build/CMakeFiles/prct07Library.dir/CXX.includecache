@@ -24,7 +24,7 @@ i_algorithm_greedy.h
 
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
 
-/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange_k.h
 i_environment_structure.h
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
 
@@ -74,9 +74,9 @@ i_point.h
 point_basic.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
 
-/home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange.cpp
-../../include/environment_structure/environment_structure_exchange.h
-/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange.h
+/home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange_k.cpp
+../../include/environment_structure/environment_structure_exchange_k.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange_k.h
 algorithm
 -
 stdio.h

@@ -84,6 +84,17 @@ CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exc
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o: ../include/point/point_cluster.h
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o: ../src/environment_structure/environment_structure_exchange.cpp
 
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../include/algorithm_greedy/framework_greedy.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../include/environment_structure/environment_structure_exchange_k.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../include/environment_structure/i_environment_structure.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../include/heuristics/i_heuristic.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../include/point/i_point.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../include/point/point_basic.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../include/point/point_cluster.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../src/environment_structure/environment_structure_exchange_k.cpp
+
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/heuristics/heuristic_kmeans_least.h
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/heuristics/i_heuristic.h
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/point/i_point.h

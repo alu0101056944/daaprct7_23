@@ -200,7 +200,7 @@ std::vector<int> AlgorithmGreedyKMeans::getSetOfRandomNonServicePoints(int size)
         set.end()) {
 
       srand(time(NULL));
-      randomIndex = rand() % pointsClient_.size();
+      randomIndex = rand() % nonServicePoints.size();
     }
 
     set.push_back(randomIndex);

@@ -41,6 +41,11 @@
 },
 {
   "directory": "/home/usuario/dyaa/daaprct7_23/build",
+  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange_k.cpp",
+  "file": "/home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange_k.cpp"
+},
+{
+  "directory": "/home/usuario/dyaa/daaprct7_23/build",
   "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_delete.cpp",
   "file": "/home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_delete.cpp"
 },

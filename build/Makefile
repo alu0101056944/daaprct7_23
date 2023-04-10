@@ -352,6 +352,33 @@ src/environment_structure/environment_structure_exchange.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.s
 .PHONY : src/environment_structure/environment_structure_exchange.cpp.s
 
+src/environment_structure/environment_structure_exchange_k.o: src/environment_structure/environment_structure_exchange_k.cpp.o
+
+.PHONY : src/environment_structure/environment_structure_exchange_k.o
+
+# target to build an object file
+src/environment_structure/environment_structure_exchange_k.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o
+.PHONY : src/environment_structure/environment_structure_exchange_k.cpp.o
+
+src/environment_structure/environment_structure_exchange_k.i: src/environment_structure/environment_structure_exchange_k.cpp.i
+
+.PHONY : src/environment_structure/environment_structure_exchange_k.i
+
+# target to preprocess a source file
+src/environment_structure/environment_structure_exchange_k.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.i
+.PHONY : src/environment_structure/environment_structure_exchange_k.cpp.i
+
+src/environment_structure/environment_structure_exchange_k.s: src/environment_structure/environment_structure_exchange_k.cpp.s
+
+.PHONY : src/environment_structure/environment_structure_exchange_k.s
+
+# target to generate assembly for a file
+src/environment_structure/environment_structure_exchange_k.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.s
+.PHONY : src/environment_structure/environment_structure_exchange_k.cpp.s
+
 src/heuristics/heuristic_kmeans_least.o: src/heuristics/heuristic_kmeans_least.cpp.o
 
 .PHONY : src/heuristics/heuristic_kmeans_least.o
@@ -602,6 +629,9 @@ help:
 	@echo "... src/environment_structure/environment_structure_exchange.o"
 	@echo "... src/environment_structure/environment_structure_exchange.i"
 	@echo "... src/environment_structure/environment_structure_exchange.s"
+	@echo "... src/environment_structure/environment_structure_exchange_k.o"
+	@echo "... src/environment_structure/environment_structure_exchange_k.i"
+	@echo "... src/environment_structure/environment_structure_exchange_k.s"
 	@echo "... src/heuristics/heuristic_kmeans_least.o"
 	@echo "... src/heuristics/heuristic_kmeans_least.i"
 	@echo "... src/heuristics/heuristic_kmeans_least.s"
