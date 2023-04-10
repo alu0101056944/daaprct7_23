@@ -35,7 +35,6 @@ private:
   int k_;
   int amountOfReassignedPoints_;
   int amountOfProcessedPoints_; // for hasCandidates()
-  float sse_;
   
   // print() variables:
   const int currentID_;

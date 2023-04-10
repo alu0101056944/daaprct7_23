@@ -28,7 +28,8 @@ AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> pointsClien
       std::vector<PointBasic> pointsService) :
     currentID_(++ID),
     amountOfReassignedPoints_(pointsClient.size()),
-    ptrHeuristic_(new HeuristicKMeansLeast()) {
+    ptrHeuristic_(new HeuristicKMeansLeast()),
+    executionIterationNumber_(0) {
   
   for (auto& point : pointsClient) {
     pointsClient_.push_back(PointCluster(point));
@@ -45,7 +46,8 @@ AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointCluster> pointsCli
     pointsService_(pointsService),
     currentID_(++ID),
     amountOfReassignedPoints_(pointsClient.size()),
-    ptrHeuristic_(new HeuristicKMeansLeast()) {}
+    ptrHeuristic_(new HeuristicKMeansLeast()),
+    executionIterationNumber_(0) {}
 
 AlgorithmGreedyKMeans::~AlgorithmGreedyKMeans() {}
 
@@ -92,6 +94,7 @@ void AlgorithmGreedyKMeans::selectBestCandidate() {
 
 // Always true because I need addCandidate() to always be called
 bool AlgorithmGreedyKMeans::validCandidate() {
+  ++executionIterationNumber_;
   return true;
 }
 
@@ -146,18 +149,12 @@ void AlgorithmGreedyKMeans::addCandidate() {
 }
 
 void AlgorithmGreedyKMeans::print() {
-  std::cout << "Amount of clusters: " << k_ << std::endl;
-  for (int i = 0; i < pointsService_.size(); ++i) {
-    std::cout << "Cluster " << i << ", ";
-    pointsService_[i].print();
-    std::cout << ": ";
-    for (int j = 0; j < pointsClient_.size(); ++j) {
-      if (pointsClient_[j].getCluster() == i) {
-        pointsClient_[j].print();
-      }
-    }
-    std::cout << std::endl;
-  }
+  std::cout << currentID_ << "\t\t";
+  std::cout << pointsClient_.size() << "\t\t";
+  std::cout << pointsService_.size() << "\t\t";
+  std::cout << executionIterationNumber_ << "\t\t\t";
+  std::cout << objectiveFunction() << "\t\t";
+  std::cout << "..." << "\t\t";
 }
 
 float AlgorithmGreedyKMeans::objectiveFunction() {
