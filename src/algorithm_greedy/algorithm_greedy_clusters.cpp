@@ -59,6 +59,10 @@ std::vector<PointCluster> AlgorithmGreedyClusters::getServices() {
   return pointsService_;
 }
 
+std::vector<PointCluster> AlgorithmGreedyClusters::getClients() {
+  return pointsClient_;
+}
+
 std::shared_ptr<IHeuristic> AlgorithmGreedyClusters::getHeuristic() {
   return ptrHeuristic_;
 }

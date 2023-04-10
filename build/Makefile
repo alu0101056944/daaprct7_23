@@ -298,32 +298,32 @@ src/algorithm_greedy/framework_greedy.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.s
 .PHONY : src/algorithm_greedy/framework_greedy.cpp.s
 
-src/environment_structure/environment_structure_interchange.o: src/environment_structure/environment_structure_interchange.cpp.o
+src/environment_structure/environment_structure_exchange.o: src/environment_structure/environment_structure_exchange.cpp.o
 
-.PHONY : src/environment_structure/environment_structure_interchange.o
+.PHONY : src/environment_structure/environment_structure_exchange.o
 
 # target to build an object file
-src/environment_structure/environment_structure_interchange.cpp.o:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o
-.PHONY : src/environment_structure/environment_structure_interchange.cpp.o
+src/environment_structure/environment_structure_exchange.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o
+.PHONY : src/environment_structure/environment_structure_exchange.cpp.o
 
-src/environment_structure/environment_structure_interchange.i: src/environment_structure/environment_structure_interchange.cpp.i
+src/environment_structure/environment_structure_exchange.i: src/environment_structure/environment_structure_exchange.cpp.i
 
-.PHONY : src/environment_structure/environment_structure_interchange.i
+.PHONY : src/environment_structure/environment_structure_exchange.i
 
 # target to preprocess a source file
-src/environment_structure/environment_structure_interchange.cpp.i:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.i
-.PHONY : src/environment_structure/environment_structure_interchange.cpp.i
+src/environment_structure/environment_structure_exchange.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.i
+.PHONY : src/environment_structure/environment_structure_exchange.cpp.i
 
-src/environment_structure/environment_structure_interchange.s: src/environment_structure/environment_structure_interchange.cpp.s
+src/environment_structure/environment_structure_exchange.s: src/environment_structure/environment_structure_exchange.cpp.s
 
-.PHONY : src/environment_structure/environment_structure_interchange.s
+.PHONY : src/environment_structure/environment_structure_exchange.s
 
 # target to generate assembly for a file
-src/environment_structure/environment_structure_interchange.cpp.s:
-	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.s
-.PHONY : src/environment_structure/environment_structure_interchange.cpp.s
+src/environment_structure/environment_structure_exchange.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.s
+.PHONY : src/environment_structure/environment_structure_exchange.cpp.s
 
 src/heuristics/heuristic_kmeans_least.o: src/heuristics/heuristic_kmeans_least.cpp.o
 
@@ -432,6 +432,33 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07.dir/build.make CMakeFiles/prct07.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/objective_function_sse.o: src/objective_function_sse.cpp.o
+
+.PHONY : src/objective_function_sse.o
+
+# target to build an object file
+src/objective_function_sse.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o
+.PHONY : src/objective_function_sse.cpp.o
+
+src/objective_function_sse.i: src/objective_function_sse.cpp.i
+
+.PHONY : src/objective_function_sse.i
+
+# target to preprocess a source file
+src/objective_function_sse.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.i
+.PHONY : src/objective_function_sse.cpp.i
+
+src/objective_function_sse.s: src/objective_function_sse.cpp.s
+
+.PHONY : src/objective_function_sse.s
+
+# target to generate assembly for a file
+src/objective_function_sse.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.s
+.PHONY : src/objective_function_sse.cpp.s
 
 src/point/point_basic.o: src/point/point_basic.cpp.o
 
@@ -542,9 +569,9 @@ help:
 	@echo "... src/algorithm_greedy/framework_greedy.o"
 	@echo "... src/algorithm_greedy/framework_greedy.i"
 	@echo "... src/algorithm_greedy/framework_greedy.s"
-	@echo "... src/environment_structure/environment_structure_interchange.o"
-	@echo "... src/environment_structure/environment_structure_interchange.i"
-	@echo "... src/environment_structure/environment_structure_interchange.s"
+	@echo "... src/environment_structure/environment_structure_exchange.o"
+	@echo "... src/environment_structure/environment_structure_exchange.i"
+	@echo "... src/environment_structure/environment_structure_exchange.s"
 	@echo "... src/heuristics/heuristic_kmeans_least.o"
 	@echo "... src/heuristics/heuristic_kmeans_least.i"
 	@echo "... src/heuristics/heuristic_kmeans_least.s"
@@ -557,6 +584,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/objective_function_sse.o"
+	@echo "... src/objective_function_sse.i"
+	@echo "... src/objective_function_sse.s"
 	@echo "... src/point/point_basic.o"
 	@echo "... src/point/point_basic.i"
 	@echo "... src/point/point_basic.s"

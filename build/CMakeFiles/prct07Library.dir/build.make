@@ -135,18 +135,18 @@ CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.s:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/algorithm_grasp/algorithm_grasp_clusters.cpp -o CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.s
 
-CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o: CMakeFiles/prct07Library.dir/flags.make
-CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o: ../src/environment_structure/environment_structure_interchange.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_interchange.cpp
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o: CMakeFiles/prct07Library.dir/flags.make
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o: ../src/environment_structure/environment_structure_exchange.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange.cpp
 
-CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_interchange.cpp > CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.i
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange.cpp > CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.i
 
-CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_interchange.cpp -o CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.s
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange.cpp -o CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.s
 
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: CMakeFiles/prct07Library.dir/flags.make
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o: ../src/heuristics/heuristic_kmeans_max.cpp
@@ -226,6 +226,19 @@ CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/instance_filereader.cpp -o CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.s
 
+CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o: CMakeFiles/prct07Library.dir/flags.make
+CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o: ../src/objective_function_sse.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/objective_function_sse.cpp
+
+CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/dyaa/daaprct7_23/src/objective_function_sse.cpp > CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.i
+
+CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/objective_function_sse.cpp -o CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.s
+
 # Object files for target prct07Library
 prct07Library_OBJECTS = \
 "CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o" \
@@ -234,13 +247,14 @@ prct07Library_OBJECTS = \
 "CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o" \
-"CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o" \
+"CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/point/point_basic.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/point/point_cluster.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o" \
-"CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o"
+"CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o" \
+"CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o"
 
 # External object files for target prct07Library
 prct07Library_EXTERNAL_OBJECTS =
@@ -251,16 +265,17 @@ libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o
-libprct07Library.a: CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o
+libprct07Library.a: CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/point/point_basic.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/point/point_cluster.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o
+libprct07Library.a: CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/build.make
 libprct07Library.a: CMakeFiles/prct07Library.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX static library libprct07Library.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX static library libprct07Library.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/prct07Library.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/prct07Library.dir/link.txt --verbose=$(VERBOSE)
 

@@ -17,6 +17,7 @@
 
 #include "../../include/point/point_cluster.h"
 #include "../../include/heuristics/heuristic_kmeans_least.h"
+#include "../../include/objective_function_sse.h"
 
 int AlgorithmGreedyKMeans::ID = 0;
 
@@ -149,6 +150,10 @@ void AlgorithmGreedyKMeans::print() {
     }
     std::cout << std::endl;
   }
+}
+
+float AlgorithmGreedyKMeans::objectiveFunction() {
+  return ObjectiveFunctionSSE().get(pointsClient_, pointsService_);
 }
 
 std::vector<int> AlgorithmGreedyKMeans::generateRandomIndexList(int size) {

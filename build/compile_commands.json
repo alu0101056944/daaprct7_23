@@ -36,8 +36,8 @@
 },
 {
   "directory": "/home/usuario/dyaa/daaprct7_23/build",
-  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_interchange.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_interchange.cpp",
-  "file": "/home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_interchange.cpp"
+  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange.cpp",
+  "file": "/home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange.cpp"
 },
 {
   "directory": "/home/usuario/dyaa/daaprct7_23/build",
@@ -68,5 +68,10 @@
   "directory": "/home/usuario/dyaa/daaprct7_23/build",
   "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/instance_filereader.cpp",
   "file": "/home/usuario/dyaa/daaprct7_23/src/instance_filereader.cpp"
+},
+{
+  "directory": "/home/usuario/dyaa/daaprct7_23/build",
+  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/objective_function_sse.cpp",
+  "file": "/home/usuario/dyaa/daaprct7_23/src/objective_function_sse.cpp"
 }
 ]

@@ -18,6 +18,11 @@ void PointCluster::setCluster(int clusterIndex) {
   clusterIndex_ = clusterIndex;
 }
 
+PointBasic PointCluster::getBasic()  {
+  return pointBasic_;
+}
+
+
 std::vector<std::variant<float, std::string>> PointCluster::getComponents() {
   return pointBasic_.getComponents();
 }

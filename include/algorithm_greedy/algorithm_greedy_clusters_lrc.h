@@ -15,6 +15,7 @@ public:
   ~AlgorithmGreedyClustersLRC();
   
   std::vector<PointCluster> getServices();
+  std::vector<PointCluster> getClients();
   void setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristic);
 
   virtual void preprocess();

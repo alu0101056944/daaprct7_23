@@ -16,6 +16,7 @@ public:
 
   int getCluster();
   void setCluster(int clusterIndex);
+  PointBasic getBasic();
 
   virtual std::vector<std::variant<float, std::string>> getComponents();
 

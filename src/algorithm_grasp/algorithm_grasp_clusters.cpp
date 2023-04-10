@@ -3,6 +3,8 @@
 #include <chrono>
 #include <iostream>
 
+#include "../../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h"
+
 #include "../../include/environment_structure/environment_structure_interchange.h"
 
 AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
@@ -31,16 +33,17 @@ void AlgorithmGRASPClusters::preprocess() {
   startTime_ = std::chrono::high_resolution_clock::now();
 }
 
-bool AlgorithmGRASPClusters::build() {
-  ptrSolution_ = std::make_shared<AlgorithmGreedyClustersLRC>(points_, k_, sizeOfLRC_);
-  greedyAlgorithm_.execute(ptrSolution_);
+void AlgorithmGRASPClusters::build() {
+  auto builtSolution = std::make_shared<AlgorithmGreedyClustersLRC>(points_, k_, sizeOfLRC_);
+  greedyAlgorithm_.execute(builtSolution);
+  ptrSolution_ = std::make_shared<AlgorithmGreedyKMeans>(builtSolution->getClients(),
+    builtSolution->getServices());
 }
 
-bool AlgorithmGRASPClusters::postprocess() {
+void AlgorithmGRASPClusters::postprocess() {
   // TODO: do the environment structure algorithm before changing the rest ***************
-  auto newPointsService = ptrStructure_.getBestServices();
-  auto newPointsClient = ptrStructure_.getBestClients();
-  ptrSolution_ = std::make_shared<AlgorithmGreedyClustersLRC(newPointsClient, newPointsService);
+  ptrStructure_->execute(ptrSolution_);
+  ptrBestSolution_ = ptrStructure_->getBestSolution();
 }
 
 void AlgorithmGRASPClusters::update() {

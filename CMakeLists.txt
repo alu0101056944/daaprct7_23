@@ -24,7 +24,8 @@ add_library(prct07Library
 
     include/similarity/i_similarity.h
     src/similarity/similarity_euclidean.cpp
-    src/instance_filereader.cpp)
+    src/instance_filereader.cpp
+    src/objective_function_sse.cpp)
 add_executable(prct07 src/main.cpp)
 target_link_libraries(prct07 prct07Library)
 target_compile_features(prct07 PRIVATE cxx_std_20)

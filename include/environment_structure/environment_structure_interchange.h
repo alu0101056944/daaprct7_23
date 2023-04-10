@@ -8,11 +8,10 @@ public:
   EnvironmentStructureInterchange();
   ~EnvironmentStructureInterchange();
 
-  virtual std::vector<PointCluster> getBestClients();
-  virtual std::vector<PointCluster> getBestServices();
-  virtual executeLocalSearch(std::vector<PointCluster> pointsClient,
-      std::vector<PointCluster> pointsService);
+  virtual std::shared_ptr<AlgorithmGreedyKMeans> getBestSolution();
+  virtual void execute(std::shared_ptr<AlgorithmGreedyKMeans> solution);
 private:
+  std::shared_ptr<AlgorithmGreedyKMeans> ptrBestSolution_;
 };
 
 #endif

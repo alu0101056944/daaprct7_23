@@ -1,22 +1,43 @@
 #include "../../include/environment_structure/environment_structure_interchange.h"
 
+#include <algorithm>
+#include <cassert>
+
+#include "../../include/algorithm_greedy/algorithm_greedy_kmeans.h"
+#include "../../include/algorithm_greedy/framework_greedy.h"
+
 EnvironmentStructureInterchange::EnvironmentStructureInterchange() {}
 
 EnvironmentStructureInterchange::~EnvironmentStructureInterchange() {}
 
 
-std::vector<PointCluster> getBestClients() {
-
+std::shared_ptr<AlgorithmGreedyKMeans> EnvironmentStructureInterchange::getBestSolution() {
+  assert(ptrBestSolution_ != nullptr);
+  return ptrBestSolution_;  
 }
 
-std::vector<PointCluster> getBestServices() {
+// exhange one service point to one other position
+void EnvironmentStructureInterchange::execute(
+      std::shared_ptr<AlgorithmGreedyKMeans> solution) {
+  FrameworkGreedy greedyAlgorithm;
 
-}
+  auto bestSolution = solution;
+  
+  for (int i = 0; i < solution->getServices().size(); ++i) {
+    for (int j = 0; j < solution->getServices().size(); ++j) {
+      if (j != i) {
+        std::vector<PointCluster> permutation = solution->getServices();
+        std::iter_swap(permutation.begin() + i, permutation.begin() + j);
 
-// interchange one service point to one other position
-executeLocalSearch(std::vector<PointCluster> pointsClient,
-    std::vector<PointCluster> pointsService) {
+        auto ptrKMeans = std::make_shared<AlgorithmGreedyKMeans>(solution->getClients(),
+            permutation);
+        greedyAlgorithm.execute(ptrKMeans);
 
+        if (ptrKMeans->objectiveFunction() < bestSolution->objectiveFunction()) {
 
+        }
+      }
+    }
+  }
 }
 

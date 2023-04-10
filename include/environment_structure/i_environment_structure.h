@@ -4,15 +4,14 @@
 #include <vector>
 
 #include "../point/point_cluster.h"
+#include "../algorithm_greedy/algorithm_greedy_kmeans.h"
 
 class IEnvironmentStructure {
 public:
   virtual ~IEnvironmentStructure() {}
 
-  virtual std::vector<PointCluster> getBestClients() = 0;
-  virtual std::vector<PointCluster> getBestServices() = 0;
-  virtual executeLocalSearch(std::vector<PointCluster> pointsClient,
-      std::vector<PointCluster> pointsService) = 0;
+  virtual std::shared_ptr<AlgorithmGreedyKMeans> getBestSolution() = 0;
+  virtual void execute(std::shared_ptr<AlgorithmGreedyKMeans> solution) = 0;
 };
 
 #endif

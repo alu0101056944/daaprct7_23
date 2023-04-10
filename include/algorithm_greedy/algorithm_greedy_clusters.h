@@ -16,6 +16,7 @@ public:
   
   // getters and setters
   std::vector<PointCluster> getServices();
+  std::vector<PointCluster> getClients();
   std::vector<PointCluster> getCandidates();
   void setCandidates(std::vector<PointCluster> candidates);
   int getIndexOfFarthest();

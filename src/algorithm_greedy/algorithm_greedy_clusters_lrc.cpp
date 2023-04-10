@@ -22,6 +22,10 @@ std::vector<PointCluster> AlgorithmGreedyClustersLRC::getServices() {
   return greedy_.getServices();;
 }
 
+std::vector<PointCluster> AlgorithmGreedyClustersLRC::getClients() {
+  return greedy_.getClients();
+}
+
 void AlgorithmGreedyClustersLRC::setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristic) {
   greedy_.setHeuristic(ptrHeuristic);
 }
