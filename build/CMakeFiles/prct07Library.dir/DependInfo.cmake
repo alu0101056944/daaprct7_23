@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/algorithm_greedy_kmeans.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/algorithm_greedy/framework_greedy.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o"
+  "/home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_delete.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/heuristics/heuristic_kmeans_least.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o"
   "/home/usuario/dyaa/daaprct7_23/src/heuristics/heuristic_kmeans_max.cpp" "/home/usuario/dyaa/daaprct7_23/build/CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_max.cpp.o"

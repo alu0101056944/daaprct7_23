@@ -298,6 +298,33 @@ src/algorithm_greedy/framework_greedy.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.s
 .PHONY : src/algorithm_greedy/framework_greedy.cpp.s
 
+src/environment_structure/environment_structure_delete.o: src/environment_structure/environment_structure_delete.cpp.o
+
+.PHONY : src/environment_structure/environment_structure_delete.o
+
+# target to build an object file
+src/environment_structure/environment_structure_delete.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o
+.PHONY : src/environment_structure/environment_structure_delete.cpp.o
+
+src/environment_structure/environment_structure_delete.i: src/environment_structure/environment_structure_delete.cpp.i
+
+.PHONY : src/environment_structure/environment_structure_delete.i
+
+# target to preprocess a source file
+src/environment_structure/environment_structure_delete.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.i
+.PHONY : src/environment_structure/environment_structure_delete.cpp.i
+
+src/environment_structure/environment_structure_delete.s: src/environment_structure/environment_structure_delete.cpp.s
+
+.PHONY : src/environment_structure/environment_structure_delete.s
+
+# target to generate assembly for a file
+src/environment_structure/environment_structure_delete.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.s
+.PHONY : src/environment_structure/environment_structure_delete.cpp.s
+
 src/environment_structure/environment_structure_exchange.o: src/environment_structure/environment_structure_exchange.cpp.o
 
 .PHONY : src/environment_structure/environment_structure_exchange.o
@@ -569,6 +596,9 @@ help:
 	@echo "... src/algorithm_greedy/framework_greedy.o"
 	@echo "... src/algorithm_greedy/framework_greedy.i"
 	@echo "... src/algorithm_greedy/framework_greedy.s"
+	@echo "... src/environment_structure/environment_structure_delete.o"
+	@echo "... src/environment_structure/environment_structure_delete.i"
+	@echo "... src/environment_structure/environment_structure_delete.s"
 	@echo "... src/environment_structure/environment_structure_exchange.o"
 	@echo "... src/environment_structure/environment_structure_exchange.i"
 	@echo "... src/environment_structure/environment_structure_exchange.s"

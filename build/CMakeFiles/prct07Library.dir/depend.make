@@ -8,7 +8,7 @@ CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o:
 CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
 CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o: ../include/algorithm_greedy/framework_greedy.h
 CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
-CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o: ../include/environment_structure/environment_structure_exchange.h
+CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o: ../include/environment_structure/environment_structure_delete.h
 CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o: ../include/environment_structure/i_environment_structure.h
 CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o: ../include/heuristics/i_heuristic.h
 CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o: ../include/point/i_point.h
@@ -61,6 +61,17 @@ CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o:
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../include/algorithm_greedy/framework_greedy.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../src/algorithm_greedy/framework_greedy.cpp
+
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o: ../include/algorithm_greedy/framework_greedy.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o: ../include/environment_structure/environment_structure_delete.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o: ../include/environment_structure/i_environment_structure.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o: ../include/heuristics/i_heuristic.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o: ../include/point/i_point.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o: ../include/point/point_basic.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o: ../include/point/point_cluster.h
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o: ../src/environment_structure/environment_structure_delete.cpp
 
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o: ../include/algorithm_greedy/framework_greedy.h
