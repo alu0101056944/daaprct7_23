@@ -35,7 +35,7 @@ int main (int argv, char** argc) {
     auto ptrAlgorithm = std::make_shared<AlgorithmGreedyClustersLRC>(
         points, kAmountOfClusters, kSizeOfLRC);
     frameworkGreedy.executeAndprint(ptrAlgorithm);
-  } else if (kNameOfAlgorithm.compare("final")) {
+  } else if (kNameOfAlgorithm.compare("final") == 0) {
     const int kSizeOfLRC = argv > 3 ? std::stoi(argc[3]) : 3;
     auto ptrAlgorithm = std::make_shared<AlgorithmGRASPClusters>(
         points, kAmountOfClusters, kSizeOfLRC);

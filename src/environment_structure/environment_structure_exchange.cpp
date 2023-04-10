@@ -1,4 +1,4 @@
-#include "../../include/environment_structure/environment_structure_interchange.h"
+#include "../../include/environment_structure/environment_structure_exchange.h"
 
 #include <algorithm>
 #include <cassert>
@@ -6,18 +6,18 @@
 #include "../../include/algorithm_greedy/algorithm_greedy_kmeans.h"
 #include "../../include/algorithm_greedy/framework_greedy.h"
 
-EnvironmentStructureInterchange::EnvironmentStructureInterchange() {}
+EnvironmentStructureExchange::EnvironmentStructureExchange() {}
 
-EnvironmentStructureInterchange::~EnvironmentStructureInterchange() {}
+EnvironmentStructureExchange::~EnvironmentStructureExchange() {}
 
 
-std::shared_ptr<AlgorithmGreedyKMeans> EnvironmentStructureInterchange::getBestSolution() {
+std::shared_ptr<AlgorithmGreedyKMeans> EnvironmentStructureExchange::getBestSolution() {
   assert(ptrBestSolution_ != nullptr);
   return ptrBestSolution_;  
 }
 
 // exhange one service point to one other position
-void EnvironmentStructureInterchange::execute(
+void EnvironmentStructureExchange::execute(
       std::shared_ptr<AlgorithmGreedyKMeans> solution) {
   FrameworkGreedy greedyAlgorithm;
 
@@ -40,4 +40,3 @@ void EnvironmentStructureInterchange::execute(
     }
   }
 }
-

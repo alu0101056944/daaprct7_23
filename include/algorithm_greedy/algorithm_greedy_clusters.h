@@ -19,8 +19,7 @@ public:
   std::vector<PointCluster> getClients();
   std::vector<PointCluster> getCandidates();
   void setCandidates(std::vector<PointCluster> candidates);
-  int getIndexOfFarthest();
-  void setIndexOfFarthest(int newIndex);
+  void setFarthestPoint(PointCluster pointFarthest);
   std::shared_ptr<IHeuristic> getHeuristic();
   void setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristic);
 

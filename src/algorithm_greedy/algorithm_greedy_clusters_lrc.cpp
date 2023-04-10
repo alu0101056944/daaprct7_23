@@ -68,14 +68,14 @@ void AlgorithmGreedyClustersLRC::selectBestCandidate() {
 
   srand(time(NULL));
   int randomIndex = rand() % lengthAvailable; // framework checks if there are candidates, should not cause trouble.
-  greedy_.setIndexOfFarthest(randomIndex);
+  greedy_.setFarthestPoint(lrcCandidates[randomIndex]);
   lrcCandidates.erase(lrcCandidates.begin() + randomIndex);
 
   for (int i = 0; i < lrcCandidates.size(); ++i) {
     pointsCandidate.push_back(lrcCandidates[i]);
   }
 
-  greedy_.setCandidates(pointsCandidate); // does not matter; candidates are reset after this method
+  greedy_.setCandidates(pointsCandidate);
 }
 
 bool AlgorithmGreedyClustersLRC::validCandidate() {

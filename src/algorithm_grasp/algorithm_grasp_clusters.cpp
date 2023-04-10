@@ -5,7 +5,7 @@
 
 #include "../../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h"
 
-#include "../../include/environment_structure/environment_structure_interchange.h"
+#include "../../include/environment_structure/environment_structure_exchange.h"
 
 AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
     int k, int sizeOfLRC, int msBeforeStop) :
@@ -36,12 +36,12 @@ void AlgorithmGRASPClusters::preprocess() {
 void AlgorithmGRASPClusters::build() {
   auto builtSolution = std::make_shared<AlgorithmGreedyClustersLRC>(points_, k_, sizeOfLRC_);
   greedyAlgorithm_.execute(builtSolution);
+
   ptrSolution_ = std::make_shared<AlgorithmGreedyKMeans>(builtSolution->getClients(),
     builtSolution->getServices());
 }
 
 void AlgorithmGRASPClusters::postprocess() {
-  // TODO: do the environment structure algorithm before changing the rest ***************
   ptrStructure_->execute(ptrSolution_);
   ptrBestSolution_ = ptrStructure_->getBestSolution();
 }

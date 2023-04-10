@@ -12,6 +12,7 @@
 #include "../../include/point/point_cluster.h"
 #include "../../include/heuristics/heuristic_kmeans_max.h"
 #include "../../include/similarity/similarity_euclidean.h"
+#include "../../include/objective_function_sse.h"
 
 int AlgorithmGreedyClusters::ID = 0;
 
@@ -75,12 +76,8 @@ void AlgorithmGreedyClusters::setCandidates(std::vector<PointCluster> candidates
   pointsCandidate_ = candidates;
 }
 
-int AlgorithmGreedyClusters::getIndexOfFarthest() {
-  return indexOfFarthest_;
-}
-
-void AlgorithmGreedyClusters::setIndexOfFarthest(int newIndex) {
-  indexOfFarthest_ = newIndex;
+void AlgorithmGreedyClusters::setFarthestPoint(PointCluster pointFarthest) {
+  pointFarthest_ = pointFarthest;
 }
 
 void AlgorithmGreedyClusters::setHeuristic(std::shared_ptr<IHeuristic> ptrHeuristic) {
@@ -141,18 +138,7 @@ void AlgorithmGreedyClusters::addCandidate() {
 
 // calculate sse
 float AlgorithmGreedyClusters::objectiveFunction() {
-  SimilarityEuclidean euclidean;
-  float total = 0;
-  for (int i = 0; i < pointsService_.size(); ++i) {
-    float clusterTotal = 0;
-    for (auto& point : pointsClient_) {
-      if (point.getCluster() == i) {
-        clusterTotal += euclidean.similarity(pointsService_[i], point);
-      }
-    }
-    total += clusterTotal;
-  }
-  return total;
+  return ObjectiveFunctionSSE().get(pointsClient_, pointsService_);
 }
 
 void AlgorithmGreedyClusters::print() {

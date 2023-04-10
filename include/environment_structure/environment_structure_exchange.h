@@ -1,12 +1,12 @@
-#ifndef ENVIRONMENT_STRUCTURE_INTERCHANGE_H
-#define ENVIRONMENT_STRUCTURE_INTERCHANGE_H
+#ifndef ENVIRONMENT_STRUCTURE_EXCHANGE_H
+#define ENVIRONMENT_STRUCTURE_EXCHANGE_H
 
 #include "i_environment_structure.h"
 
-class EnvironmentStructureInterchange : public IEnvironmentStructure {
+class EnvironmentStructureExchange : public IEnvironmentStructure {
 public:
-  EnvironmentStructureInterchange();
-  ~EnvironmentStructureInterchange();
+  EnvironmentStructureExchange();
+  ~EnvironmentStructureExchange();
 
   virtual std::shared_ptr<AlgorithmGreedyKMeans> getBestSolution();
   virtual void execute(std::shared_ptr<AlgorithmGreedyKMeans> solution);
