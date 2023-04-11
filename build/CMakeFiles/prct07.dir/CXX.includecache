@@ -137,6 +137,8 @@ stdlib.h
 -
 time.h
 -
+cmath
+-
 ../include/instance_filereader.h
 /home/usuario/dyaa/daaprct7_23/include/instance_filereader.h
 ../include/point/point_basic.h

@@ -13,9 +13,6 @@ AlgorithmGreedyClustersLRC::AlgorithmGreedyClustersLRC(std::vector<PointBasic> p
   int k, int sizeOfLRC) : greedy_(points, k),
     sizeOfLRC_(sizeOfLRC) {}
 
-AlgorithmGreedyClustersLRC::AlgorithmGreedyClustersLRC(std::vector<PointBasic> points,
-  int sizeOfLRC) : greedy_(points), sizeOfLRC_(sizeOfLRC) {}
-
 AlgorithmGreedyClustersLRC::~AlgorithmGreedyClustersLRC() {}
 
 std::vector<PointCluster> AlgorithmGreedyClustersLRC::getServices() {

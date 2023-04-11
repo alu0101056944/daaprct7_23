@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <cmath>
 
 #include "../include/instance_filereader.h"
 #include "../include/point/point_basic.h"
@@ -46,7 +47,7 @@ int main (int argv, char** argc) {
   std::vector<PointBasic> points = reader.getPoints();
 
   const std::string kNameOfAlgorithm = argc[2];
-  const int kAmountOfClusters = std::stoi(argc[3]);
+  const int kAmountOfClusters = std::stoi(argc[3]) == -1 ? std::ceil(((float)points.size()) * 0.1) : std::stoi(argc[3]);
   
   if (kNameOfAlgorithm.compare("clustersLRC") == 0) {
     FrameworkGreedy frameworkGreedy;

@@ -10,7 +10,6 @@
 class AlgorithmGreedyClustersLRC : public IAlgorithmGreedy {
 public:
   AlgorithmGreedyClustersLRC(std::vector<PointBasic> points, int k, int sizeOfLRC);
-  AlgorithmGreedyClustersLRC(std::vector<PointBasic> points, int sizeOfLRC);
 
   ~AlgorithmGreedyClustersLRC();
   

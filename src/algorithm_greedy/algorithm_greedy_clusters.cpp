@@ -36,24 +36,6 @@ AlgorithmGreedyClusters::AlgorithmGreedyClusters(std::vector<PointBasic> points,
   pointsCandidate_ = pointsClient_;
 }
 
-AlgorithmGreedyClusters::AlgorithmGreedyClusters(std::vector<PointBasic> points) :
-    k_(points.size() * 0.1),
-    ptrHeuristic_(new HeuristicKMeansMax()),
-    sse_(-1),
-    indexOfFarthest_(-1),
-    executionIterationNumber_(0),
-    currentID_(++ID),
-    pointFarthest_(points.back()) {
-  assert(k_ >= 2);
-  assert(points.size() >= k_);
-
-  for (auto& point : points) {
-    assert(point.getComponents().size() == points.back().getComponents().size());
-    pointsClient_.push_back(PointCluster(point));
-  }
-  pointsCandidate_ = pointsClient_;
-}
-
 AlgorithmGreedyClusters::~AlgorithmGreedyClusters() {}
 
 std::vector<PointCluster> AlgorithmGreedyClusters::getServices() {
