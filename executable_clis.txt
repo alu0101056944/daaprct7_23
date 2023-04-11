@@ -1,0 +1,3 @@
+./prct07 instancias/prob1.txt grasp 6 4
+./prct07 instancias/prob1.txt clusters 6 4
+./prct07 instancias/prob1.txt clustersLRC  6 4

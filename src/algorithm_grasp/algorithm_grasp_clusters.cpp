@@ -68,7 +68,7 @@ void AlgorithmGRASPClusters::update() {
 }
 
 bool AlgorithmGRASPClusters::stopCriteria() {
-  return !hasImproved_ && executionIterationNumber_ > 40;
+  return !hasImproved_ && executionIterationNumber_ > 10;
 }
 
 void AlgorithmGRASPClusters::print() {

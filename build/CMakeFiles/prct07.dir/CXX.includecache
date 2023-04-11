@@ -70,6 +70,18 @@ i_algorithm_greedy.h
 
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
 
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_delete.h
+i_environment_structure.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
+
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange.h
+i_environment_structure.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
+
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange_k.h
+i_environment_structure.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
+
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
 vector
 -
@@ -155,6 +167,12 @@ cmath
 /home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/framework_grasp.h
 ../include/algorithm_grasp/algorithm_grasp_clusters.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/algorithm_grasp_clusters.h
+../include/environment_structure/environment_structure_delete.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_delete.h
+../include/environment_structure/environment_structure_exchange.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange.h
+../include/environment_structure/environment_structure_exchange_k.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange_k.h
 ../include/point/point_cluster.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 

@@ -17,6 +17,10 @@
 #include "../include/algorithm_grasp/framework_grasp.h"
 #include "../include/algorithm_grasp/algorithm_grasp_clusters.h"
 
+#include "../include/environment_structure/environment_structure_delete.h"
+#include "../include/environment_structure/environment_structure_exchange.h"
+#include "../include/environment_structure/environment_structure_exchange_k.h"
+
 #include "../include/point/point_cluster.h"
 
 // Used for random kmeans setup to be able to do a print() on main()
@@ -61,9 +65,28 @@ int main (int argv, char** argc) {
     FrameworkGRASP frameworkGRASP;
     const int kSizeOfLRC = argv > 3 ? std::stoi(argc[4]) : 3;
 
+    std::cout << "With exchange environment structure:" << std::endl;
+
     auto ptrGRASP = std::make_shared<AlgorithmGRASPClusters>(
         points, kAmountOfClusters, kSizeOfLRC);
     frameworkGRASP.executeAndprint(ptrGRASP);
+    
+    std::cout << "With delete environment structure:" << std::endl;
+
+    auto deleteStructure = std::make_shared<EnvironmentStructureDelete>();
+    ptrGRASP = std::make_shared<AlgorithmGRASPClusters>(
+        points, kAmountOfClusters, kSizeOfLRC);
+    ptrGRASP->setEnvironmentStructure(deleteStructure);
+    frameworkGRASP.executeAndprint(ptrGRASP);
+
+    std::cout << "With exchange K environment structure:" << std::endl;
+
+    auto deleteExchangeK = std::make_shared<EnvironmentStructureExchangeK>();
+    ptrGRASP = std::make_shared<AlgorithmGRASPClusters>(
+        points, kAmountOfClusters, kSizeOfLRC);
+    ptrGRASP->setEnvironmentStructure(deleteExchangeK);
+    frameworkGRASP.executeAndprint(ptrGRASP);
+
 
   } else if (kNameOfAlgorithm.compare("kmeans") == 0) {
     FrameworkGreedy frameworkGreedy;
