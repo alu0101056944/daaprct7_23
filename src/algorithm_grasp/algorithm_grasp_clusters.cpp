@@ -16,7 +16,7 @@ AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
       points_(points),
       k_(k),
       sizeOfLRC_(sizeOfLRC),
-      ptrStructure_(new EnvironmentStructureDelete()),
+      ptrStructure_(new EnvironmentStructureExchange()),
       currentID_(++ID),
       executionIterationNumber_(0),
       hasImproved_(true) {}
@@ -26,7 +26,7 @@ AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
       points_(points),
       k_(0.1 * points.size()),
       sizeOfLRC_(sizeOfLRC),
-      ptrStructure_(new EnvironmentStructureDelete()),
+      ptrStructure_(new EnvironmentStructureExchange()),
       currentID_(++ID),
       executionIterationNumber_(0),
       hasImproved_(true) {}
@@ -68,16 +68,16 @@ void AlgorithmGRASPClusters::update() {
 }
 
 bool AlgorithmGRASPClusters::stopCriteria() {
-  return !hasImproved_;
+  return !hasImproved_ && executionIterationNumber_ > 40;
 }
 
 void AlgorithmGRASPClusters::print() {
   std::cout << currentID_ << "\t\t";
   std::cout << points_.size() << "\t\t";
-  std::cout << ptrBestSolution_->getServices().size() << "\t\t";
+  std::cout << ptrSolution_->getServices().size() << "\t\t";
   std::cout << executionIterationNumber_ << "\t\t\t";
-  if (ptrBestSolution_ != nullptr) {
-    std::cout << ptrBestSolution_->objectiveFunction() << "\t\t";
+  if (ptrSolution_ != nullptr) {
+    std::cout << ptrSolution_->objectiveFunction() << "\t\t";
   } else {
     std::cout << "..." << "\t\t";
   }
