@@ -14,8 +14,8 @@ public:
 
   ~PointCluster();
 
-  int getCluster();
-  void setCluster(int clusterIndex);
+  PointBasic getCluster();
+  void setCluster(PointBasic newCluster);
   PointBasic getBasic();
 
   virtual std::vector<std::variant<float, std::string>> getComponents();
@@ -23,8 +23,7 @@ public:
   virtual void print();
 private:
   PointBasic pointBasic_;
-
-  int clusterIndex_;
+  PointBasic cluster_;
 };
 
 #endif

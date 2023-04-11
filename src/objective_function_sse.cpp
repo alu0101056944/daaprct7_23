@@ -14,7 +14,7 @@ float ObjectiveFunctionSSE::get(std::vector<PointCluster> pointsClient,
   for (int i = 0; i < pointsService.size(); ++i) {
     float clusterTotal = 0;
     for (auto& point : pointsClient) {
-      if (point.getCluster() == i) {
+      if (point.getCluster().getComponents() == pointsService[i].getComponents()) {
         clusterTotal += std::pow(euclidean.similarity(pointsService[i], point), 2);
       }
     }

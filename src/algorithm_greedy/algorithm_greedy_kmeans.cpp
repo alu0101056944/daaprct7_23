@@ -84,11 +84,11 @@ void AlgorithmGreedyKMeans::selectBestCandidate() {
     const int kClosestClusterIndex = ptrHeuristic_->choose(singlePointVector,
         pointsService_);
 
-    if (kClosestClusterIndex != point.getCluster()) {
+    if (pointsService_[kClosestClusterIndex].getComponents() != point.getCluster().getComponents()) {
       ++amountOfReassignedPoints_;
     }
 
-    point.setCluster(kClosestClusterIndex);
+    point.setCluster(pointsService_[kClosestClusterIndex].getBasic());
   }
 }
 
@@ -113,7 +113,7 @@ void AlgorithmGreedyKMeans::addCandidate() {
     int amountOfPointsOnCluster = 0;
     // average = total/(nº elements), total is calculated here
     for (auto& point : pointsClient_) {
-      if (point.getCluster() == i) {
+      if (point.getCluster().getComponents() == pointsService_[i].getComponents()) {
         auto components = point.getComponents();
         for (int j = 0; j < components.size(); ++j) {
 
@@ -138,12 +138,7 @@ void AlgorithmGreedyKMeans::addCandidate() {
 
       pointsService_[i] = PointCluster(componentsAverage);
     } else {
-      // when pointsService.size() == pointsClient.size() I dont want it to
-      // choose a point that has a service point on top
-      auto otherNonServices = getSetOfRandomNonServicePoints(1);
-      if (!otherNonServices.empty()) {
-        pointsService_[i] = pointsClient_[otherNonServices.back()];
-      }
+      pointsService_.erase(pointsService_.begin() + i);
     }
   }
 }

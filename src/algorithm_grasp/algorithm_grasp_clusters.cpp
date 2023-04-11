@@ -6,6 +6,8 @@
 #include "../../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h"
 
 #include "../../include/environment_structure/environment_structure_exchange.h"
+#include "../../include/environment_structure/environment_structure_exchange_k.h"
+#include "../../include/environment_structure/environment_structure_delete.h"
 
 int AlgorithmGRASPClusters::ID = 0;
 
@@ -14,7 +16,7 @@ AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
       points_(points),
       k_(k),
       sizeOfLRC_(sizeOfLRC),
-      ptrStructure_(new EnvironmentStructureExchange()),
+      ptrStructure_(new EnvironmentStructureDelete()),
       currentID_(++ID),
       executionIterationNumber_(0),
       hasImproved_(true) {}
@@ -24,7 +26,7 @@ AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
       points_(points),
       k_(0.1 * points.size()),
       sizeOfLRC_(sizeOfLRC),
-      ptrStructure_(new EnvironmentStructureExchange()),
+      ptrStructure_(new EnvironmentStructureDelete()),
       currentID_(++ID),
       executionIterationNumber_(0),
       hasImproved_(true) {}
@@ -39,6 +41,7 @@ void AlgorithmGRASPClusters::setEnvironmentStructure(
 void AlgorithmGRASPClusters::preprocess() {}
 
 void AlgorithmGRASPClusters::build() {
+  ++executionIterationNumber_;
   hasImproved_ = false;
 
   auto builtSolution = std::make_shared<AlgorithmGreedyClustersLRC>(points_, k_, sizeOfLRC_);
@@ -58,8 +61,6 @@ void AlgorithmGRASPClusters::postprocess() {
 }
 
 void AlgorithmGRASPClusters::update() {
-  ++executionIterationNumber_;
-
   if (ptrSolution_->objectiveFunction() < ptrBestSolution_->objectiveFunction()) {
     ptrBestSolution_ = ptrSolution_;
     hasImproved_ = true;
@@ -73,7 +74,7 @@ bool AlgorithmGRASPClusters::stopCriteria() {
 void AlgorithmGRASPClusters::print() {
   std::cout << currentID_ << "\t\t";
   std::cout << points_.size() << "\t\t";
-  std::cout << k_ << "\t\t";
+  std::cout << ptrBestSolution_->getServices().size() << "\t\t";
   std::cout << executionIterationNumber_ << "\t\t\t";
   if (ptrBestSolution_ != nullptr) {
     std::cout << ptrBestSolution_->objectiveFunction() << "\t\t";

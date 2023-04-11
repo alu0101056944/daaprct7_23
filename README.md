@@ -25,8 +25,6 @@ TODO: Make a decision on if nominal similarity is well designed.
 
 TODO: Adjust the minimum k amount so that it is minimum 2 when doing k * 0.1
 
-TODO: add kmeans print()
-
 TODO: triangular restriction on the similirity function
 
 TODO: read whole directory and execute all the files using the same amount of clusters.
