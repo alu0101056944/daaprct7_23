@@ -9,6 +9,7 @@ InstanceFileReader::InstanceFileReader(std::string filePath) {
 
   std::vector<std::vector<std::string>> lines;
 
+  // add lines to lines vector after splitting the lines into tokens.
   std::ifstream file(filePath);
   std::string line;
   while (std::getline(file, line)) {
@@ -23,6 +24,8 @@ InstanceFileReader::InstanceFileReader(std::string filePath) {
 
   const int kAmountOfPoints = std::stof(lines[0][0]);
   const int kDimensionOfPoints = std::stof(lines[1][0]);
+  // generate points
+  // initialize component, detect type, push.
   for (int i = 2; i < kAmountOfPoints + 2; ++i) {
     std::vector<std::variant<float, std::string>> components;
     for (int j = 0; j < kDimensionOfPoints; ++j) {

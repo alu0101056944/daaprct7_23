@@ -19,7 +19,7 @@ int AlgorithmGreedyClusters::ID = 0;
 AlgorithmGreedyClusters::AlgorithmGreedyClusters(std::vector<PointBasic> points,
     int k) :
     k_(k),
-    ptrHeuristic_(new HeuristicKMeansMax()),
+    ptrHeuristic_(new HeuristicKMeansMax()), // choose() farthest away point from any centroid
     sse_(-1),
     indexOfFarthest_(-1),
     executionIterationNumber_(0),
@@ -37,6 +37,8 @@ AlgorithmGreedyClusters::AlgorithmGreedyClusters(std::vector<PointBasic> points,
 }
 
 AlgorithmGreedyClusters::~AlgorithmGreedyClusters() {}
+
+// ************ getters and setters
 
 std::vector<PointCluster> AlgorithmGreedyClusters::getServices() {
   return pointsService_;
@@ -66,6 +68,9 @@ void AlgorithmGreedyClusters::setHeuristic(std::shared_ptr<IHeuristic> ptrHeuris
   ptrHeuristic_ = ptrHeuristic;
 }
 
+// ************ framework methods
+
+// add 2 centroids. All solutions will have minimum 2
 void AlgorithmGreedyClusters::preprocess() {
   for (int i = 0; i < 2; ++i) {
     selectBestCandidate();
@@ -73,20 +78,24 @@ void AlgorithmGreedyClusters::preprocess() {
   }
 }
 
+// whether can add centroid
 bool AlgorithmGreedyClusters::hasCandidates() {
   return pointsService_.size() < pointsClient_.size();
 }
 
+// whether reached size = k
 bool AlgorithmGreedyClusters::isAtSolution() {
   return pointsService_.size() == k_;
 }
 
+// choose farthest client from other centroids as possible centroid
 void AlgorithmGreedyClusters::selectBestCandidate() {
   indexOfFarthest_ = ptrHeuristic_->choose(pointsCandidate_, pointsService_);
   pointFarthest_ = pointsCandidate_[indexOfFarthest_];
   pointsCandidate_.erase(pointsCandidate_.begin() + indexOfFarthest_);
 }
 
+// whether centroid ontop of candidate. Because kmeans would change both equally
 bool AlgorithmGreedyClusters::validCandidate() {
   ++executionIterationNumber_;
   bool similarPointPresentAsService = false;
@@ -101,8 +110,7 @@ bool AlgorithmGreedyClusters::validCandidate() {
   return !similarPointPresentAsService;
 }
 
-// execute kmeans algorithm with current services
-// add service point and then update all service points to their client average
+// Add new centroid. Execute kmeans.
 void AlgorithmGreedyClusters::addCandidate() {
   pointsService_.push_back(pointFarthest_);
 
@@ -118,7 +126,6 @@ void AlgorithmGreedyClusters::addCandidate() {
   sse_ = objectiveFunction();
 }
 
-// calculate sse
 float AlgorithmGreedyClusters::objectiveFunction() {
   return ObjectiveFunctionSSE().get(pointsClient_, pointsService_);
 }
@@ -130,22 +137,4 @@ void AlgorithmGreedyClusters::print() {
   std::cout << executionIterationNumber_ << "\t\t\t";
   std::cout << sse_ << "\t\t";
   std::cout << "..." << "\t\t";
-}
-
-std::vector<int> AlgorithmGreedyClusters::generateRandomIndexList(int size) {
-  std::vector<int> previous;
-
-  srand(time(NULL));
-  int randomIndex = rand() % pointsClient_.size();
-  previous.push_back(randomIndex);
-
-  for (int i = 0; i < size - 1; ++i) {
-    while (std::find(previous.begin(), previous.end(), randomIndex) !=
-        previous.end()) {
-      srand(time(NULL));
-      randomIndex = rand() % pointsClient_.size();
-    }
-    previous.push_back(randomIndex);
-  }
-  return previous;
 }

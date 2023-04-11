@@ -54,11 +54,6 @@ private:
   
   std::shared_ptr<IHeuristic> ptrHeuristic_;
 
-
-  /**
-   * mathematical set of points from pointsClient_ by picking randomly
-   */
-  std::vector<int> generateRandomIndexList(int size);
 };
 
 #endif

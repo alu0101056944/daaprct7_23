@@ -34,6 +34,10 @@ void EnvironmentStructureExchangeK::execute(
   do {
     hasImproved = false;
 
+    /**
+     * Choose k different centroids. Choose k different clients. Substitute.
+     */
+
     std::vector<PointCluster> clients = bestSolution->getClients();
     std::vector<PointCluster> services = bestSolution->getServices();
     
@@ -56,12 +60,11 @@ void EnvironmentStructureExchangeK::execute(
       }
     }
 
-    // Because non service points may be smaller than k_
-    // So limit all the next operations to how many are available
+    // centroid amount may be smaller than k_
     const int kExchangeAmount = nonServicePoints.size() >= k_ ? k_ : nonServicePoints.size();
 
+    // select different services
     std::vector<int> chosenServices;
-    // select different services to exchange
     for (int i = 0; i < kExchangeAmount; ++i) {
       srand(time(NULL));
       int randomIndex = rand() % services.size();
@@ -75,8 +78,8 @@ void EnvironmentStructureExchangeK::execute(
       chosenServices.push_back(randomIndex);
     }
 
+    // select different clients that are not service
     std::vector<int> newServices;
-    // select different non service points to exchange the old services with
     for (int i = 0; i < kExchangeAmount; ++i) {
       srand(time(NULL));
       int randomIndex = rand() % nonServicePoints.size();
@@ -90,7 +93,7 @@ void EnvironmentStructureExchangeK::execute(
       newServices.push_back(randomIndex);
     }
 
-    // exchange
+    // substitute
     for (int i = 0; i < kExchangeAmount; ++i) {
       services[chosenServices[i]] = nonServicePoints[newServices[i]];
     }

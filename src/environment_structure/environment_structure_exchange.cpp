@@ -19,8 +19,7 @@ std::shared_ptr<AlgorithmGreedyKMeans> EnvironmentStructureExchange::getBestSolu
   return ptrBestSolution_;  
 }
 
-// exhange one service point for a random client point that doesn't have a
-// service point on the same location
+// substitute centroid with client that is not centroid (does not have one ontop)
 void EnvironmentStructureExchange::execute(
       std::shared_ptr<AlgorithmGreedyKMeans> solution) {
   FrameworkGreedy greedyAlgorithm;
@@ -31,10 +30,13 @@ void EnvironmentStructureExchange::execute(
     hasImproved = false;
 
     std::vector<PointCluster> clients = bestSolution->getClients();
+
+    // Choose centroid. get client that is not centroid. Substitute if found. Kmeans.
+    // check if best.
     for (int i = 0; i < bestSolution->getServices().size(); ++i) {
       std::vector<PointCluster> services = bestSolution->getServices();
 
-      // calculate list of client points that are not service points
+      // get clients that are not centroid
       std::vector<PointCluster> nonServicePoints;
       for (int i = 0; i < clients.size(); ++i) {
         auto componentsClient = clients[i].getComponents();
@@ -53,6 +55,7 @@ void EnvironmentStructureExchange::execute(
         }
       }
 
+      // only substitute if not empty
       if (!nonServicePoints.empty()) {
         srand(time(NULL));
         int randomIndex = rand() % nonServicePoints.size();

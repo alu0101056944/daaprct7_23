@@ -9,15 +9,20 @@ ObjectiveFunctionSSE::~ObjectiveFunctionSSE() {}
 
 float ObjectiveFunctionSSE::get(std::vector<PointCluster> pointsClient,
       std::vector<PointCluster> pointsService) {
+  // use euclidean distance
   SimilarityEuclidean euclidean;
+
+  // for each centroid check all points and sum if belongs.
   float total = 0;
   for (int i = 0; i < pointsService.size(); ++i) {
+
     float clusterTotal = 0;
     for (auto& point : pointsClient) {
       if (point.getCluster().getComponents() == pointsService[i].getComponents()) {
         clusterTotal += std::pow(euclidean.similarity(pointsService[i], point), 2);
       }
     }
+
     total += clusterTotal;
   }
   return total;

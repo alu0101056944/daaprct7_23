@@ -39,35 +39,30 @@ bool AlgorithmGreedyClustersLRC::isAtSolution() {
   return greedy_.isAtSolution();
 }
 
-/**
- * Alternative: select best candidate, get and store, repeat LCR.size() times.
-*/
+// call selectBestCandidate() a few times. Store them. Select one. re-add rest.
 void AlgorithmGreedyClustersLRC::selectBestCandidate() {
   auto pointsCandidate = greedy_.getCandidates();
   auto pointsService = greedy_.getServices();
   auto ptrHeuristic = greedy_.getHeuristic();
   
   std::vector<PointCluster> lrcCandidates;
-  /**
-   * equivalent syntax:
-  while (!pointsCandidate.empty() && pointsCandidate.size() < sizeOfLRC_) {
-    int indexOfFarthest = ptrHeuristic->choose(pointsCandidate, pointsService);
-    lrcCandidates.push_back(pointsCandidate[indexOfFarthest]);
-    pointsCandidate.erase(pointsCandidate.begin() + indexOfFarthest);
-  }
-  */
+
   int lengthAvailable = pointsCandidate.size() < sizeOfLRC_ ? pointsCandidate.size() : sizeOfLRC_;
+
+  // choose and push a few times
   for (int i = 0; i < lengthAvailable; ++i) {
     int indexOfFarthest = ptrHeuristic->choose(pointsCandidate, pointsService);
     lrcCandidates.push_back(pointsCandidate[indexOfFarthest]);
     pointsCandidate.erase(pointsCandidate.begin() + indexOfFarthest);
   }
 
+  // choose random candidate
   srand(time(NULL));
   int randomIndex = rand() % lengthAvailable; // framework checks if there are candidates, should not cause trouble.
   greedy_.setFarthestPoint(lrcCandidates[randomIndex]);
   lrcCandidates.erase(lrcCandidates.begin() + randomIndex);
 
+  // re-add unchosen ones
   for (int i = 0; i < lrcCandidates.size(); ++i) {
     pointsCandidate.push_back(lrcCandidates[i]);
   }
@@ -79,7 +74,7 @@ bool AlgorithmGreedyClustersLRC::validCandidate() {
   return greedy_.validCandidate();
 }
 
-// execute kmeans algorithm with current services
+// Add new centroid. Execute kmeans.
 void AlgorithmGreedyClustersLRC::addCandidate() {
   greedy_.addCandidate();
 }

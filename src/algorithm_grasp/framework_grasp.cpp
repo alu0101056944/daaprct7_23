@@ -7,6 +7,7 @@ FrameworkGRASP::FrameworkGRASP() {}
 
 FrameworkGRASP::~FrameworkGRASP() {}
 
+// Standard grasp structure
 void FrameworkGRASP::execute(std::shared_ptr<IAlgorithmGRASP> ptrAlgorithm) {
   ptrAlgorithm->preprocess();
   while (!ptrAlgorithm->stopCriteria()) {
@@ -22,7 +23,7 @@ void FrameworkGRASP::executeAndprint(std::shared_ptr<IAlgorithmGRASP> ptrAlgorit
   ptrAlgorithm->preprocess();
   while (!ptrAlgorithm->stopCriteria()) {
 
-    // print the build phase
+    // Measure and print build()
     auto start = std::chrono::high_resolution_clock::now();
     ptrAlgorithm->build();
     auto stop = std::chrono::high_resolution_clock::now();
@@ -31,6 +32,7 @@ void FrameworkGRASP::executeAndprint(std::shared_ptr<IAlgorithmGRASP> ptrAlgorit
     ptrAlgorithm->print();
     std::cout << std::to_string(cpuTime) << "\t\t" << std::endl;
 
+    // Measure and print postprocess() and update()
     start = std::chrono::high_resolution_clock::now();
     ptrAlgorithm->postprocess();
     ptrAlgorithm->update();

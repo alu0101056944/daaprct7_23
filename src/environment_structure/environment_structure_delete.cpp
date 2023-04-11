@@ -25,6 +25,8 @@ void EnvironmentStructureDelete::execute(
   bool hasImproved;
   do {
     hasImproved = false;
+
+    // Delete position, execute kmeans, check if best.
     auto services = bestSolution->getServices();
     for (int i = 0; i < services.size(); ++i) {
       std::vector<PointCluster> permutation = services;
@@ -39,6 +41,7 @@ void EnvironmentStructureDelete::execute(
         hasImproved = true;
       }
     }
+
   } while (hasImproved);
 
   ptrBestSolution_ = bestSolution;

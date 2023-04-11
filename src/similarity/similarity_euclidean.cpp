@@ -11,25 +11,26 @@ SimilarityEuclidean::SimilarityEuclidean() {}
 
 SimilarityEuclidean::~SimilarityEuclidean() {}
 
-// the least similarity using euclidean the better, because it is distance
-// so the less the more similar.
-//
-// For strings, if a value is different then the distance is maximum to specify
-// that the points are not even close to similar.
+// if string is different -> infinite distance
 float SimilarityEuclidean::similarity(PointCluster pointA, PointCluster pointB) {
   auto componentsA = pointA.getComponents();
   auto componentsB = pointB.getComponents();
   
-  assert(componentsA.size() == componentsB.size());
+  assert(componentsA.size() == componentsB.size()); // just in case
 
   float distance = 0;
+  // iterate components one by one, add to each to distance
   for (int i = 0; i < componentsA.size(); ++i) {
+
+    // if float calculate normally
     if (std::holds_alternative<float>(componentsA[i])) {
       
       const float kA = std::get<float>(componentsA[i]);
       const float kB = std::get<float>(componentsB[i]);
 
       distance += std::pow(kA - kB, 2);
+
+      // if string set infinite distance
     } else if (std::holds_alternative<std::string>(componentsA[i])) {
 
       const std::string kA = std::get<std::string>(componentsA[i]);

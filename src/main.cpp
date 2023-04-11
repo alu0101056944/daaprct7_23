@@ -23,12 +23,15 @@
 
 #include "../include/point/point_cluster.h"
 
-// Used for random kmeans setup to be able to do a print() on main()
+// Used for random kmeans setup to be able to execute kmeans on main
 std::vector<int> uniqueServicePointsFrom(std::vector<PointBasic> points, int size) {
   std::vector<int> indexSet;
   for (int i = 0; i < size; ++i) {
+    // get random index
     srand(time(NULL));
     int randomIndex = rand() % points.size();
+
+    // add when not duplicate
     while (std::find(indexSet.begin(), indexSet.end(), randomIndex) !=
         indexSet.end()) {
       srand(time(NULL));
@@ -47,10 +50,14 @@ int main (int argv, char** argc) {
     return -1;
   }
 
+  // Get the points from file
   InstanceFileReader reader(argc[1]);
   std::vector<PointBasic> points = reader.getPoints();
 
   const std::string kNameOfAlgorithm = argc[2];
+
+  // Set cluster amount, round up if float.
+  // Because builder is not penalized. Gets the amount of clusters to build towards.
   const int kAmountOfClusters = std::stoi(argc[3]) == -1 ? std::ceil(((float)points.size()) * 0.1) : std::stoi(argc[3]);
   
   if (kNameOfAlgorithm.compare("clustersLRC") == 0) {
@@ -87,13 +94,12 @@ int main (int argv, char** argc) {
     ptrGRASP->setEnvironmentStructure(deleteExchangeK);
     frameworkGRASP.executeAndprint(ptrGRASP);
 
-
   } else if (kNameOfAlgorithm.compare("kmeans") == 0) {
     FrameworkGreedy frameworkGreedy;
 
+    // generate k different service points
     std::vector<int> pointsServiceIndex = uniqueServicePointsFrom(points,
         kAmountOfClusters);
-
     std::vector<PointBasic> pointsService;
     for (auto& index : pointsServiceIndex) {
       pointsService.push_back(points[index]);

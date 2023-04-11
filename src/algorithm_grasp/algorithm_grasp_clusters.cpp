@@ -40,6 +40,7 @@ void AlgorithmGRASPClusters::setEnvironmentStructure(
 
 void AlgorithmGRASPClusters::preprocess() {}
 
+// build using builder. Transform to kmeans instance.
 void AlgorithmGRASPClusters::build() {
   ++executionIterationNumber_;
   hasImproved_ = false;
@@ -50,11 +51,12 @@ void AlgorithmGRASPClusters::build() {
   ptrSolution_ = std::make_shared<AlgorithmGreedyKMeans>(builtSolution->getClients(),
     builtSolution->getServices());
 
-  if (ptrBestSolution_ == nullptr) { // to ease the print()
+  if (ptrBestSolution_ == nullptr) { // to allow print()
     ptrBestSolution_ = ptrSolution_;
   }
 }
 
+// execute structure, substitute solution.
 void AlgorithmGRASPClusters::postprocess() {
   ptrStructure_->execute(ptrSolution_);
   ptrSolution_ = ptrStructure_->getBestSolution();
