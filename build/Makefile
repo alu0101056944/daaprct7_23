@@ -136,6 +136,33 @@ prct07Library/fast:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/build
 .PHONY : prct07Library/fast
 
+src/algorithm_closest_assignment.o: src/algorithm_closest_assignment.cpp.o
+
+.PHONY : src/algorithm_closest_assignment.o
+
+# target to build an object file
+src/algorithm_closest_assignment.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.o
+.PHONY : src/algorithm_closest_assignment.cpp.o
+
+src/algorithm_closest_assignment.i: src/algorithm_closest_assignment.cpp.i
+
+.PHONY : src/algorithm_closest_assignment.i
+
+# target to preprocess a source file
+src/algorithm_closest_assignment.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.i
+.PHONY : src/algorithm_closest_assignment.cpp.i
+
+src/algorithm_closest_assignment.s: src/algorithm_closest_assignment.cpp.s
+
+.PHONY : src/algorithm_closest_assignment.s
+
+# target to generate assembly for a file
+src/algorithm_closest_assignment.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.s
+.PHONY : src/algorithm_closest_assignment.cpp.s
+
 src/algorithm_grasp/algorithm_grasp_clusters.o: src/algorithm_grasp/algorithm_grasp_clusters.cpp.o
 
 .PHONY : src/algorithm_grasp/algorithm_grasp_clusters.o
@@ -605,6 +632,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... prct07"
 	@echo "... prct07Library"
+	@echo "... src/algorithm_closest_assignment.o"
+	@echo "... src/algorithm_closest_assignment.i"
+	@echo "... src/algorithm_closest_assignment.s"
 	@echo "... src/algorithm_grasp/algorithm_grasp_clusters.o"
 	@echo "... src/algorithm_grasp/algorithm_grasp_clusters.i"
 	@echo "... src/algorithm_grasp/algorithm_grasp_clusters.s"

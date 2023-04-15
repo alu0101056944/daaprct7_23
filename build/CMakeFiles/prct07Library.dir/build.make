@@ -265,6 +265,19 @@ CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/objective_function_sse.cpp -o CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.s
 
+CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.o: CMakeFiles/prct07Library.dir/flags.make
+CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.o: ../src/algorithm_closest_assignment.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.o"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/algorithm_closest_assignment.cpp
+
+CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/dyaa/daaprct7_23/src/algorithm_closest_assignment.cpp > CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.i
+
+CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/dyaa/daaprct7_23/src/algorithm_closest_assignment.cpp -o CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.s
+
 # Object files for target prct07Library
 prct07Library_OBJECTS = \
 "CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o" \
@@ -282,7 +295,8 @@ prct07Library_OBJECTS = \
 "CMakeFiles/prct07Library.dir/src/point/point_cluster.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o" \
 "CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o" \
-"CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o"
+"CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o" \
+"CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.o"
 
 # External object files for target prct07Library
 prct07Library_EXTERNAL_OBJECTS =
@@ -303,9 +317,10 @@ libprct07Library.a: CMakeFiles/prct07Library.dir/src/point/point_cluster.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/similarity/similarity_euclidean.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/instance_filereader.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o
+libprct07Library.a: CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.o
 libprct07Library.a: CMakeFiles/prct07Library.dir/build.make
 libprct07Library.a: CMakeFiles/prct07Library.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX static library libprct07Library.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/usuario/dyaa/daaprct7_23/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX static library libprct07Library.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/prct07Library.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/prct07Library.dir/link.txt --verbose=$(VERBOSE)
 

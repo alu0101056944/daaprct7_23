@@ -8,7 +8,6 @@
 #include <cassert>
 #include <cmath>
 
-#include "../../include/algorithm_greedy/algorithm_greedy_kmeans.h"
 #include "../../include/point/point_cluster.h"
 #include "../../include/heuristics/heuristic_kmeans_max.h"
 #include "../../include/similarity/similarity_euclidean.h"
@@ -114,12 +113,9 @@ bool AlgorithmGreedyClusters::validCandidate() {
 void AlgorithmGreedyClusters::addCandidate() {
   pointsService_.push_back(pointFarthest_);
 
-  auto ptrKmeans = std::make_shared<AlgorithmGreedyKMeans>(pointsClient_,
-      pointsService_);
-  greedyAlgorithm_.execute(ptrKmeans);
-  pointsService_ = ptrKmeans->getServices();
-  pointsClient_ = ptrKmeans->getClients();
-
+  algorithmClosest_.execute(pointsClient_, pointsService_);
+  pointsService_ = algorithmClosest_.getServices();
+  pointsClient_ = algorithmClosest_.getClients();
   pointsCandidate_ = pointsClient_;
 
   ssePrevious_ = sse_;

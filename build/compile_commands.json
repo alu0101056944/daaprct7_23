@@ -83,5 +83,10 @@
   "directory": "/home/usuario/dyaa/daaprct7_23/build",
   "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/objective_function_sse.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/objective_function_sse.cpp",
   "file": "/home/usuario/dyaa/daaprct7_23/src/objective_function_sse.cpp"
+},
+{
+  "directory": "/home/usuario/dyaa/daaprct7_23/build",
+  "command": "/usr/bin/g++    -g   -std=gnu++2a -o CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.o -c /home/usuario/dyaa/daaprct7_23/src/algorithm_closest_assignment.cpp",
+  "file": "/home/usuario/dyaa/daaprct7_23/src/algorithm_closest_assignment.cpp"
 }
 ]

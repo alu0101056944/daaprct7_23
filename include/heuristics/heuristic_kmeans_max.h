@@ -3,8 +3,8 @@
  *   point of interest.
 */
 
-#ifndef HEURISTIC_KMEANS_LEAST_H
-#define HEURISTIC_KMEANS_LEAST_H
+#ifndef HEURISTIC_KMEANS_MAX_H
+#define HEURISTIC_KMEANS_MAX_H
 
 #include <memory>
 

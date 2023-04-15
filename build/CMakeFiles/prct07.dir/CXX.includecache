@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/home/usuario/dyaa/daaprct7_23/include/algorithm_closest_assignment.h
+vector
+-
+memory
+-
+point/point_cluster.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
+heuristics/heuristic_kmeans_least.h
+/home/usuario/dyaa/daaprct7_23/include/heuristics/heuristic_kmeans_least.h
+
 /home/usuario/dyaa/daaprct7_23/include/algorithm_grasp/algorithm_grasp_clusters.h
 chrono
 -
@@ -31,8 +41,8 @@ i_algorithm_grasp.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_clusters.h
 i_algorithm_greedy.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
-framework_greedy.h
-/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
+../algorithm_closest_assignment.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_closest_assignment.h
 ../point/point_basic.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
 ../point/point_cluster.h
@@ -90,6 +100,16 @@ vector
 ../algorithm_greedy/algorithm_greedy_kmeans.h
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
 
+/home/usuario/dyaa/daaprct7_23/include/heuristics/heuristic_kmeans_least.h
+memory
+-
+i_heuristic.h
+/home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
+../similarity/i_similarity.h
+/home/usuario/dyaa/daaprct7_23/include/similarity/i_similarity.h
+../point/point_cluster.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
+
 /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
 vector
 -
@@ -135,6 +155,10 @@ i_point.h
 /home/usuario/dyaa/daaprct7_23/include/point/i_point.h
 point_basic.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
+
+/home/usuario/dyaa/daaprct7_23/include/similarity/i_similarity.h
+../point/point_cluster.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 
 /home/usuario/dyaa/daaprct7_23/src/main.cpp
 iostream

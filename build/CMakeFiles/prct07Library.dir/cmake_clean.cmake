@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/prct07Library.dir/src/algorithm_closest_assignment.cpp.o"
   "CMakeFiles/prct07Library.dir/src/algorithm_grasp/algorithm_grasp_clusters.cpp.o"
   "CMakeFiles/prct07Library.dir/src/algorithm_grasp/framework_grasp.cpp.o"
   "CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters.cpp.o"

@@ -2,7 +2,7 @@
 #define ALGORITHM_GREEDY_CLUSTERS_H
 
 #include "i_algorithm_greedy.h"
-#include "framework_greedy.h"
+#include "../algorithm_closest_assignment.h"
 #include "../point/point_basic.h"
 #include "../point/point_cluster.h"
 #include "../heuristics/i_heuristic.h"
@@ -39,7 +39,7 @@ private:
   int indexOfFarthest_;
   PointCluster pointFarthest_;
 
-  FrameworkGreedy greedyAlgorithm_; // for applying KMeans in addCandidate()
+  AlgorithmClosestAssignment algorithmClosest_;
 
   float sse_;
   float ssePrevious_;
