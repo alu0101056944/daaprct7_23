@@ -17,7 +17,9 @@ std::vector<PointCluster> AlgorithmClosestAssignment::getServices() {
 void AlgorithmClosestAssignment::execute(std::vector<PointCluster> clients,
       std::vector<PointCluster> services) {
   for (auto& client : clients) {
-    const int kIndexOfClosest = ptrHeuristic_->choose(clients, services);
+    std::vector<PointCluster> clientWrapper;
+    clientWrapper.push_back(client);
+    const int kIndexOfClosest = ptrHeuristic_->choose(clientWrapper, services);
     client.setCluster(services[kIndexOfClosest].getBasic());
   }
   clients_ = clients;
