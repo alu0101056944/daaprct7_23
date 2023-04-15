@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <cmath>
+#include <cassert>
 
 #include "../include/instance_filereader.h"
 #include "../include/point/point_basic.h"
@@ -25,19 +26,25 @@
 
 // Used for random kmeans setup to be able to execute kmeans on main
 std::vector<int> uniqueServicePointsFrom(std::vector<PointBasic> points, int size) {
-  std::vector<int> indexSet;
-  for (int i = 0; i < size; ++i) {
-    // get random index
-    srand(time(NULL));
-    int randomIndex = rand() % points.size();
+  assert(points.size() >= size);
 
-    // add when not duplicate
-    while (std::find(indexSet.begin(), indexSet.end(), randomIndex) !=
-        indexSet.end()) {
-      srand(time(NULL));
-      randomIndex = rand() % points.size();
+  std::vector<int> indexSet;
+  int amountToAdd = size;
+  for (int i = 0; i < points.size(); ++i) {
+    // attempt to add
+    srand(time(NULL));
+    if (rand() % 100 > 50) {
+      indexSet.push_back(i);
+      --amountToAdd;
+      if (amountToAdd == 0) {
+        break;
+      }
     }
-    indexSet.push_back(randomIndex);
+  }
+  // if all attemps failed, just add from the back.
+  for (int i = 0; i < amountToAdd; ++i) {
+    indexSet.push_back(points.size() - 1);
+    points.pop_back();
   }
   return indexSet;
 }

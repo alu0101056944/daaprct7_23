@@ -39,8 +39,6 @@ int HeuristicKMeansMax::choose(std::vector<PointCluster> pointsClient,
     return index;
   }
 
-  maximumTotalDistance = 0;
-
   // furthest away point from the service points
   // iterate point, calculate distance to centroids. check if best.
   for (int i = 0; i < pointsClient.size(); ++i) {

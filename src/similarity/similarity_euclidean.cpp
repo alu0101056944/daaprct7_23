@@ -19,7 +19,7 @@ float SimilarityEuclidean::similarity(PointCluster pointA, PointCluster pointB) 
   assert(componentsA.size() == componentsB.size()); // just in case
 
   float distance = 0;
-  // iterate components one by one, add to each to distance
+  // iterate components one by one, add the difference of each to distance
   for (int i = 0; i < componentsA.size(); ++i) {
 
     // if float calculate normally

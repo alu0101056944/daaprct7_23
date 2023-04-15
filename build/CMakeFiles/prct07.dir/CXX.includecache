@@ -175,6 +175,8 @@ time.h
 -
 cmath
 -
+cassert
+-
 ../include/instance_filereader.h
 /home/usuario/dyaa/daaprct7_23/include/instance_filereader.h
 ../include/point/point_basic.h

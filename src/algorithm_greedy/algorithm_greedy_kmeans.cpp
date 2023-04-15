@@ -25,7 +25,8 @@ AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> pointsClien
     currentID_(++ID),
     amountOfReassignedPoints_(pointsClient.size()), // to execute first iteration
     ptrHeuristic_(new HeuristicKMeansLeast()), // choose closest centroid
-    executionIterationNumber_(0) {
+    executionIterationNumber_(0),
+    sse_(0) {
   
   // Convert basic point to cluster point
   for (auto& point : pointsClient) {
@@ -34,6 +35,7 @@ AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> pointsClien
   for (auto& point : pointsService) {
     pointsService_.push_back(PointCluster(point));
   }
+  sse_ = objectiveFunction();
 }
 
 // if points are already cluster points
@@ -44,7 +46,10 @@ AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointCluster> pointsCli
     currentID_(++ID),
     amountOfReassignedPoints_(pointsClient.size()),
     ptrHeuristic_(new HeuristicKMeansLeast()),
-    executionIterationNumber_(0) {}
+    executionIterationNumber_(0),
+    sse_(0) {
+  sse_ = objectiveFunction();
+}
 
 AlgorithmGreedyKMeans::~AlgorithmGreedyKMeans() {}
 
@@ -146,6 +151,7 @@ void AlgorithmGreedyKMeans::addCandidate() {
       pointsService_.erase(pointsService_.begin() + i);
     }
   }
+  sse_ = objectiveFunction();
 }
 
 void AlgorithmGreedyKMeans::print() {
@@ -153,7 +159,7 @@ void AlgorithmGreedyKMeans::print() {
   std::cout << pointsClient_.size() << "\t\t";
   std::cout << pointsService_.size() << "\t\t";
   std::cout << executionIterationNumber_ << "\t\t\t";
-  std::cout << objectiveFunction() << "\t\t";
+  std::cout << sse_ << "\t\t";
   std::cout << "..." << "\t\t";
 }
 
