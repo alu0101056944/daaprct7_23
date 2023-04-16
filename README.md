@@ -17,13 +17,13 @@ TODO: a point cluster has a cluster index stored, but the clusters will change c
     passed with client points, two entities used at the same time on the same places, so
     again, it should not be a problem.
 
-TODO: Think about what to do on the preprocess phase of the GRASP.
+TODO: Think about what to do on the preprocess phase of the GRASP. *refused*
 
-TODO: make is so that CLI works without specifying k
+TODO: make is so that CLI works without specifying k *refused*
 
-TODO: Make a decision on if nominal similarity is well designed.
+TODO: Make a decision on if nominal similarity is well designed. *done*
 
-TODO: Adjust the minimum k amount so that it is minimum 2 when doing k * 0.1
+TODO: Adjust the minimum k amount so that it is minimum 2 when doing k * 0.1 *done*
 
 TODO: triangular restriction on the similirity function
 
@@ -31,7 +31,7 @@ TODO: read whole directory and execute all the files using the same amount of cl
 
 TODO: efficiency. Don't recalculate SSE each time a change takes place, instead just add/substract to the previous sse total.
 
-TODO: Remove kmeans application on grasp builder and on environment structures. The objetive is to avoid different order leading to different results.
+TODO: Remove kmeans application on grasp builder, use assignment algorithm instead. The objetive is to avoid different order leading to different results. **done**
 
 ## About failed iterations on the build phase:
 

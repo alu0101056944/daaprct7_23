@@ -21,6 +21,7 @@
 #include "../include/environment_structure/environment_structure_delete.h"
 #include "../include/environment_structure/environment_structure_exchange.h"
 #include "../include/environment_structure/environment_structure_exchange_k.h"
+#include "../include/environment_structure/environment_structure_add.h"
 
 #include "../include/point/point_cluster.h"
 
@@ -93,12 +94,20 @@ int main (int argv, char** argc) {
     ptrGRASP->setEnvironmentStructure(deleteStructure);
     frameworkGRASP.executeAndprint(ptrGRASP);
 
-    std::cout << "With exchange K environment structure:" << std::endl;
+    std::cout << "With add environment structure:" << std::endl;
 
-    auto deleteExchangeK = std::make_shared<EnvironmentStructureExchangeK>();
+    auto structureAdd = std::make_shared<EnvironmentStructureAdd>();
     ptrGRASP = std::make_shared<AlgorithmGRASPClusters>(
         points, kAmountOfClusters, kSizeOfLRC);
-    ptrGRASP->setEnvironmentStructure(deleteExchangeK);
+    ptrGRASP->setEnvironmentStructure(structureAdd);
+    frameworkGRASP.executeAndprint(ptrGRASP);
+
+    std::cout << "With exchange K environment structure:" << std::endl;
+
+    auto exchangeK = std::make_shared<EnvironmentStructureExchangeK>();
+    ptrGRASP = std::make_shared<AlgorithmGRASPClusters>(
+        points, kAmountOfClusters, kSizeOfLRC);
+    ptrGRASP->setEnvironmentStructure(exchangeK);
     frameworkGRASP.executeAndprint(ptrGRASP);
 
   } else if (kNameOfAlgorithm.compare("kmeans") == 0) {

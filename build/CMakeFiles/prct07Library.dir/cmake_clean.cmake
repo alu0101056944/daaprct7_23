@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_clusters_lrc.cpp.o"
   "CMakeFiles/prct07Library.dir/src/algorithm_greedy/algorithm_greedy_kmeans.cpp.o"
   "CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o"
+  "CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_add.cpp.o"
   "CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o"
   "CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o"
   "CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o"

@@ -7,7 +7,6 @@ AlgorithmClosestAssignment::~AlgorithmClosestAssignment() {}
 
 std::vector<PointCluster> AlgorithmClosestAssignment::getClients() {
   return clients_;
-
 }
 
 std::vector<PointCluster> AlgorithmClosestAssignment::getServices() {

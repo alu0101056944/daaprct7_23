@@ -80,6 +80,12 @@ i_algorithm_greedy.h
 
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
 
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_add.h
+i_environment_structure.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
+../heuristics/heuristic_kmeans_max.h
+/home/usuario/dyaa/daaprct7_23/include/heuristics/heuristic_kmeans_max.h
+
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_delete.h
 i_environment_structure.h
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
@@ -109,6 +115,14 @@ i_heuristic.h
 /home/usuario/dyaa/daaprct7_23/include/similarity/i_similarity.h
 ../point/point_cluster.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
+
+/home/usuario/dyaa/daaprct7_23/include/heuristics/heuristic_kmeans_max.h
+memory
+-
+i_heuristic.h
+/home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
+../similarity/i_similarity.h
+/home/usuario/dyaa/daaprct7_23/include/similarity/i_similarity.h
 
 /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
 vector
@@ -199,6 +213,8 @@ cassert
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange.h
 ../include/environment_structure/environment_structure_exchange_k.h
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange_k.h
+../include/environment_structure/environment_structure_add.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_add.h
 ../include/point/point_cluster.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 

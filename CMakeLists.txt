@@ -15,6 +15,7 @@ add_library(prct07Library
     src/environment_structure/environment_structure_exchange.cpp
     src/environment_structure/environment_structure_exchange_k.cpp
     src/environment_structure/environment_structure_delete.cpp
+    src/environment_structure/environment_structure_add.cpp
 
     include/heuristics/i_heuristic.h
     src/heuristics/heuristic_kmeans_max.cpp
