@@ -43,8 +43,6 @@ void AlgorithmGVNS::addToShaking(std::shared_ptr<IEnvironmentStructure> structur
 }
 
 void AlgorithmGVNS::preprocess() {
-  hasImproved_ = false;
-
   auto builtSolution = std::make_shared<AlgorithmGreedyClustersLRC>(points_, k_, sizeOfLRC_);
   greedyAlgorithm_.execute(builtSolution);
 
@@ -58,8 +56,9 @@ void AlgorithmGVNS::preprocess() {
 
 void AlgorithmGVNS::execute() {
   preprocess();
-  while (!hasImproved_ && executionIterationNumber_ > 30) {
+  while (hasImproved_ || executionIterationNumber_ < 30) {
     ++executionIterationNumber_;
+    hasImproved_ = false;
     for (int i = 0; i < shakes_.size(); ++i) {
       shakes_[i]->execute(ptrSolution_);
       auto shakenSolution = shakes_[i]->getBestSolution();
@@ -96,14 +95,15 @@ void AlgorithmGVNS::executeAndprint() {
   std::cout << currentID_ << "\t\t";
   std::cout << points_.size() << "\t\t";
   std::cout << ptrBestSolution_->getServices().size() << "\t\t";
+  std::cout << shakes_.size() << "\t\t";
   std::cout << executionIterationNumber_ << "\t\t\t";
   std::cout << ptrBestSolution_->objectiveFunction() << "\t\t";
   std::cout << sizeOfLRC_ << "\t\t";
-  std::cout << cpuTime << "\t\t";
+  std::cout << cpuTime << "\t\t" << std::endl;
 
-  while (!hasImproved_ && executionIterationNumber_ > 30) {
+  while (hasImproved_ || executionIterationNumber_ < 30) {
     ++executionIterationNumber_;
-
+    hasImproved_ = false;
     auto start = std::chrono::high_resolution_clock::now();
 
     for (int i = 0; i < shakes_.size(); ++i) {
@@ -134,9 +134,11 @@ void AlgorithmGVNS::executeAndprint() {
     std::cout << currentID_ << "\t\t";
     std::cout << points_.size() << "\t\t";
     std::cout << ptrBestSolution_->getServices().size() << "\t\t";
+    std::cout << shakes_.size() << "\t\t";
     std::cout << executionIterationNumber_ << "\t\t\t";
     std::cout << ptrBestSolution_->objectiveFunction() << "\t\t";
     std::cout << sizeOfLRC_ << "\t\t";
-    std::cout << cpuTime << "\t\t";
+    std::cout << cpuTime << "\t\t" << std::endl;
   }
+  std::cout << std::endl;
 }

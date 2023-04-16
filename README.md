@@ -33,6 +33,8 @@ TODO: efficiency. Don't recalculate SSE each time a change takes place, instead 
 
 TODO: Remove kmeans application on grasp builder, use assignment algorithm instead. The objetive is to avoid different order leading to different results. **done**
 
+TODO: calculate penalization value for the objective function
+
 ## About failed iterations on the build phase:
 
 In k-means, it can happen that a cluster remains in the same place, especially when it is about to finish the k-means process. I have it set up so that when a cluster is alone and has not been recalculated because it has no points, but it may be that the random index leads to the same cluster.
