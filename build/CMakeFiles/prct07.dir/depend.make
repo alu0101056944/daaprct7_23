@@ -10,6 +10,7 @@ CMakeFiles/prct07.dir/src/main.cpp.o: ../include/algorithm_greedy/algorithm_gree
 CMakeFiles/prct07.dir/src/main.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
 CMakeFiles/prct07.dir/src/main.cpp.o: ../include/algorithm_greedy/framework_greedy.h
 CMakeFiles/prct07.dir/src/main.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
+CMakeFiles/prct07.dir/src/main.cpp.o: ../include/algorithm_gvns/algorithm_gvns.h
 CMakeFiles/prct07.dir/src/main.cpp.o: ../include/environment_structure/environment_structure_add.h
 CMakeFiles/prct07.dir/src/main.cpp.o: ../include/environment_structure/environment_structure_delete.h
 CMakeFiles/prct07.dir/src/main.cpp.o: ../include/environment_structure/environment_structure_exchange.h

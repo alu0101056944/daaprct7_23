@@ -23,6 +23,8 @@
 #include "../include/environment_structure/environment_structure_exchange_k.h"
 #include "../include/environment_structure/environment_structure_add.h"
 
+#include "../include/algorithm_gvns/algorithm_gvns.h"
+
 #include "../include/point/point_cluster.h"
 
 // Used for random kmeans setup to be able to execute kmeans on main
@@ -67,10 +69,10 @@ int main (int argv, char** argc) {
   // Set cluster amount, round up if float.
   // Because builder is not penalized. Gets the amount of clusters to build towards.
   const int kAmountOfClusters = std::stoi(argc[3]) == -1 ? std::ceil(((float)points.size()) * 0.1) : std::stoi(argc[3]);
-  
+  const int kSizeOfLRC = argv > 3 ? std::stoi(argc[4]) : 3;
+
   if (kNameOfAlgorithm.compare("clustersLRC") == 0) {
     FrameworkGreedy frameworkGreedy;
-    const int kSizeOfLRC = argv > 3 ? std::stoi(argc[4]) : 3;
 
     auto ptrClustersLRC = std::make_shared<AlgorithmGreedyClustersLRC>(
         points, kAmountOfClusters, kSizeOfLRC);
@@ -78,7 +80,6 @@ int main (int argv, char** argc) {
 
   } else if (kNameOfAlgorithm.compare("grasp") == 0) {
     FrameworkGRASP frameworkGRASP;
-    const int kSizeOfLRC = argv > 3 ? std::stoi(argc[4]) : 3;
 
     std::cout << "With exchange environment structure:" << std::endl;
 
@@ -124,6 +125,9 @@ int main (int argv, char** argc) {
     auto ptrKMeans = std::make_shared<AlgorithmGreedyKMeans>(
       points, pointsService);
     frameworkGreedy.executeAndprint(ptrKMeans);
+  } else if (kNameOfAlgorithm.compare("gvns") == 0) {
+    AlgorithmGVNS algorithmGVNS(points, kAmountOfClusters, kSizeOfLRC);
+    algorithmGVNS.executeAndprint();
   } else {
     FrameworkGreedy frameworkGreedy;
     auto ptrClusters = std::make_shared<AlgorithmGreedyClusters>(

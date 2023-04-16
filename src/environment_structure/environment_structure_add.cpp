@@ -18,8 +18,7 @@ std::shared_ptr<AlgorithmGreedyKMeans> EnvironmentStructureAdd::getBestSolution(
 }
 
 // exchange one service point to one other position
-void EnvironmentStructureAdd::execute(
-      std::shared_ptr<AlgorithmGreedyKMeans> solution) {
+void EnvironmentStructureAdd::execute(std::shared_ptr<AlgorithmGreedyKMeans> solution) {
   FrameworkGreedy greedyAlgorithm;
   
   auto bestSolution = solution;

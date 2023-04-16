@@ -325,6 +325,33 @@ src/algorithm_greedy/framework_greedy.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.s
 .PHONY : src/algorithm_greedy/framework_greedy.cpp.s
 
+src/algorithm_gvns/algorithm_gvns.o: src/algorithm_gvns/algorithm_gvns.cpp.o
+
+.PHONY : src/algorithm_gvns/algorithm_gvns.o
+
+# target to build an object file
+src/algorithm_gvns/algorithm_gvns.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o
+.PHONY : src/algorithm_gvns/algorithm_gvns.cpp.o
+
+src/algorithm_gvns/algorithm_gvns.i: src/algorithm_gvns/algorithm_gvns.cpp.i
+
+.PHONY : src/algorithm_gvns/algorithm_gvns.i
+
+# target to preprocess a source file
+src/algorithm_gvns/algorithm_gvns.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.i
+.PHONY : src/algorithm_gvns/algorithm_gvns.cpp.i
+
+src/algorithm_gvns/algorithm_gvns.s: src/algorithm_gvns/algorithm_gvns.cpp.s
+
+.PHONY : src/algorithm_gvns/algorithm_gvns.s
+
+# target to generate assembly for a file
+src/algorithm_gvns/algorithm_gvns.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.s
+.PHONY : src/algorithm_gvns/algorithm_gvns.cpp.s
+
 src/environment_structure/environment_structure_add.o: src/environment_structure/environment_structure_add.cpp.o
 
 .PHONY : src/environment_structure/environment_structure_add.o
@@ -432,6 +459,87 @@ src/environment_structure/environment_structure_exchange_k.s: src/environment_st
 src/environment_structure/environment_structure_exchange_k.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.s
 .PHONY : src/environment_structure/environment_structure_exchange_k.cpp.s
+
+src/environment_structure/shakes/shakes_add.o: src/environment_structure/shakes/shakes_add.cpp.o
+
+.PHONY : src/environment_structure/shakes/shakes_add.o
+
+# target to build an object file
+src/environment_structure/shakes/shakes_add.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o
+.PHONY : src/environment_structure/shakes/shakes_add.cpp.o
+
+src/environment_structure/shakes/shakes_add.i: src/environment_structure/shakes/shakes_add.cpp.i
+
+.PHONY : src/environment_structure/shakes/shakes_add.i
+
+# target to preprocess a source file
+src/environment_structure/shakes/shakes_add.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.i
+.PHONY : src/environment_structure/shakes/shakes_add.cpp.i
+
+src/environment_structure/shakes/shakes_add.s: src/environment_structure/shakes/shakes_add.cpp.s
+
+.PHONY : src/environment_structure/shakes/shakes_add.s
+
+# target to generate assembly for a file
+src/environment_structure/shakes/shakes_add.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.s
+.PHONY : src/environment_structure/shakes/shakes_add.cpp.s
+
+src/environment_structure/shakes/shakes_delete.o: src/environment_structure/shakes/shakes_delete.cpp.o
+
+.PHONY : src/environment_structure/shakes/shakes_delete.o
+
+# target to build an object file
+src/environment_structure/shakes/shakes_delete.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o
+.PHONY : src/environment_structure/shakes/shakes_delete.cpp.o
+
+src/environment_structure/shakes/shakes_delete.i: src/environment_structure/shakes/shakes_delete.cpp.i
+
+.PHONY : src/environment_structure/shakes/shakes_delete.i
+
+# target to preprocess a source file
+src/environment_structure/shakes/shakes_delete.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.i
+.PHONY : src/environment_structure/shakes/shakes_delete.cpp.i
+
+src/environment_structure/shakes/shakes_delete.s: src/environment_structure/shakes/shakes_delete.cpp.s
+
+.PHONY : src/environment_structure/shakes/shakes_delete.s
+
+# target to generate assembly for a file
+src/environment_structure/shakes/shakes_delete.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.s
+.PHONY : src/environment_structure/shakes/shakes_delete.cpp.s
+
+src/environment_structure/shakes/shakes_exchange.o: src/environment_structure/shakes/shakes_exchange.cpp.o
+
+.PHONY : src/environment_structure/shakes/shakes_exchange.o
+
+# target to build an object file
+src/environment_structure/shakes/shakes_exchange.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.o
+.PHONY : src/environment_structure/shakes/shakes_exchange.cpp.o
+
+src/environment_structure/shakes/shakes_exchange.i: src/environment_structure/shakes/shakes_exchange.cpp.i
+
+.PHONY : src/environment_structure/shakes/shakes_exchange.i
+
+# target to preprocess a source file
+src/environment_structure/shakes/shakes_exchange.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.i
+.PHONY : src/environment_structure/shakes/shakes_exchange.cpp.i
+
+src/environment_structure/shakes/shakes_exchange.s: src/environment_structure/shakes/shakes_exchange.cpp.s
+
+.PHONY : src/environment_structure/shakes/shakes_exchange.s
+
+# target to generate assembly for a file
+src/environment_structure/shakes/shakes_exchange.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.s
+.PHONY : src/environment_structure/shakes/shakes_exchange.cpp.s
 
 src/heuristics/heuristic_kmeans_least.o: src/heuristics/heuristic_kmeans_least.cpp.o
 
@@ -680,6 +788,9 @@ help:
 	@echo "... src/algorithm_greedy/framework_greedy.o"
 	@echo "... src/algorithm_greedy/framework_greedy.i"
 	@echo "... src/algorithm_greedy/framework_greedy.s"
+	@echo "... src/algorithm_gvns/algorithm_gvns.o"
+	@echo "... src/algorithm_gvns/algorithm_gvns.i"
+	@echo "... src/algorithm_gvns/algorithm_gvns.s"
 	@echo "... src/environment_structure/environment_structure_add.o"
 	@echo "... src/environment_structure/environment_structure_add.i"
 	@echo "... src/environment_structure/environment_structure_add.s"
@@ -692,6 +803,15 @@ help:
 	@echo "... src/environment_structure/environment_structure_exchange_k.o"
 	@echo "... src/environment_structure/environment_structure_exchange_k.i"
 	@echo "... src/environment_structure/environment_structure_exchange_k.s"
+	@echo "... src/environment_structure/shakes/shakes_add.o"
+	@echo "... src/environment_structure/shakes/shakes_add.i"
+	@echo "... src/environment_structure/shakes/shakes_add.s"
+	@echo "... src/environment_structure/shakes/shakes_delete.o"
+	@echo "... src/environment_structure/shakes/shakes_delete.i"
+	@echo "... src/environment_structure/shakes/shakes_delete.s"
+	@echo "... src/environment_structure/shakes/shakes_exchange.o"
+	@echo "... src/environment_structure/shakes/shakes_exchange.i"
+	@echo "... src/environment_structure/shakes/shakes_exchange.s"
 	@echo "... src/heuristics/heuristic_kmeans_least.o"
 	@echo "... src/heuristics/heuristic_kmeans_least.i"
 	@echo "... src/heuristics/heuristic_kmeans_least.s"

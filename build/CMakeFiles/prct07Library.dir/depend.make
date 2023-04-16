@@ -77,6 +77,30 @@ CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../inc
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
 CMakeFiles/prct07Library.dir/src/algorithm_greedy/framework_greedy.cpp.o: ../src/algorithm_greedy/framework_greedy.cpp
 
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/algorithm_closest_assignment.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/algorithm_greedy/algorithm_greedy_clusters.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/algorithm_greedy/framework_greedy.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/algorithm_gvns/algorithm_gvns.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/environment_structure/environment_structure_add.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/environment_structure/environment_structure_delete.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/environment_structure/environment_structure_exchange.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/environment_structure/environment_structure_exchange_k.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/environment_structure/i_environment_structure.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/environment_structure/shakes/shakes_add.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/environment_structure/shakes/shakes_delete.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/environment_structure/shakes/shakes_exchange.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/heuristics/heuristic_kmeans_least.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/heuristics/heuristic_kmeans_max.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/heuristics/i_heuristic.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/point/i_point.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/point/point_basic.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/point/point_cluster.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../include/similarity/i_similarity.h
+CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o: ../src/algorithm_gvns/algorithm_gvns.cpp
+
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_add.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_add.cpp.o: ../include/algorithm_greedy/framework_greedy.h
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_add.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
@@ -122,6 +146,41 @@ CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exc
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../include/point/point_basic.h
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../include/point/point_cluster.h
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.o: ../src/environment_structure/environment_structure_exchange_k.cpp
+
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o: ../include/algorithm_greedy/framework_greedy.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o: ../include/environment_structure/i_environment_structure.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o: ../include/environment_structure/shakes/shakes_add.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o: ../include/heuristics/i_heuristic.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o: ../include/point/i_point.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o: ../include/point/point_basic.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o: ../include/point/point_cluster.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o: ../src/environment_structure/shakes/shakes_add.cpp
+
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../include/algorithm_greedy/framework_greedy.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../include/environment_structure/i_environment_structure.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../include/environment_structure/shakes/shakes_delete.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../include/heuristics/heuristic_kmeans_max.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../include/heuristics/i_heuristic.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../include/point/i_point.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../include/point/point_basic.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../include/point/point_cluster.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../include/similarity/i_similarity.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_delete.cpp.o: ../src/environment_structure/shakes/shakes_delete.cpp
+
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.o: ../include/algorithm_greedy/algorithm_greedy_kmeans.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.o: ../include/algorithm_greedy/framework_greedy.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.o: ../include/algorithm_greedy/i_algorithm_greedy.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.o: ../include/environment_structure/i_environment_structure.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.o: ../include/environment_structure/shakes/shakes_exchange.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.o: ../include/heuristics/i_heuristic.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.o: ../include/point/i_point.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.o: ../include/point/point_basic.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.o: ../include/point/point_cluster.h
+CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_exchange.cpp.o: ../src/environment_structure/shakes/shakes_exchange.cpp
 
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/heuristics/heuristic_kmeans_least.h
 CMakeFiles/prct07Library.dir/src/heuristics/heuristic_kmeans_least.cpp.o: ../include/heuristics/i_heuristic.h

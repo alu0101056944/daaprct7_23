@@ -80,6 +80,18 @@ i_algorithm_greedy.h
 
 /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
 
+/home/usuario/dyaa/daaprct7_23/include/algorithm_gvns/algorithm_gvns.h
+memory
+-
+../point/point_basic.h
+/home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
+../algorithm_greedy/framework_greedy.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
+../algorithm_greedy/algorithm_greedy_kmeans.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
+../environment_structure/i_environment_structure.h
+/home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
+
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_add.h
 i_environment_structure.h
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
@@ -215,6 +227,8 @@ cassert
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange_k.h
 ../include/environment_structure/environment_structure_add.h
 /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_add.h
+../include/algorithm_gvns/algorithm_gvns.h
+/home/usuario/dyaa/daaprct7_23/include/algorithm_gvns/algorithm_gvns.h
 ../include/point/point_cluster.h
 /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
 

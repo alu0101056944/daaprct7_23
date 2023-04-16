@@ -15,7 +15,6 @@
 class AlgorithmGRASPClusters : public IAlgorithmGRASP {
 public:
   AlgorithmGRASPClusters(std::vector<PointBasic> points, int k, int sizeOfLRC);
-  AlgorithmGRASPClusters(std::vector<PointBasic> points, int sizeOfLRC);
 
   ~AlgorithmGRASPClusters();
 
@@ -51,8 +50,6 @@ private:
   int sizeOfLRC_;
 
   bool hasImproved_;
-
-  std::vector<PointCluster> nextBestCandidates_;
 
   // print() variables:
   const int currentID_;

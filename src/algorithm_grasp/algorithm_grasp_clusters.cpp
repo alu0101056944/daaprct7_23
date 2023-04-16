@@ -21,16 +21,6 @@ AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
       executionIterationNumber_(0),
       hasImproved_(true) {}
 
-AlgorithmGRASPClusters::AlgorithmGRASPClusters(std::vector<PointBasic> points,
-    int sizeOfLRC) :
-      points_(points),
-      k_(0.1 * points.size()),
-      sizeOfLRC_(sizeOfLRC),
-      ptrStructure_(new EnvironmentStructureExchange()),
-      currentID_(++ID),
-      executionIterationNumber_(0),
-      hasImproved_(true) {}
-
 AlgorithmGRASPClusters::~AlgorithmGRASPClusters() {}
 
 void AlgorithmGRASPClusters::setEnvironmentStructure(

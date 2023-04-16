@@ -1,10 +1,10 @@
 #include "../../include/environment_structure/environment_structure_exchange.h"
 
 #include <algorithm>
+#include <cassert>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <cassert>
 
 #include "../../include/algorithm_greedy/algorithm_greedy_kmeans.h"
 #include "../../include/algorithm_greedy/framework_greedy.h"
@@ -20,8 +20,7 @@ std::shared_ptr<AlgorithmGreedyKMeans> EnvironmentStructureExchange::getBestSolu
 }
 
 // substitute centroid with client that is not centroid (does not have one ontop)
-void EnvironmentStructureExchange::execute(
-      std::shared_ptr<AlgorithmGreedyKMeans> solution) {
+void EnvironmentStructureExchange::execute(std::shared_ptr<AlgorithmGreedyKMeans> solution) {
   FrameworkGreedy greedyAlgorithm;
 
   auto bestSolution = solution;

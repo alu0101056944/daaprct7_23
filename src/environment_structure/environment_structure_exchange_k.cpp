@@ -1,10 +1,10 @@
 #include "../../include/environment_structure/environment_structure_exchange_k.h"
 
 #include <algorithm>
+#include <cassert>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <cassert>
 
 #include "../../include/algorithm_greedy/algorithm_greedy_kmeans.h"
 #include "../../include/algorithm_greedy/framework_greedy.h"
@@ -25,8 +25,7 @@ std::shared_ptr<AlgorithmGreedyKMeans> EnvironmentStructureExchangeK::getBestSol
 
 // exhange one service point for a random client point that doesn't have a
 // service point on the same location
-void EnvironmentStructureExchangeK::execute(
-      std::shared_ptr<AlgorithmGreedyKMeans> solution) {
+void EnvironmentStructureExchangeK::execute(std::shared_ptr<AlgorithmGreedyKMeans> solution) {
   FrameworkGreedy greedyAlgorithm;
 
   auto bestSolution = solution;

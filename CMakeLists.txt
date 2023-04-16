@@ -11,11 +11,16 @@ add_library(prct07Library
     src/algorithm_grasp/framework_grasp.cpp
     src/algorithm_grasp/algorithm_grasp_clusters.cpp
 
+    src/algorithm_gvns/algorithm_gvns.cpp
+
     include/environment_structure/i_environment_structure.h
     src/environment_structure/environment_structure_exchange.cpp
     src/environment_structure/environment_structure_exchange_k.cpp
     src/environment_structure/environment_structure_delete.cpp
     src/environment_structure/environment_structure_add.cpp
+    src/environment_structure/shakes/shakes_add.cpp
+    src/environment_structure/shakes/shakes_delete.cpp
+    src/environment_structure/shakes/shakes_exchange.cpp
 
     include/heuristics/i_heuristic.h
     src/heuristics/heuristic_kmeans_max.cpp
