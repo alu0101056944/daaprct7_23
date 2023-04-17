@@ -69,7 +69,7 @@ void AlgorithmGVNS::preprocess() {
 // not full local search, but rather a "single step" search.
 void AlgorithmGVNS::execute() {
   preprocess();
-  while (hasImproved_ || executionIterationNumber_ < 30) {
+  while (hasImproved_ || executionIterationNumber_ < 10) {
     ++executionIterationNumber_;
     hasImproved_ = false;
 
@@ -116,7 +116,7 @@ void AlgorithmGVNS::executeAndprint() {
   std::cout << sizeOfLRC_ << "\t\t";
   std::cout << cpuTime << "\t\t" << std::endl;
 
-  while (hasImproved_ || executionIterationNumber_ < 30) {
+  while (hasImproved_ || executionIterationNumber_ < 10) {
     ++executionIterationNumber_;
     hasImproved_ = false;
     auto start = std::chrono::high_resolution_clock::now();
