@@ -42,16 +42,14 @@ void AlgorithmGVNS::addToShaking(std::shared_ptr<IEnvironmentStructure> structur
   shakes_.push_back(structure);
 }
 
+// build initial solution
 void AlgorithmGVNS::preprocess() {
   auto builtSolution = std::make_shared<AlgorithmGreedyClustersLRC>(points_, k_, sizeOfLRC_);
   greedyAlgorithm_.execute(builtSolution);
 
-  ptrSolution_ = std::make_shared<AlgorithmGreedyKMeans>(builtSolution->getClients(),
+  ptrBestSolution_ = std::make_shared<AlgorithmGreedyKMeans>(builtSolution->getClients(),
     builtSolution->getServices());
-
-  if (ptrBestSolution_ == nullptr) { // to allow print()
-    ptrBestSolution_ = ptrSolution_;
-  }
+  greedyAlgorithm_.execute(ptrBestSolution_);
 }
 
 void AlgorithmGVNS::execute() {
@@ -59,8 +57,10 @@ void AlgorithmGVNS::execute() {
   while (hasImproved_ || executionIterationNumber_ < 30) {
     ++executionIterationNumber_;
     hasImproved_ = false;
+
+    // 1 shakes then ALL local searches
     for (int i = 0; i < shakes_.size(); ++i) {
-      shakes_[i]->execute(ptrSolution_);
+      shakes_[i]->execute(ptrBestSolution_);
       auto shakenSolution = shakes_[i]->getBestSolution();
 
       std::shared_ptr<AlgorithmGreedyKMeans> bestLocal;
@@ -107,7 +107,7 @@ void AlgorithmGVNS::executeAndprint() {
     auto start = std::chrono::high_resolution_clock::now();
 
     for (int i = 0; i < shakes_.size(); ++i) {
-      shakes_[i]->execute(ptrSolution_);
+      shakes_[i]->execute(ptrBestSolution_);
       auto shakenSolution = shakes_[i]->getBestSolution();
 
       std::shared_ptr<AlgorithmGreedyKMeans> bestLocal;

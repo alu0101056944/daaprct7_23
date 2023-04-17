@@ -78,7 +78,7 @@ void EnvironmentStructureExchangeK::execute(std::shared_ptr<AlgorithmGreedyKMean
     }
 
     // select different clients that are not service
-    std::vector<int> newServices = uniqueServicePointsFrom(nonServicePoints, k_);
+    std::vector<int> newServices = uniqueServicePointsFrom(nonServicePoints, kExchangeAmount);
 
     // substitute
     for (int i = 0; i < kExchangeAmount; ++i) {

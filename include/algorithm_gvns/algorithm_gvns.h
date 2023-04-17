@@ -36,7 +36,6 @@ private:
 
   bool hasImproved_;
 
-  std::shared_ptr<AlgorithmGreedyKMeans> ptrSolution_;
   std::shared_ptr<AlgorithmGreedyKMeans> ptrBestSolution_;
 
   // print() variables:
