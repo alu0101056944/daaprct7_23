@@ -11,7 +11,7 @@ public:
   ~ObjectiveFunctionSSE();
 
   float get(std::vector<PointCluster> pointsClient,
-      std::vector<PointCluster> pointsService);
+      std::vector<PointCluster> pointsService, float factor);
 };
 
 #endif
