@@ -16,6 +16,8 @@ private:
   std::shared_ptr<AlgorithmGreedyKMeans> ptrBestSolution_;
 
   int k_; // how many service points to exchange.
+
+  std::vector<int> uniqueServicePointsFrom(std::vector<PointCluster> points, int size);
 };
 
 #endif

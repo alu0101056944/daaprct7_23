@@ -78,19 +78,7 @@ void EnvironmentStructureExchangeK::execute(std::shared_ptr<AlgorithmGreedyKMean
     }
 
     // select different clients that are not service
-    std::vector<int> newServices;
-    for (int i = 0; i < kExchangeAmount; ++i) {
-      srand(time(NULL));
-      int randomIndex = rand() % nonServicePoints.size();
-      while (std::find(newServices.begin(), newServices.end(), randomIndex) !=
-          newServices.end()) {
-
-        srand(time(NULL));
-        randomIndex = rand() % nonServicePoints.size();
-      }
-
-      newServices.push_back(randomIndex);
-    }
+    std::vector<int> newServices = uniqueServicePointsFrom(nonServicePoints, k_);
 
     // substitute
     for (int i = 0; i < kExchangeAmount; ++i) {
@@ -107,4 +95,29 @@ void EnvironmentStructureExchangeK::execute(std::shared_ptr<AlgorithmGreedyKMean
   } while (hasImproved);
 
   ptrBestSolution_ = bestSolution;
+}
+
+std::vector<int> EnvironmentStructureExchangeK::uniqueServicePointsFrom(
+      std::vector<PointCluster> points, int size) {
+  assert(points.size() >= size);
+
+  std::vector<int> indexSet;
+  int amountToAdd = size;
+  for (int i = 0; i < points.size(); ++i) {
+    // attempt to add
+    srand(time(NULL));
+    if (rand() % 100 > 50) {
+      indexSet.push_back(i);
+      --amountToAdd;
+      if (amountToAdd == 0) {
+        break;
+      }
+    }
+  }
+  // if all attemps failed, just add from the back.
+  for (int i = 0; i < amountToAdd; ++i) {
+    indexSet.push_back(points.size() - 1);
+    points.pop_back();
+  }
+  return indexSet;
 }

@@ -33,7 +33,7 @@ TODO: efficiency. Don't recalculate SSE each time a change takes place, instead 
 
 TODO: Remove kmeans application on grasp builder, use assignment algorithm instead. The objetive is to avoid different order leading to different results. **done**
 
-TODO: calculate penalization value for the objective function
+TODO: calculate penalization value for the objective function.
 
 ## About failed iterations on the build phase:
 
