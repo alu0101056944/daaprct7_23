@@ -108,14 +108,6 @@ int main (int argv, char** argc) {
     ptrGRASP->setEnvironmentStructure(structureAdd);
     frameworkGRASP.executeAndprint(ptrGRASP);
 
-    std::cout << "With exchange K environment structure:" << std::endl;
-
-    auto exchangeK = std::make_shared<EnvironmentStructureExchangeK>();
-    ptrGRASP = std::make_shared<AlgorithmGRASPClusters>(
-        points, amountOfClusters, kSizeOfLRC);
-    ptrGRASP->setEnvironmentStructure(exchangeK);
-    frameworkGRASP.executeAndprint(ptrGRASP);
-
   } else if (kNameOfAlgorithm.compare("kmeans") == 0) {
     FrameworkGreedy frameworkGreedy;
 

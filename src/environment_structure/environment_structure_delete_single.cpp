@@ -32,7 +32,7 @@ void EnvironmentStructureDeleteSingle::execute(std::shared_ptr<AlgorithmGreedyKM
         bestSolution->getClients(), permutation);
     greedyAlgorithm.execute(ptrKMeans);
 
-    if (ptrKMeans->objectiveFunction() < bestSolution->objectiveFunction()) {
+    if (ptrKMeans->getSSE() < bestSolution->getSSE()) {
       bestSolution = ptrKMeans;
     }
   }

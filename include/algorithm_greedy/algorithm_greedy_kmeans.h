@@ -29,7 +29,8 @@ public:
   virtual void addCandidate();
   virtual void print();
   float objectiveFunction();
-
+  float getSSE();
+  
   static int ID;
 private:
   int amountOfReassignedPoints_;

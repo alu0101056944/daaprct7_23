@@ -79,6 +79,10 @@ void AlgorithmGreedyClustersLRC::addCandidate() {
   greedy_.addCandidate();
 }
 
+float AlgorithmGreedyClustersLRC::getSSE() {
+  return greedy_.getSSE();
+}
+
 // calculate sse
 float AlgorithmGreedyClustersLRC::objectiveFunction() {
   return greedy_.objectiveFunction();

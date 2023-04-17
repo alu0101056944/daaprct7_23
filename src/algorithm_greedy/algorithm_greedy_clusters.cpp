@@ -122,6 +122,10 @@ void AlgorithmGreedyClusters::addCandidate() {
   sse_ = objectiveFunction();
 }
 
+float AlgorithmGreedyClusters::getSSE() {
+  return sse_;
+}
+
 float AlgorithmGreedyClusters::objectiveFunction() {
   return ObjectiveFunctionSSE().get(pointsClient_, pointsService_, 12);
 }

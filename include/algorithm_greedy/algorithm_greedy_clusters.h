@@ -30,6 +30,7 @@ public:
   virtual bool validCandidate();
   virtual void addCandidate();
   virtual void print();
+    float getSSE();
   float objectiveFunction();
 
   static int ID;

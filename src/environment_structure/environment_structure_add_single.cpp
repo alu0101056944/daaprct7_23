@@ -36,7 +36,7 @@ void EnvironmentStructureAddSingle::execute(std::shared_ptr<AlgorithmGreedyKMean
         bestSolution->getClients(), permutation);
     greedyAlgorithm.execute(ptrKMeans);
 
-    if (ptrKMeans->objectiveFunction() < bestSolution->objectiveFunction()) {
+    if (ptrKMeans->getSSE() < bestSolution->getSSE()) {
       bestSolution = ptrKMeans;
     }
   }

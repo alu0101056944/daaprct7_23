@@ -57,7 +57,7 @@ void AlgorithmGVNS::preprocess() {
     for (int i = 0; i < shakes_.size(); ++i) {
       shakes_[i]->execute(ptrBestSolution_);
       auto shakenSolution = shakes_[i]->getBestSolution();
-      if (shakenSolution->objectiveFunction() < ptrBestSolution_->objectiveFunction()) {
+      if (shakenSolution->getSSE() < ptrBestSolution_->getSSE()) {
         ptrBestSolution_ = shakenSolution;
         hasImprovedLocal = true;
         i = 0;
@@ -82,13 +82,13 @@ void AlgorithmGVNS::execute() {
       for (int j = 0; j < localSearches_.size(); ++j) {
         localSearches_[j]->execute(bestLocal);
         auto localSolution = localSearches_[j]->getBestSolution();
-        if (localSolution->objectiveFunction() < bestLocal->objectiveFunction()) {
+        if (localSolution->getSSE() < bestLocal->getSSE()) {
           bestLocal = localSolution;
           j = 0;
         }
       }
 
-      if (bestLocal->objectiveFunction() < ptrBestSolution_->objectiveFunction()) {
+      if (bestLocal->getSSE() < ptrBestSolution_->getSSE()) {
         ptrBestSolution_ = bestLocal;
         hasImproved_ = true;
         i = 0;
@@ -112,7 +112,7 @@ void AlgorithmGVNS::executeAndprint() {
   std::cout << ptrBestSolution_->getServices().size() << "\t\t";
   std::cout << shakes_.size() << "\t\t";
   std::cout << executionIterationNumber_ << "\t\t\t";
-  std::cout << ptrBestSolution_->objectiveFunction() << "\t\t";
+  std::cout << ptrBestSolution_->getSSE() << "\t\t";
   std::cout << sizeOfLRC_ << "\t\t";
   std::cout << cpuTime << "\t\t" << std::endl;
 
@@ -130,13 +130,13 @@ void AlgorithmGVNS::executeAndprint() {
       for (int j = 0; j < localSearches_.size(); ++j) {
         localSearches_[j]->execute(bestLocal);
         auto localSolution = localSearches_[j]->getBestSolution();
-        if (localSolution->objectiveFunction() < bestLocal->objectiveFunction()) {
+        if (localSolution->getSSE() < bestLocal->getSSE()) {
           bestLocal = localSolution;
           j = 0;
         }
       }
 
-      if (bestLocal->objectiveFunction() < ptrBestSolution_->objectiveFunction()) {
+      if (bestLocal->getSSE() < ptrBestSolution_->getSSE()) {
         ptrBestSolution_ = bestLocal;
         hasImproved_ = true;
         i = 0;
@@ -152,7 +152,7 @@ void AlgorithmGVNS::executeAndprint() {
     std::cout << ptrBestSolution_->getServices().size() << "\t\t";
     std::cout << shakes_.size() << "\t\t";
     std::cout << executionIterationNumber_ << "\t\t\t";
-    std::cout << ptrBestSolution_->objectiveFunction() << "\t\t";
+    std::cout << ptrBestSolution_->getSSE() << "\t\t";
     std::cout << sizeOfLRC_ << "\t\t";
     std::cout << cpuTime << "\t\t" << std::endl;
   }

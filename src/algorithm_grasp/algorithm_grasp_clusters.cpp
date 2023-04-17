@@ -54,7 +54,7 @@ void AlgorithmGRASPClusters::postprocess() {
 }
 
 void AlgorithmGRASPClusters::update() {
-  if (ptrSolution_->objectiveFunction() < ptrBestSolution_->objectiveFunction()) {
+  if (ptrSolution_->getSSE() < ptrBestSolution_->getSSE()) {
     ptrBestSolution_ = ptrSolution_;
     hasImproved_ = true;
   }

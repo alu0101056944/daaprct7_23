@@ -35,7 +35,7 @@ void EnvironmentStructureDelete::execute(std::shared_ptr<AlgorithmGreedyKMeans> 
           bestSolution->getClients(), permutation);
       greedyAlgorithm.execute(ptrKMeans);
 
-      if (ptrKMeans->objectiveFunction() < bestSolution->objectiveFunction()) {
+      if (ptrKMeans->getSSE() < bestSolution->getSSE()) {
         bestSolution = ptrKMeans;
         hasImproved = true;
       }

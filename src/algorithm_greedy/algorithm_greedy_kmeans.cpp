@@ -169,6 +169,10 @@ void AlgorithmGreedyKMeans::print() {
   std::cout << "..." << "\t\t";
 }
 
+float AlgorithmGreedyKMeans::getSSE() {
+  return sse_;
+}
+
 float AlgorithmGreedyKMeans::objectiveFunction() {
   return ObjectiveFunctionSSE().get(pointsClient_, pointsService_, 12);
 }
