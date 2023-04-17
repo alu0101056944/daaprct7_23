@@ -35,20 +35,26 @@ AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointBasic> pointsClien
   for (auto& point : pointsService) {
     pointsService_.push_back(PointCluster(point));
   }
-  sse_ = objectiveFunction();
 }
 
 // if points are already cluster points
 AlgorithmGreedyKMeans::AlgorithmGreedyKMeans(std::vector<PointCluster> pointsClient,
       std::vector<PointCluster> pointsService) :
-    pointsClient_(pointsClient),
-    pointsService_(pointsService),
     currentID_(++ID),
     amountOfReassignedPoints_(pointsClient.size()),
     ptrHeuristic_(new HeuristicKMeansLeast()),
     executionIterationNumber_(0),
     sse_(0) {
-  sse_ = objectiveFunction();
+  // Same logic but for point clusters. Cannot have pointclusters already assigned
+  // because the kmeans algorithm will fail.
+
+  // reset cluster points
+  for (auto& point : pointsClient) {
+    pointsClient_.push_back(PointCluster(point.getComponents()));
+  }
+  for (auto& point : pointsService) {
+    pointsService_.push_back(PointCluster(point.getComponents()));
+  }
 }
 
 AlgorithmGreedyKMeans::~AlgorithmGreedyKMeans() {}
@@ -98,6 +104,7 @@ void AlgorithmGreedyKMeans::selectBestCandidate() {
 
     point.setCluster(pointsService_[kClosestClusterIndex].getBasic());
   }
+  sse_ = objectiveFunction();
 }
 
 // Doesnt matter, always true.
@@ -151,7 +158,6 @@ void AlgorithmGreedyKMeans::addCandidate() {
       pointsService_.erase(pointsService_.begin() + i);
     }
   }
-  sse_ = objectiveFunction();
 }
 
 void AlgorithmGreedyKMeans::print() {
