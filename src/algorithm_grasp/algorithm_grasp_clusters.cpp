@@ -40,6 +40,7 @@ void AlgorithmGRASPClusters::build() {
 
   ptrSolution_ = std::make_shared<AlgorithmGreedyKMeans>(builtSolution->getClients(),
     builtSolution->getServices());
+  greedyAlgorithm_.execute(ptrSolution_);
 
   if (ptrBestSolution_ == nullptr) { // to allow print()
     ptrBestSolution_ = ptrSolution_;

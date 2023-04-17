@@ -9,7 +9,7 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/build/prct07",
-      "args": ["${workspaceFolder}/instancias/prob1.txt", "kmeans", "6", "4"],
+      "args": ["${workspaceFolder}/instancias/prob1.txt", "grasp", "6", "4"],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
       "environment": [],
