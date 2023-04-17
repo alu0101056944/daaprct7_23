@@ -1,1 +1,0 @@
-/usr/bin/g++  -g   CMakeFiles/prct07.dir/src/main.cpp.o  -o prct07  libprct07Library.a 
