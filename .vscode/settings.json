@@ -54,7 +54,7 @@
   },
   "cmake.debugConfig": {
     "args": [
-        "../instancias/prob1.txt", "gvns", "6", "4"
+        "../instancias/prob1.txt", "grasp", "6", "4"
     ]
 },
 "C_Cpp.errorSquiggles": "disabled",

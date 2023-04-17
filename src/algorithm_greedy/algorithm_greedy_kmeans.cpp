@@ -108,7 +108,7 @@ bool AlgorithmGreedyKMeans::validCandidate() {
 
 // average centroid recalculus by client average
 void AlgorithmGreedyKMeans::addCandidate() {
-  for (int i = 0; i < pointsService_.size(); ++i) {
+  for (int i = pointsService_.size() - 1; i >= 0; --i) {
 
     // auxiliary components, set to 0 floats, ignore strings
     auto componentsAverage = pointsService_[i].getComponents();
