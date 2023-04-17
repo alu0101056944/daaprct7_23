@@ -22,18 +22,37 @@ void ShakesExchange::execute(std::shared_ptr<AlgorithmGreedyKMeans> solution) {
   FrameworkGreedy greedyAlgorithm;
   
   auto services = solution->getServices();
-  auto candidates = solution->getClients();
+  auto clients = solution->getClients();
+
+  // calculate list of client points that are not service points
+  std::vector<PointCluster> nonServicePoints;
+  for (int i = 0; i < clients.size(); ++i) {
+    auto componentsClient = clients[i].getComponents();
+    bool isService = false;
+
+    for (int j = 0; j < services.size(); ++j) {
+      auto componentsService = services[j].getComponents();
+      
+      if (componentsClient == componentsService) {
+        isService = true;
+      }
+    }
+
+    if (!isService) {
+      nonServicePoints.push_back(clients[i]);
+    }
+  }
 
   // choose random service
   srand(time(NULL));
   const int kRandomIndexService = rand() % services.size();
 
-  // choose random candidate
+  // choose random non service point
   srand(time(NULL));
-  const int kRandomIndexCandidate = rand() % candidates.size();
+  const int kRandomIndexCandidate = rand() % nonServicePoints.size();
 
   // substitute
-  services[kRandomIndexService] = candidates[kRandomIndexCandidate];
+  services[kRandomIndexService] = nonServicePoints[kRandomIndexCandidate];
   
   // apply kmeans and save
   auto ptrKMeans = std::make_shared<AlgorithmGreedyKMeans>(

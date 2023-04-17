@@ -379,6 +379,33 @@ src/environment_structure/environment_structure_add.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_add.cpp.s
 .PHONY : src/environment_structure/environment_structure_add.cpp.s
 
+src/environment_structure/environment_structure_add_single.o: src/environment_structure/environment_structure_add_single.cpp.o
+
+.PHONY : src/environment_structure/environment_structure_add_single.o
+
+# target to build an object file
+src/environment_structure/environment_structure_add_single.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_add_single.cpp.o
+.PHONY : src/environment_structure/environment_structure_add_single.cpp.o
+
+src/environment_structure/environment_structure_add_single.i: src/environment_structure/environment_structure_add_single.cpp.i
+
+.PHONY : src/environment_structure/environment_structure_add_single.i
+
+# target to preprocess a source file
+src/environment_structure/environment_structure_add_single.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_add_single.cpp.i
+.PHONY : src/environment_structure/environment_structure_add_single.cpp.i
+
+src/environment_structure/environment_structure_add_single.s: src/environment_structure/environment_structure_add_single.cpp.s
+
+.PHONY : src/environment_structure/environment_structure_add_single.s
+
+# target to generate assembly for a file
+src/environment_structure/environment_structure_add_single.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_add_single.cpp.s
+.PHONY : src/environment_structure/environment_structure_add_single.cpp.s
+
 src/environment_structure/environment_structure_delete.o: src/environment_structure/environment_structure_delete.cpp.o
 
 .PHONY : src/environment_structure/environment_structure_delete.o
@@ -405,6 +432,33 @@ src/environment_structure/environment_structure_delete.s: src/environment_struct
 src/environment_structure/environment_structure_delete.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.s
 .PHONY : src/environment_structure/environment_structure_delete.cpp.s
+
+src/environment_structure/environment_structure_delete_single.o: src/environment_structure/environment_structure_delete_single.cpp.o
+
+.PHONY : src/environment_structure/environment_structure_delete_single.o
+
+# target to build an object file
+src/environment_structure/environment_structure_delete_single.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete_single.cpp.o
+.PHONY : src/environment_structure/environment_structure_delete_single.cpp.o
+
+src/environment_structure/environment_structure_delete_single.i: src/environment_structure/environment_structure_delete_single.cpp.i
+
+.PHONY : src/environment_structure/environment_structure_delete_single.i
+
+# target to preprocess a source file
+src/environment_structure/environment_structure_delete_single.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete_single.cpp.i
+.PHONY : src/environment_structure/environment_structure_delete_single.cpp.i
+
+src/environment_structure/environment_structure_delete_single.s: src/environment_structure/environment_structure_delete_single.cpp.s
+
+.PHONY : src/environment_structure/environment_structure_delete_single.s
+
+# target to generate assembly for a file
+src/environment_structure/environment_structure_delete_single.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete_single.cpp.s
+.PHONY : src/environment_structure/environment_structure_delete_single.cpp.s
 
 src/environment_structure/environment_structure_exchange.o: src/environment_structure/environment_structure_exchange.cpp.o
 
@@ -459,6 +513,33 @@ src/environment_structure/environment_structure_exchange_k.s: src/environment_st
 src/environment_structure/environment_structure_exchange_k.cpp.s:
 	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_k.cpp.s
 .PHONY : src/environment_structure/environment_structure_exchange_k.cpp.s
+
+src/environment_structure/environment_structure_exchange_single.o: src/environment_structure/environment_structure_exchange_single.cpp.o
+
+.PHONY : src/environment_structure/environment_structure_exchange_single.o
+
+# target to build an object file
+src/environment_structure/environment_structure_exchange_single.cpp.o:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_single.cpp.o
+.PHONY : src/environment_structure/environment_structure_exchange_single.cpp.o
+
+src/environment_structure/environment_structure_exchange_single.i: src/environment_structure/environment_structure_exchange_single.cpp.i
+
+.PHONY : src/environment_structure/environment_structure_exchange_single.i
+
+# target to preprocess a source file
+src/environment_structure/environment_structure_exchange_single.cpp.i:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_single.cpp.i
+.PHONY : src/environment_structure/environment_structure_exchange_single.cpp.i
+
+src/environment_structure/environment_structure_exchange_single.s: src/environment_structure/environment_structure_exchange_single.cpp.s
+
+.PHONY : src/environment_structure/environment_structure_exchange_single.s
+
+# target to generate assembly for a file
+src/environment_structure/environment_structure_exchange_single.cpp.s:
+	$(MAKE) -f CMakeFiles/prct07Library.dir/build.make CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_single.cpp.s
+.PHONY : src/environment_structure/environment_structure_exchange_single.cpp.s
 
 src/environment_structure/shakes/shakes_add.o: src/environment_structure/shakes/shakes_add.cpp.o
 
@@ -794,15 +875,24 @@ help:
 	@echo "... src/environment_structure/environment_structure_add.o"
 	@echo "... src/environment_structure/environment_structure_add.i"
 	@echo "... src/environment_structure/environment_structure_add.s"
+	@echo "... src/environment_structure/environment_structure_add_single.o"
+	@echo "... src/environment_structure/environment_structure_add_single.i"
+	@echo "... src/environment_structure/environment_structure_add_single.s"
 	@echo "... src/environment_structure/environment_structure_delete.o"
 	@echo "... src/environment_structure/environment_structure_delete.i"
 	@echo "... src/environment_structure/environment_structure_delete.s"
+	@echo "... src/environment_structure/environment_structure_delete_single.o"
+	@echo "... src/environment_structure/environment_structure_delete_single.i"
+	@echo "... src/environment_structure/environment_structure_delete_single.s"
 	@echo "... src/environment_structure/environment_structure_exchange.o"
 	@echo "... src/environment_structure/environment_structure_exchange.i"
 	@echo "... src/environment_structure/environment_structure_exchange.s"
 	@echo "... src/environment_structure/environment_structure_exchange_k.o"
 	@echo "... src/environment_structure/environment_structure_exchange_k.i"
 	@echo "... src/environment_structure/environment_structure_exchange_k.s"
+	@echo "... src/environment_structure/environment_structure_exchange_single.o"
+	@echo "... src/environment_structure/environment_structure_exchange_single.i"
+	@echo "... src/environment_structure/environment_structure_exchange_single.s"
 	@echo "... src/environment_structure/shakes/shakes_add.o"
 	@echo "... src/environment_structure/shakes/shakes_add.i"
 	@echo "... src/environment_structure/shakes/shakes_add.s"

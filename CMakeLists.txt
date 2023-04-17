@@ -15,9 +15,12 @@ add_library(prct07Library
 
     include/environment_structure/i_environment_structure.h
     src/environment_structure/environment_structure_exchange.cpp
+    src/environment_structure/environment_structure_exchange_single.cpp
     src/environment_structure/environment_structure_exchange_k.cpp
     src/environment_structure/environment_structure_delete.cpp
+    src/environment_structure/environment_structure_delete_single.cpp
     src/environment_structure/environment_structure_add.cpp
+    src/environment_structure/environment_structure_add_single.cpp
     src/environment_structure/shakes/shakes_add.cpp
     src/environment_structure/shakes/shakes_delete.cpp
     src/environment_structure/shakes/shakes_exchange.cpp

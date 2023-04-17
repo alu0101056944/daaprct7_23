@@ -5,10 +5,9 @@
 
 #include "../../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h"
 
-#include "../../include/environment_structure/environment_structure_exchange.h"
-#include "../../include/environment_structure/environment_structure_exchange_k.h"
-#include "../../include/environment_structure/environment_structure_delete.h"
-#include "../../include/environment_structure/environment_structure_add.h"
+#include "../../include/environment_structure/environment_structure_exchange_single.h"
+#include "../../include/environment_structure/environment_structure_delete_single.h"
+#include "../../include/environment_structure/environment_structure_add_single.h"
 
 #include "../../include/environment_structure/shakes/shakes_add.h"
 #include "../../include/environment_structure/shakes/shakes_delete.h"
@@ -23,13 +22,12 @@ AlgorithmGVNS::AlgorithmGVNS(std::vector<PointBasic> points, int k, int sizeOfLR
       currentID_(++ID),
       executionIterationNumber_(0),
       hasImproved_(true) {
-  addToLocalSearch(std::make_shared<EnvironmentStructureExchange>());
-  addToLocalSearch(std::make_shared<EnvironmentStructureAdd>());
-  addToLocalSearch(std::make_shared<EnvironmentStructureDelete>());
-  addToLocalSearch(std::make_shared<EnvironmentStructureExchangeK>());
-  addToShaking(std::make_shared<ShakesAdd>());
   addToShaking(std::make_shared<ShakesExchange>());
   addToShaking(std::make_shared<ShakesDelete>());
+  addToShaking(std::make_shared<ShakesAdd>());
+  addToLocalSearch(std::make_shared<EnvironmentStructureExchangeSingle>());
+  addToLocalSearch(std::make_shared<EnvironmentStructureDeleteSingle>());
+  addToLocalSearch(std::make_shared<EnvironmentStructureAddSingle>());
 }
 
 AlgorithmGVNS::~AlgorithmGVNS() {}
@@ -50,8 +48,22 @@ void AlgorithmGVNS::preprocess() {
   ptrBestSolution_ = std::make_shared<AlgorithmGreedyKMeans>(builtSolution->getClients(),
     builtSolution->getServices());
   greedyAlgorithm_.execute(ptrBestSolution_);
+
+  while (hasImproved_ || executionIterationNumber_ < 30) {
+    hasImproved_ = false;
+    for (int i = 0; i < shakes_.size(); ++i) {
+      shakes_[i]->execute(ptrBestSolution_);
+      auto shakenSolution = shakes_[i]->getBestSolution();
+      if (shakenSolution->objectiveFunction() < ptrBestSolution_->objectiveFunction()) {
+        ptrBestSolution_ = shakenSolution;
+        hasImproved_ = true;
+        i = 0;
+      }
+    }
+  }
 }
 
+// not full local search, but rather a "single step" search.
 void AlgorithmGVNS::execute() {
   preprocess();
   while (hasImproved_ || executionIterationNumber_ < 30) {
@@ -63,13 +75,13 @@ void AlgorithmGVNS::execute() {
       shakes_[i]->execute(ptrBestSolution_);
       auto shakenSolution = shakes_[i]->getBestSolution();
 
-      std::shared_ptr<AlgorithmGreedyKMeans> bestLocal;
+      auto bestLocal = shakenSolution;
       for (int j = 0; j < localSearches_.size(); ++j) {
-        localSearches_[j]->execute(shakenSolution);
+        localSearches_[j]->execute(bestLocal);
         auto localSolution = localSearches_[j]->getBestSolution();
-        if (bestLocal == nullptr ||
-            localSolution->objectiveFunction() < bestLocal->objectiveFunction()) {
+        if (localSolution->objectiveFunction() < bestLocal->objectiveFunction()) {
           bestLocal = localSolution;
+          j = 0;
         }
       }
 
@@ -106,17 +118,18 @@ void AlgorithmGVNS::executeAndprint() {
     hasImproved_ = false;
     auto start = std::chrono::high_resolution_clock::now();
 
+    // 1 shakes then ALL local searches
     for (int i = 0; i < shakes_.size(); ++i) {
       shakes_[i]->execute(ptrBestSolution_);
       auto shakenSolution = shakes_[i]->getBestSolution();
 
-      std::shared_ptr<AlgorithmGreedyKMeans> bestLocal;
+      auto bestLocal = shakenSolution;
       for (int j = 0; j < localSearches_.size(); ++j) {
-        localSearches_[j]->execute(shakenSolution);
+        localSearches_[j]->execute(bestLocal);
         auto localSolution = localSearches_[j]->getBestSolution();
-        if (bestLocal == nullptr ||
-            localSolution->objectiveFunction() < bestLocal->objectiveFunction()) {
+        if (localSolution->objectiveFunction() < bestLocal->objectiveFunction()) {
           bestLocal = localSolution;
+          j = 0;
         }
       }
 

@@ -85,10 +85,9 @@ CMakeFiles/prct07Library.dir/src/algorithm_gvns/algorithm_gvns.cpp.o
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
  /home/usuario/dyaa/daaprct7_23/include/algorithm_gvns/algorithm_gvns.h
- /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_add.h
- /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_delete.h
- /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange.h
- /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange_k.h
+ /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_add_single.h
+ /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_delete_single.h
+ /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange_single.h
  /home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
  /home/usuario/dyaa/daaprct7_23/include/environment_structure/shakes/shakes_add.h
  /home/usuario/dyaa/daaprct7_23/include/environment_structure/shakes/shakes_delete.h
@@ -114,6 +113,19 @@ CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_add
  /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
  /home/usuario/dyaa/daaprct7_23/include/similarity/i_similarity.h
  /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_add.cpp
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_add_single.cpp.o
+ /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
+ /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
+ /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
+ /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_add_single.h
+ /home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
+ /home/usuario/dyaa/daaprct7_23/include/heuristics/heuristic_kmeans_max.h
+ /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
+ /home/usuario/dyaa/daaprct7_23/include/point/i_point.h
+ /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
+ /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
+ /home/usuario/dyaa/daaprct7_23/include/similarity/i_similarity.h
+ /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_add_single.cpp
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete.cpp.o
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
@@ -125,6 +137,17 @@ CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_del
  /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
  /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
  /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_delete.cpp
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_delete_single.cpp.o
+ /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
+ /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
+ /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
+ /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_delete_single.h
+ /home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
+ /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
+ /home/usuario/dyaa/daaprct7_23/include/point/i_point.h
+ /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
+ /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
+ /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_delete_single.cpp
 CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange.cpp.o
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
@@ -147,6 +170,17 @@ CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exc
  /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
  /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
  /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange_k.cpp
+CMakeFiles/prct07Library.dir/src/environment_structure/environment_structure_exchange_single.cpp.o
+ /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
+ /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
+ /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/i_algorithm_greedy.h
+ /home/usuario/dyaa/daaprct7_23/include/environment_structure/environment_structure_exchange_single.h
+ /home/usuario/dyaa/daaprct7_23/include/environment_structure/i_environment_structure.h
+ /home/usuario/dyaa/daaprct7_23/include/heuristics/i_heuristic.h
+ /home/usuario/dyaa/daaprct7_23/include/point/i_point.h
+ /home/usuario/dyaa/daaprct7_23/include/point/point_basic.h
+ /home/usuario/dyaa/daaprct7_23/include/point/point_cluster.h
+ /home/usuario/dyaa/daaprct7_23/src/environment_structure/environment_structure_exchange_single.cpp
 CMakeFiles/prct07Library.dir/src/environment_structure/shakes/shakes_add.cpp.o
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/algorithm_greedy_kmeans.h
  /home/usuario/dyaa/daaprct7_23/include/algorithm_greedy/framework_greedy.h
