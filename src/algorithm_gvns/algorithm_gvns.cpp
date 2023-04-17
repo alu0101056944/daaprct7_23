@@ -49,14 +49,17 @@ void AlgorithmGVNS::preprocess() {
     builtSolution->getServices());
   greedyAlgorithm_.execute(ptrBestSolution_);
 
-  while (hasImproved_ || executionIterationNumber_ < 30) {
-    hasImproved_ = false;
+  int iterationAmount = 0;
+  bool hasImprovedLocal = true;
+  while (hasImprovedLocal || iterationAmount < 30) {
+    ++iterationAmount;
+    hasImprovedLocal = false;
     for (int i = 0; i < shakes_.size(); ++i) {
       shakes_[i]->execute(ptrBestSolution_);
       auto shakenSolution = shakes_[i]->getBestSolution();
       if (shakenSolution->objectiveFunction() < ptrBestSolution_->objectiveFunction()) {
         ptrBestSolution_ = shakenSolution;
-        hasImproved_ = true;
+        hasImprovedLocal = true;
         i = 0;
       }
     }
