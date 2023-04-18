@@ -44,9 +44,12 @@ void ShakesAdd::execute(std::shared_ptr<AlgorithmGreedyKMeans> solution) {
   }
 
   // choose random non service point
-  srand(time(NULL));
-  const int kRandomIndex = rand() % nonServicePoints.size();
-  services.push_back(nonServicePoints[kRandomIndex]);
+  if (nonServicePoints.size() > 0) {
+    srand(time(NULL));
+    const int kRandomIndex = rand() % nonServicePoints.size();
+    services.push_back(nonServicePoints[kRandomIndex]);
+  }
+
   
   // apply kmeans and save
   auto ptrKMeans = std::make_shared<AlgorithmGreedyKMeans>(
