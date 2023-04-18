@@ -127,7 +127,7 @@ float AlgorithmGreedyClusters::getSSE() {
 }
 
 float AlgorithmGreedyClusters::objectiveFunction() {
-  return ObjectiveFunctionSSE().get(pointsClient_, pointsService_, 8);
+  return ObjectiveFunctionSSE().get(pointsClient_, pointsService_, 12);
 }
 
 void AlgorithmGreedyClusters::print() {

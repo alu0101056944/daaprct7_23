@@ -5,9 +5,9 @@
 
 #include "../../include/algorithm_greedy/algorithm_greedy_clusters_lrc.h"
 
-#include "../../include/environment_structure/environment_structure_exchange_single.h"
-#include "../../include/environment_structure/environment_structure_delete_single.h"
-#include "../../include/environment_structure/environment_structure_add_single.h"
+#include "../../include/environment_structure/environment_structure_exchange.h"
+#include "../../include/environment_structure/environment_structure_delete.h"
+#include "../../include/environment_structure/environment_structure_add.h"
 
 #include "../../include/environment_structure/shakes/shakes_add.h"
 #include "../../include/environment_structure/shakes/shakes_delete.h"
@@ -25,9 +25,9 @@ AlgorithmGVNS::AlgorithmGVNS(std::vector<PointBasic> points, int k, int sizeOfLR
   addToShaking(std::make_shared<ShakesExchange>());
   addToShaking(std::make_shared<ShakesDelete>());
   addToShaking(std::make_shared<ShakesAdd>());
-  addToLocalSearch(std::make_shared<EnvironmentStructureExchangeSingle>());
-  addToLocalSearch(std::make_shared<EnvironmentStructureDeleteSingle>());
-  addToLocalSearch(std::make_shared<EnvironmentStructureAddSingle>());
+  addToLocalSearch(std::make_shared<EnvironmentStructureExchange>()); // Antes EnvironmentStructureExchangeSingle
+  addToLocalSearch(std::make_shared<EnvironmentStructureDelete>()); // Antes EnvironmentStructureDeleteSingle
+  addToLocalSearch(std::make_shared<EnvironmentStructureAdd>()); // Antes EnvironmentStructureAddSingle
 }
 
 AlgorithmGVNS::~AlgorithmGVNS() {}

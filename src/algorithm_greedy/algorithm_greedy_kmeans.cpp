@@ -174,5 +174,5 @@ float AlgorithmGreedyKMeans::getSSE() {
 }
 
 float AlgorithmGreedyKMeans::objectiveFunction() {
-  return ObjectiveFunctionSSE().get(pointsClient_, pointsService_, 8);
+  return ObjectiveFunctionSSE().get(pointsClient_, pointsService_, 12);
 }
