@@ -1,3 +1,4 @@
+./build/prct07 ./instancias/prob1.txt kmeans 6 4
 ./build/prct07 ./instancias/prob1.txt gvns 6 4
 ./build/prct07 ./instancias/prob1.txt grasp 6 4
 ./build/prct07 ./instancias/prob1.txt clusters 6 4

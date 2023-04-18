@@ -31,11 +31,13 @@ TODO: read whole directory and execute all the files using the same amount of cl
 
 TODO: efficiency. Don't recalculate SSE each time a change takes place, instead just add/substract to the previous sse total.
 
-TODO: Remove kmeans application on grasp builder, use assignment algorithm instead. The objetive is to avoid different order leading to different results. **done**
+TODO: Remove kmeans application on grasp builder, use assignment algorithm instead. The objetive is to avoid different order leading to different results. *done*
 
-TODO: calculate penalization value for the objective function.
+TODO: calculate penalization value for the objective function. *done*
 
-TODO: Choose own penalization formula other than AIC.
+TODO: Choose own penalization formula other than AIC. *done*
+
+TODO: relative addition of objective function rather than full recalculation
 
 ## About failed iterations on the build phase:
 
